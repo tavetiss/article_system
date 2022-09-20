@@ -215,7 +215,12 @@ Delnavaz \emph{et al.} first developed a flexible piezoelectric harvester made o
 	\label{tab:harvesters_ear}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%  
-Based on the literature, we propose a new technological solution optimizing the energy conversion efficiency to maximize the harvested energy from the ear canal dynamic motion. 
+Based on the literature, we propose a new technological solution optimizing the energy conversion efficiency to maximize the harvested energy from the ear canal dynamic motion. Section \ref{sec:HARVESTER PRESENTATION AND OPERATION PRINCIPLE} presents the harvester and describes its operation principle. Section \ref{sec:SYSTEM MODELING AND SIMULATIONS} shows the global system  modeling and the numerical simulation on its behavior. Then section \ref{sec:EXPERIMENTAL CHARACTERIZATIONS} then exposes the experimental validation performed on the harvester critical components and section \ref{sec:MODEL RECALIBRATION WITH EXPERIMENTAL DATA} presents the experimentally adjusted global harvester model. Section \ref{sec:ANALYZE AND DISCUSSION} discusses this work major contributions and the harvester potential. Finally, a conclusion is stated in the last section.
+
+%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
+\section{HARVESTER PRESENTATION AND OPERATION \mbox{PRINCIPLE}}
+\label{sec:HARVESTER PRESENTATION AND OPERATION PRINCIPLE}
+%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}[!htbp]
 	\centering
@@ -225,7 +230,7 @@ Based on the literature, we propose a new technological solution optimizing the 
 	\label{fig:system_presentation}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The figure \ref{fig:system_presentation} presents a schematic view of the energy harvesting system. We use a liquid filled earplug to transmit the energy outside the ear canal and benefit so from larger effective space. To maximize the efficiency, the system integrates a frequency-up conversion stage performed by a bistable oscillator (BO). The latter implements an amplified piezoelectric generator (APG) made of a flextensional elastic APX4 steel structure containing stacked PZT ceramics (fig. \ref{fig:APG}). The electromechanical converter composed of the BO and the APG theoretically offers higher energy conversion efficiency compared to low frequency solutions and/or flexible electromechanical transducers \cite{Guo2019,Peng2021,Kulah2008}.
+The figure \ref{fig:system_presentation} presents a schematic view of the energy harvesting system. We use a liquid filled earplug to transmit the energy outside the ear canal and benefit so from larger effective space. To maximize the efficiency, the system integrates a frequency-up conversion stage performed by a bistable oscillator (BO). The latter implements an amplified piezoelectric generator (APG) made of a flextensional elastic APX4 steel structure containing stacked lead zirconate titanate (PZT) ceramics (fig. \ref{fig:APG}). The electromechanical converter composed of the BO and the APG theoretically offers higher energy conversion efficiency compared to low frequency solutions and/or flexible electromechanical transducers \cite{Guo2019,Peng2021,Kulah2008}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{figure}[!htb]
 	\begin{center}
@@ -252,19 +257,13 @@ The electromechanical converter is actuated, by two hydraulic cylinders (HC), wi
 
 To maximize the mechanical energy transfer between the ear canal and the earplug, the latter is lightly pressurized. A minimum of 14kPa is needed in order to fit the earplug to the ear canal wall \cite{Delnavaz2013}. The pressure separator ensures that this initial pressurization does not interfere on the system operation. Then, during a mastication cycle, the TMJ compresses the ear canal wall and expels so the fluid outside the earplug. The HVs ensure to led the fluid alternatively to each HC in order to actuate the BO mass back and forward. The hydraulic amplifier adapts the cylinders stroke to the available earplug flow rate and also adapts the mechanical impedance of the BO to the mechanical impedance of the ear canal wall.
 
-The \cref{fig:mass_piston} shows a schematic view of the actuation of the harvester, by the ear deflection. The present structure is essentially composed of a liquid pressurized earplug, a bistable resonator containing lead zirconate titanate (PZT) structures and a hydraulic circuit allowing the coupling between those. Note that the bistable oscillator has two stable positions, called here $x_0$ and $-x_0$. The actuation occurs when the TM joint compresses the ear-canal walls, leading the fluid toward the piston. The latter pushes the resonator mass from its stable equilibrium position $x=x0$ until it is passed the potential barrier at its unstable equilibrium position ($x=0$). At this point the piston goes back due to the negative mass flow (\cref{fig:deltaV}) generated by the TM joint withdraw, while the mass goes resonate around the other stable equilibrium position at $x=-x_0$. 
+The BO mass has two stable equilibrium positions, $x_m = x_0$ and $x_m = -x_0$. The harvester operates on two major phases. The first consists on the BO mass actuation, by a HC, from one stable equilibrium position toward the unstable position at $x_m = 0$. During the second phase the mass goes oscillate around the opposite stable equilibrium position until it stops, while a portion of the oscillatory energy is converted in electricity by the GPA. The mass then moves backward during the next mastication, completing so the harvester cycle.
 
-
-
-
-
-
-\newpage
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-\section{HARVESTER CONCEPT AND OPERATION PRINCIPLE}
-\label{OPERATION PRINCIPLE}
+\section{SYSTEM GLOBAL MODELING AND SIMULATIONS}
+\label{sec:SYSTEM MODELING AND SIMULATIONS}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-\lipsum[1]
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}[!htbp]
 	\centering
@@ -274,10 +273,6 @@ The \cref{fig:mass_piston} shows a schematic view of the actuation of the harves
 	\label{fig:schema_systeme_complet}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-\section{ANALYTICAL DESIGN AND SIMULATIONS}
-\label{MODELING}
-%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}[!htbp]
 	\centering
@@ -297,6 +292,7 @@ The \cref{fig:mass_piston} shows a schematic view of the actuation of the harves
 	\label{fig:(Ep)_vs_(x_m)_avec_plusieurs_K_VH}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 	\centering
@@ -340,7 +336,7 @@ The \cref{fig:mass_piston} shows a schematic view of the actuation of the harves
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \section{EXPERIMENTAL CHARACTERIZATIONS}
-\label{EXPERIMENTAL CHARACTERIZATIONS}
+\label{sec:EXPERIMENTAL CHARACTERIZATIONS}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \lipsum[2]
     %///////////////////////////////////////////// 
@@ -550,19 +546,15 @@ $f_0$ [Hz]						&		32.9				& 27.9   					\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-\section{SYSTEM SIMULATION WITH EXPERIMENTAL DATA}
+\section{MODEL RECALIBRATION WITH EXPERIMENTAL DATA}
+\label{sec:MODEL RECALIBRATION WITH EXPERIMENTAL DATA}
 \section{ANALYZE AND DISCUSSION}
-\label{DISCUSSION}
-%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-
-%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-\section{PERSPECTIVES}
-\label{PERSPECTIVES}
+\label{sec:ANALYZE AND DISCUSSION}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \section{CONCLUSION}
-\label{CONCLUSION}
+\label{sec:CONCLUSION}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
