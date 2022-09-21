@@ -230,7 +230,7 @@ Based on the literature, we propose a new technological solution optimizing the 
 	\label{fig:system_presentation}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The figure \ref{fig:system_presentation} presents a schematic view of the energy harvesting system. We use a liquid filled earplug to transmit the energy outside the ear canal and benefit so from larger effective space. To maximize the efficiency, the system integrates a frequency-up conversion stage performed by a bistable oscillator (BO). The latter implements an amplified piezoelectric generator (APG) made of a flextensional elastic APX4 steel structure containing stacked lead zirconate titanate (PZT) ceramics (fig. \ref{fig:APG}). The electromechanical converter composed of the BO and the APG theoretically offers higher energy conversion efficiency compared to low frequency solutions and/or flexible electromechanical transducers \cite{Guo2019,Peng2021,Kulah2008}.
+The figure \ref{fig:system_presentation} presents a schematic view of the energy harvesting system. It uses a liquid filled earplug to transmit the energy outside the ear canal and benefit so from larger effective space. To maximize the efficiency, the system integrates a frequency-up conversion stage performed by a bistable oscillator (BO). The latter implements an amplified piezoelectric generator (APG) made of a flextensional elastic APX4 steel structure containing stacked lead zirconate titanate (PZT) ceramics (fig. \ref{fig:APG}). The electromechanical converter composed of the BO and the APG theoretically offers higher energy conversion efficiency compared to low frequency solutions and/or flexible electromechanical transducers \cite{Guo2019,Peng2021,Kulah2008}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{figure}[!htb]
 	\begin{center}
@@ -258,21 +258,28 @@ The electromechanical converter is actuated, by two hydraulic cylinders (HC), wi
 To maximize the mechanical energy transfer between the ear canal and the earplug, the latter is lightly pressurized. A minimum of 14kPa is needed in order to fit the earplug to the ear canal wall \cite{Delnavaz2013}. The pressure separator ensures that this initial pressurization does not interfere on the system operation. Then, during a mastication cycle, the TMJ compresses the ear canal wall and expels so the fluid outside the earplug. The HVs ensure to led the fluid alternatively to each HC in order to actuate the BO mass back and forward. The hydraulic amplifier adapts the cylinders stroke to the available earplug flow rate and also adapts the mechanical impedance of the BO to the mechanical impedance of the ear canal wall.
 
 The BO mass has two stable equilibrium positions, $x_m = x_0$ and $x_m = -x_0$. The harvester operates on two major phases. The first consists on the BO mass actuation, by a HC, from one stable equilibrium position toward the unstable position at $x_m = 0$. During the second phase the mass goes oscillate around the opposite stable equilibrium position until it stops, while a portion of the oscillatory energy is converted in electricity by the GPA. The mass then moves backward during the next mastication, completing so the harvester cycle.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!htbp]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[trim={20cm 0cm 0cm 10.75cm},clip, width=\linewidth]{figures/HV_actuation_detail.pdf}
+	\caption{Contact detail between a HV and the BO mass} 
+	\label{fig:HV_actuation_detail}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In order to maximize the harvested energy we must minimize the energy consumed by the HVs. A technological solution for this role is to use a flexible tube buckled by bending. The figure \ref{fig:HV_actuation_detail} schematizes the integration of such HV around the BO environment. The valve is composed of a flexible tube connected between a rigid part of the hydraulic circuit and a fixed one. The BO mass motion on the mobile part induces a bending angle $\theta$ around the rotational point $O$ located at the buckled section of the flexible tube. Consequently, a pressure loss is generated through the valve in buckled position. Thus, a HV is considered closed when the BO mass is at a stable equilibrium position ($x_m=\pm x_0$) and opened when the mass is at $x_m=0$. Two HVs symmetrically placed on each side of the $\vec{x}$ axis set up an opened hydraulic circuit on one side and a closed one on the other side, depending on the BO mass position. The HV technological choice is motivated by three major arguments. First, the absence of electromechanical transduction minimizes the energy losses for the valve operation. Then, the post-buckling softening of the bent tube minimizes the mechanical impact on the BO mass dynamic operation. Finally, it is well adapted at the millimetric application scale.
 
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \section{SYSTEM GLOBAL MODELING AND SIMULATIONS}
 \label{sec:SYSTEM MODELING AND SIMULATIONS}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
+The harvester is a multyphisic system composed of hydraulic, mechanical, and electrical components. This section presents a global multiphysic model describing the theoretical system operation. Two coupled subsystems are considered. The subsection \ref{subsec:The electromechanical converter modeling} shows the modeling of the electromechanical frequency-up converter (BO + APG) under the mechanical influence of a HV and a HC. Then, the subsection \ref{subsec:The hydraulic circuit} discusses the design of the hydraulic circuit composed of the two HVs, the two HCs, the hydraulic amplifier, the pressure separator and the liquid filled earplug. Finally, the section \ref{subsec:Global model simulation} exposes the numerical simulation of the designed multiphysic coupled model.
+    %///////////////////////////////////////////// 
+	\subsection{The electromechanical converter}	
+	\label{subsec:The electromechanical converter}
+    %/////////////////////////////////////////////
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}[!htbp]
-	\centering
-	\captionsetup{justification=centering}
-	\includegraphics[trim={0cm 0cm 0cm 0cm},clip, width=0.9\textwidth]{figures/schema_systeme_complet.pdf}
-	\caption{Schema système complet.}
-	\label{fig:schema_systeme_complet}
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}[!htbp]
 	\centering
@@ -282,6 +289,18 @@ The BO mass has two stable equilibrium positions, $x_m = x_0$ and $x_m = -x_0$. 
 	\label{fig:schema_cinematique1}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+    %///////////////////////////////////////////// 
+	\subsection{The hydraulic circuit}	
+	\label{subsec:The hydraulic circuit}
+    %/////////////////////////////////////////////
+
+	%///////////////////////////////////////////// 
+	\subsection{Global model simulation}	
+	\label{subsec:Global model simulation}
+	%/////////////////////////////////////////////
+
 \lipsum[1]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
