@@ -218,7 +218,43 @@ Delnavaz \emph{et al.} first developed a flexible piezoelectric harvester made o
 	\label{tab:harvesters_ear}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%  
-Based on the literature, we propose a new technological solution optimizing the energy conversion efficiency to maximize the harvested energy from the ear canal dynamic motion. Section \ref{sec:HARVESTER PRESENTATION AND OPERATION PRINCIPLE} presents the harvester and describes its operation principle. Section \ref{sec:SYSTEM MODELING AND SIMULATIONS} shows the global system  modeling and the numerical simulation on its behavior. Then section \ref{sec:EXPERIMENTAL CHARACTERIZATIONS} then exposes the experimental validation performed on the harvester critical components and section \ref{sec:MODEL RECALIBRATION WITH EXPERIMENTAL DATA} presents the experimentally adjusted global harvester model. Section \ref{sec:ANALYZE AND DISCUSSION} discusses this work major contributions and the harvester potential. Finally, a conclusion is stated in the last section.
+Based on the literature, we propose a new technological solution optimizing the energy conversion efficiency to maximize the harvested energy from the ear canal dynamic motion. The next section states on the energy source characterization and on the harvesting strategy we adopted. Section \ref{sec:HARVESTER PRESENTATION AND OPERATION PRINCIPLE} presents the harvester and describes its operation principle. Section \ref{sec:SYSTEM MODELING AND SIMULATIONS} shows the global system  modeling and the numerical simulation on its behavior. Then section \ref{sec:EXPERIMENTAL CHARACTERIZATIONS} then exposes the experimental validation performed on the harvester critical components and section \ref{sec:MODEL RECALIBRATION WITH EXPERIMENTAL DATA} presents the experimentally adjusted global harvester model. Section \ref{sec:ANALYZE AND DISCUSSION} discusses this work major contributions and the harvester potential. Finally, a conclusion is stated in the last section.
+
+%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
+\section{ENERGY SOURCE AND HARVESTING STRATEGY}
+\label{sec:THE ENERGY SOURCE AND HARVESTING STRATEGY}
+%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
+    %///////////////////////////////////////////// 
+	\subsection{The energy source}	
+	\label{The energy source}
+    %/////////////////////////////////////////////
+The ear canal deflection energy is not a usual source because of the soft tissues and the low frequency of mastication. Thus, the traditional transducing methods are not suitable enough for the application.
+
+On one hand, ear canal global bending energy is about 5 higher than the local compression energy. To date, the literature proposes only one way to harvest the bending energy from the soft human ear canal wall, which is to use of soft materials as the piezoelectric earplug previously introduced \cite{Delnavaz2013}. The very low mechanical impedance of the soft skin in fact limits the use of more effective rigid piezoelectric materials.
+
+On the other hand, the hydraulic extraction strategy proposed in \cite{Delnavaz2012} only exploits the local compression energy. However, it allows to transmit the energy outside the ear canal and benefit so from larger effective space. The latter is in fact essential as it becomes then possible to implement an impedance adaption stage and more effective transducing methods that could not fit directly inside the ear canal restricted volume.
+
+Our application is not suitable for magnetic interactions for two major reasons. First, magnetic fields admit high non-linear properties at small scales and then, their effectiveness decreases as the effective volume  of transducing material and the frequency of the energy source decrease \cite{Priya2017,Kulah2008}. The piezoelectric ceramics yet appear like a good candidate, but the use of mechanical stops is very dissipative, and the contact shall wear the parts at long-term.\\
+
+The frequency-up conversion could benefit to adapt the source to harvesters with better electromechanical coupling \cite{Ashraf2011}. Galchev et al. \cite{Galchev2009} used permanent magnets coupled to coils to rise the frequency of an ambient vibration source with a bistable mechanism. Kulah et al. \cite{Kulah2008} designed a complex but compact system with flat coils on cantilevers and permanent magnets to get a frequency-up conversion. A majority of the papers use as well mechanical stops with piezoelectric ceramic cantilevers to rich high frequencies with a good mechanical coupling \cite{Edwards2013,Gu2011,Lee2007}. 
+
+
+
+
+
+    %///////////////////////////////////////////// 
+	\subsection{The harvesting strategy}	
+	\label{The harvesting strategy}
+    %/////////////////////////////////////////////
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!htbp]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[trim={22.5cm 0cm 0cm 8.8cm},clip, width=0.4\textwidth]{figures/OB_vs_LINEAR.pdf}
+	\caption{Hydraulic source exploitation depending on the mechanical load}
+	\label{fig:OB_vs_LINEAR}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \section{HARVESTER PRESENTATION AND OPERATION \mbox{PRINCIPLE}}
@@ -273,7 +309,6 @@ The BO mass has two stable equilibrium positions, $x_m = x_0$ and $x_m = -x_0$. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In order to maximize the harvested energy we must minimize the energy consumed by the HVs. A technological solution for this role is to use a flexible tube buckled by bending. The figure \ref{fig:HV_actuation_detail} schematizes the integration of such HV around the BO environment. The valve is composed of a flexible tube connected between a rigid part of the hydraulic circuit and a fixed one. The BO mass motion on the mobile part induces a bending angle $\theta$ around the rotational point $O$ located at the buckled section of the flexible tube. Consequently, a pressure loss is generated through the valve in buckled position. Thus, a HV is considered closed when the BO mass is at a stable equilibrium position ($x_m=\pm x_0$) and opened when the mass is at $x_m=0$. Two HVs symmetrically placed on each side of the $\vec{x}$ axis set up an opened hydraulic circuit on one side and a closed one on the other side, depending on the BO mass position. The HV technological choice is motivated by three major arguments. First, the absence of electromechanical transduction minimizes the energy losses for the valve operation. Then, the post-buckling softening of the bent tube minimizes the mechanical impact on the BO mass dynamic operation. Finally, it is well adapted at the millimetric application scale.
-
 
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \section{SYSTEM GLOBAL MODELING AND SIMULATIONS}
@@ -713,7 +748,7 @@ The mechanical energy is much more exploited by the researchers because of the l
 The CRITIAS laboratory proved that the jaw movements create a dynamic motion in the ear-canal \cite{Carioli2016}. The latter is in fact compressed and bent when the temporomandibular joint comes in contact, as a consequence of the jaw motion. That periodic and natural phenomena generates a certain amount of energy that has been quantified. Carioli showed that the bending energy is in average 5 times higher than the compression energy, based on 12 subjects. However, as it is technologically difficult to adapt a transducer capable to harness the bending energy, they choose to concentrate on the ear canal compression energy which has a mean value of 2mW on the 12 test subjects. Their idea was to use an in-ear molding technology to produce personalized ear plugs capable to stick efficiently with the internal walls of the ear canal. Now there are two main issues for harvesting energy in the ear. The first one is to capture efficiently the compression energy and the second one is to convert it by minimizing the losses.\\
 The developed electromagnetic harvester capable of harvesting 0.3µW in a single mastication cycle of 1.5Hz \cite{Delnavaz2012}. The poor efficiency can be explained by the scale reduction which is conversely proportional to the efficiency of electromagnetic conversion \cite{Arnold2007}. Their second harvester on the other hand uses a thin polyvinylidene fluoride (PVDF) film that envelopes the earplug to fit the ear canal walls \cite{Delnavaz2013}. The PVDF has been chosen for its great environmental compatibility and its flexibility. So the piezoelectric harvester has supplied 77µW per mastication cycle, a lot more than the electromagnetic transducer. Yet we need harder materials to improve the global efficiency but it could cause discomfort, or we need more place, which is limited by the ear canal. Further, the electromechanical coupling of piezoelectric polymers is known to be poor, and this parameter rules the electromechanical transducer’s capacity to harvest energy \cite{Roundy2005}.
 
-The ear canal deflection energy is not a usual source because of the soft tissues and the low frequency of mastication. Thus the traditional transducing methods are not suitable enough for the application. Nevertheless, the frequency-up conversion could benefit to adapt the source to harvesters with better electromechanical coupling \cite{Ashraf2011}. Galchev et al. \cite{Galchev2009} used permanent magnets coupled to coils to rise the frequency of an ambient vibration source with a bistable mechanism. Kulah et al. \cite{Kulah2008} designed a complex but compact system with flat coils on cantilevers and permanent magnets to get a frequency-up conversion. A majority of the papers use as well mechanical stops with piezoelectric ceramic cantilevers to rich high frequencies with a good mechanical coupling \cite{Edwards2013,Gu2011,Lee2007}. Our application is not suitable for magnetic interactions because of the high non-linearities of magnetic fields at small scales. The piezoelectric ceramics yet appear like a good candidate, but the use of mechanical stops is very dissipative, and the contact shall wear the parts at long-term.\\
+
 The paper is composed of \emph{X chapters}. The second chapter shows how the frequency-up conversion occurs through the bistable resonator under an external mechanical solicitation. The third chapter develops the design method we followed to couple the ear to the resonator through hydraulic circuits. This will bring us to the fourth chapter that establishes the hydraulic passive switches needed to cycle the bistable movement. Finally, the next chapters discuss the results and conclude the study.
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
