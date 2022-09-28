@@ -61,6 +61,8 @@
 \usepackage{booktabs} % To thicken table lines
 % \usepackage{widetext}
 \usepackage{float}
+\usepackage{empheq}
+
 
 %----------------------------------------------------------------------
 %                     Commands
@@ -243,9 +245,9 @@ On the other hand, the hydraulic extraction strategy proposed in \cite{Delnavaz2
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The earplug operation characteristic behavior has not been studied yet. Thus, the evolution of the volume variation $\Delta V_{ear}$ is not well known as a function of the pressure variation $\Delta p_{ear}$. However, considering the pressure and volume variation levels from \cite{Delnavaz2012} and \cite{Bouchard-Roy2020}, the equation \ref{eq:max_hydraulic_energy} approximates an upper limit for the extractable hydraulic energy with a 28kPa pressurized earplug and a maximum volume variation of $\text{max}(\Delta V_{ear})=60$mm$^3$. The estimation assumes that the earplug is a perfect flow rate source, which is an optimistic hypothesis leading to $0.9$mJ available from one mastication. Based on 2200 mastication cycles per day, according to \cite{Goll2011}, there would be $2$mJ available per day, per ear. This amount of energy could theoretically enhance supply 23.5\% of the 17J of needed for the state of the art of cochlear implants \cite{Kulah2022}. Further research in both domains related to hearing aids and energy harvesting could lead to fully autonomous devices in the future.
+The earplug operation characteristic behavior has not been studied yet. Thus, the evolution of the volume variation $\Delta V_{ear}$ is not well known as a function of the pressure variation $\Delta p_{ear}$. However, considering the pressure and volume variation levels from \cite{Delnavaz2012} and \cite{Bouchard-Roy2020}, the equation \ref{eq:max_hydraulic_energy} approximates an upper limit for the extractable hydraulic energy with a 28kPa pressurized earplug and a maximum volume variation of $\Delta V_{ear,m}=60$mm$^3$. $p_c$ stands for the comfort pressure by estimating that the user could feel discomfort if $\Delta p_{ear}>p_c$. The energy estimation assumes that the earplug is a perfect flow rate source, which is an optimistic hypothesis leading to $0.9$mJ available from one mastication. Based on 2200 mastication cycles per day, according to \cite{Goll2011}, there would be $2$mJ available per day, per ear. This amount of energy could theoretically enhance supply 23.5\% of the 17J of needed for the state of the art of cochlear implants \cite{Kulah2022}. Further research in both domains related to hearing aids and energy harvesting could lead to fully autonomous devices in the future.
 \begin{align}
-	\text{max}(E_{hyd}) = \text{max}(\Delta p_{ear}) \cdot \text{max}(\Delta V_{ear}) = 0.9\text{mJ}
+	\text{max}(E_{hyd}) = p_c \cdot \Delta V_{ear,m} = 0.9\text{mJ}
 	\label{eq:max_hydraulic_energy}
 \end{align}
 
@@ -255,7 +257,7 @@ The earplug operation characteristic behavior has not been studied yet. Thus, th
     %/////////////////////////////////////////////
 The application is not suitable for magnetic interactions for two major reasons. Magnetic fields admit high non-linear properties at small scales and their effectiveness decreases as the effective volume of transducing material and the frequency of the energy source decrease \cite{Priya2017,Kulah2008}. The piezoelectric ceramics yet appear like good candidates, but they can not be easily used because of their high stiffness. For this reason, and also because of the higher conversion efficiency of resonant structures, the harvesting system could benefit from a frequency-up conversion stage \cite{Ashraf2011,Peng2021}. These structures are commonly used for broadband energy harvesting. A majority of the papers with piezoelectric transducers use mechanical stops with piezoelectric ceramic cantilevers to reach high frequencies with a good mechanical coupling \cite{Edwards2013,Gu2011,Lee2007}. Stoppers however dissipate energy and demand maintenance with time, in order to replace rubbing parts. To overcome this drawback, alternative solutions use mechanically bistable oscillators (BO) to perform frequency-up without any rubbing parts \cite{Vocca2012}. Recent advances 
 led to the development and optimization of  bistable structures integrating stacked piezoelectric ceramics inside flextensional elastic structures \cite{Huguet2017}. They show enhanced performances due to high electromechanical coupling and broadband efficiency.
-Preliminary calculations based on the Duffing equation defining the BO mechanical behavior \cite{Tseng1971}, and the linearity of piezoelectric beams, offer a comparison tool to determine the best technological approach to maximize the harvested energy from the hydraulic source. Figure \ref{fig:OB_vs_LINEAR} shows in blue the hydraulic behavior of the ideal flow rate source previously introduced. To be harvested, the energy has to be stored in a mechanical potential reservoir at first, to be then converted in electricity by the transducer. The hydraulic-mechanic interface is chosen to be a hydraulic cylinder. On one hand, the best linear spring is capable of storing/extracting a maximum of $0.5\text{max}(E_{hyd})$ if actuated by the source through a hydraulic cylinder. On the other hand, a BO type non-linear spring is capable of extracting more than $0.65\text{max}(E_{hyd})$ from the same source.
+Preliminary calculations based on the Duffing equation defining the BO mechanical behavior \cite{Tseng1971}, and the linearity of piezoelectric beams, offer a comparison tool to determine the best technological approach to maximize the harvested energy from the hydraulic source. Figure \ref{fig:OB_vs_LINEAR} shows in blue the hydraulic behavior of the ideal flow rate source previously introduced. To be harvested, the energy has to be stored in a mechanical potential reservoir at first, to be then converted in electricity by the transducer. The hydraulic-mechanic interface is chosen to be a hydraulic cylinder. On one hand, the best linear spring is capable of storing/extracting a maximum of $0.5\%$ from the maximum available hydraulic energy ($\text{max}(E_{hyd})$) if actuated by the source through a hydraulic cylinder. On the other hand, a BO type non-linear spring is inherently capable of extracting more than $65\%$ from the same source.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 	\centering
@@ -435,15 +437,16 @@ With the small-angle approximation, the system equation \ref{eq:OB+GPA+VH+piston
 	\subsection{Modeling of the hydraulic circuit}	
 	\label{subsec:The hydraulic circuit}
     %/////////////////////////////////////////////
+This work challenges are focused on the experimental validation of the electromechanical converter cycled by two hydraulic valves. In fact several hydraulic miniature solutions are introduced by the literature for both of the components \cite{Wang2020,Xu2021,Zhu2013}. Hence, this section neglects the pressure loss through the pressure separator and the energy loss inside the hydraulic amplifier. These hydraulic components will rather be considered on further work.
+
 In order to model the coupled behavior of the two hydraulic branches, we will use the index "$o$" for the open branch and the index "$c$" for the closed one. The following hypotheses will be considered :
 \begin{itemize}
 	\item The fluid is incompressible and Newtonian.
-	\item The hydraulic circuit is non-deformable (no volume change).
-	\item There is no leakage.
+	\item The hydraulic circuit is non-deformable (no volume change) and there is no leakage.
 	\item The hydraulic actuation is considered quasi-static (QS) in front
 	the oscillation frequency of the BO.
 \end{itemize}
-The projection on the $\vec{x}$ axis of the Newtons 2$^nd$ law applied respectively to each HC moving piston gives us their mechanical equilibrium as follows :
+The projection on the $\vec{x}$ axis of the Newtons 2$^{nd}$ law applied respectively to each HC moving piston gives us their mechanical equilibrium as follows :
 \begin{align}
 	\text{Opened cylinder ~}& \left\{~
 	-F_{pis} - p_{oc}\ S_{c} - \lambda_{c}\ \dot{x}_{oc} = 0
@@ -454,26 +457,81 @@ The projection on the $\vec{x}$ axis of the Newtons 2$^nd$ law applied respectiv
 	\right.
 	\label{eq:equilibre_dynamique_piston_ferme}
 \end{align}
-Where $p_c$ is the HC chamber pressure and $x_c$ its moving piston position. $F_{pis}$ accounts here for the OB counter-reaction on the HC. Thus, with the QS assumption, it can be derived from equation \ref{eq:OB+GPA+VH+piston}	and expressed as follows : 
+Where $p_c$ is the HC chamber pressure and $x_c$ its moving piston position. $F_{pis}$ accounts for the OB counter-reaction on the HC. Thus, with the QS assumption, it can be derived from equation \ref{eq:OB+GPA+VH+piston} and expressed as follows : 
 \begin{align}
 	-F_{pis} & = F_{bo}\\
 	-F_{pis} & = -\frac{K\ {x_0}^2}{L^2}\biggl(\frac{x_m^2}{{x_0}^2} -1\biggr)x_m - \biggl( \frac{K_{HV}\theta}{a} \biggr) - F_f
 	\label{eq:F_OB_xxxxxx}
 \end{align}
+Then, by juxtaposing the Bernoulli's equation for a current line, we can express the earplug inside pressure $p_{ear}$ as a function of the hydraulic resistance in the two parallel branches with the equations \ref{eq:Bernoulli_piston_ouvert} and \ref{eq:Bernoulli_piston_ferme}.
+\begin{align}
+	\text{Opened branch ~}& \left\{~
+	p_{ear} = p_{in} + \dfrac{1}{a_h}\biggl(p_{oc} + Cf_0 {q_0}^2 \biggr)
+	\right.
+	\label{eq:Bernoulli_piston_ouvert}\\
+	\text{Closed branch ~}& \left\{~
+	p_{ear} = p_{in} + \dfrac{1}{a_h}\biggl(p_{cc} + Cf(x_m) {q_f}^2 \biggr)
+	\right.
+	\label{eq:Bernoulli_piston_ferme}
+\end{align}
+Where $p_{in}$ is the initial pressurization, $a_h$ is the hydraulic amplification ratio, $q$ the flow rate and $Cf$ the pressure loss coefficient of a HV. The latter will depend on the HV bending angle $\theta$ and therefore on the BO mass position $x_m$ (fig. \ref{fig:HV_actuation_detail}). $Cf$ will be as more important as the $x_m$ increases. It is minimal when the HV is unbent and worth $Cf_0$.
 
-	%///////////////////////////////////////////// 
-	\subsection{Global model simulation}	
-	\label{subsec:Global model simulation}
-	%/////////////////////////////////////////////
+Also, the no leakage assumption imposes that all the outgoing fluid from the earplug is contained in the two hydraulic branches (eq. \ref{eq:conservation_masse}).
+\begin{equation}
+	q_{ear} = q_o + q_f
+	\label{eq:conservation_masse}
+\end{equation}
+Moreover, the same previous hypothese requires that all the fluid entering the HC results on a piston displacement (eqs \ref{eq:conservation_masse_ouvert},\ref{eq:conservation_masse_ferme}).
+\begin{align}
+	\text{Opened cylinder ~}& \left\{~
+	q_o = S_{hc} \dot{x}_{oc}
+	\right.
+	\label{eq:conservation_masse_ouvert}\\
+	\text{Closed cylinder ~}& \left\{~
+	q_c = S_{hc} \dot{x}_{cc}
+	\right.
+	\label{eq:conservation_masse_ferme}
+\end{align}
 
+    %///////////////////////////////////////////// 
+	\subsection{Preliminary dimensioning}	
+	\label{subsec:Preliminar dimensionning}
+    %/////////////////////////////////////////////
+The dimensioning starts by setting technological choices in order to experimentally validate the multiphysic coupled model. Therefore, the APG is a APA50XS piezoelectric actuator, from Cedrat Technologies, exploited as a generator, setting so the stiffness $K$. Then, the MQP4-10S HC from SMC will ensure the hydraulic to mechanical interface, setting then the cylinder piston section $S_{hc}$. Next, the hydraulic commutation of the two parallel branches is driven by two HVs made of collapsed flexible tubes, setting then $Cf(x_m)$. Finally, the \mbox{$L=16mm$ }parameter is chosen to be consistent with the application scale. 
 
-
-
-\newpage
+The maximum energy extractable with the BO through a QS actuation is equal to the height of the potential energy barrier $E_{pb}$ when the mass position varies from \mbox{$x_m=\pm x_0$ }to \mbox{$x_m=0$}. Knowing that it is equal to 65\% of the upper limit of the available hydraulic energy (eq. \ref{eq:max_hydraulic_energy} $\&$ fig. \ref{fig:OB_vs_LINEAR}), we can set the BO buckling level \mbox{$\epsilon = x_0/L$} through the equation \ref{eq:Ep_bar}. The harvester is thus optimized depending on the energy source.
+\begin{equation}
+	E_{pb} = \dfrac{K x_0^4}{3L^2}=0.65p_c \Delta V_{ear,m}
+	\label{eq:Ep_bar}
+\end{equation}
+Two additional coupled requirements allow the system operation by setting the amplification level $a_h$. First, the available fluid must be enough to ensure the HC stroke from its equilibrium position until the BO mass reaches \mbox{$x_m=0$} (eq. \ref{eq:contrainte_course}). Then, the BO mechanical impedance on $\vec{x}$ axis reaches a maximum value $F_c$ when \mbox{$ x_m = x_c = \dfrac{x_0}{\sqrt{3}}$}. At this point, a maximum pressure is induced in the earplug and so the equation \ref{eq:contrainte_confort} has to be verified to ensure the user comfort. If not, $\epsilon$ must be decreased, decreasing the extracted energy for the benefit of comfort.
+\begin{empheq}[left=\empheqlbrace]{align} 
+	\Delta V_{ear,m} = a_h\ S_{hc}\  x_{c0}
+	\label{eq:contrainte_course}\\
+	p_c > \frac{1}{a_h} \frac{F_c}{S_{hc}} ~~~~ \text{with}~~~~ F_c = \dfrac{4Kx_0^3}{3\sqrt{3}L^2}
+	\label{eq:contrainte_confort}
+\end{empheq}
 
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \label{NUMERICAL MODEL AND SIMULATIONS}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
+
+	%///////////////////////////////////////////// 
+	\subsection{HV hydraulic targeted behavior}	
+	\label{subsec:HV hydraulic targeted behavior}
+	%/////////////////////////////////////////////
+A multiphysic coupled model has been established with the equations and the preliminary dimensioning previously introduced. The unknown key aspect stays the hydraulic behavior $Cf(x_m)$ of the HVs. The numerical resolution of the differential equations can provide the necessary condition to satisfy in order to perform the adequate hydraulic commutation. In fact, the ratio between the pressure loss coefficient of the closed HV and the one of the opened HV has to be sufficient to force the flow through the opened branch. So we introduce $r_{Cf}$ as follows:
+\begin{equation}
+	r_{Cf} = \dfrac{\text{Closed HV}}{\text{Opened HV}}	= \dfrac{Cf_c}{Cf_0}	
+	\label{eq:r_Cf_definition}
+\end{equation}
+Where $Cf_f=Cf(\pm x_0)$. The literature does not provide the constitutive relation between $x_m$ and $Cf$ for a buckled flexible tube. Therefore, we preliminarily assume that it is linear and defined as follows :
+\begin{align}
+	Cf(x_m) & = Cf_0 + \dfrac{Cf_f - Cf_0}{x_0}\ x_m  \notag \\
+			& = Cf_0 \Biggl( 1 + \biggl(\dfrac{1}{r_{cf}-1} \biggr)\dfrac{x_m}{x_0} \Biggr)
+			\label{eq:Cf(x_m)_linear}
+\end{align}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}[!htbp]
 	\centering
@@ -492,20 +550,10 @@ Where $p_c$ is the HC chamber pressure and $x_c$ its moving piston position. $F_
 	\label{fig:simu_pos_Up_puissances_energie_1CYCLE}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}[!htbp]
-	\centering
-	\captionsetup{justification=centering}
-	\includegraphics[trim={0cm 0cm 0cm 7cm},clip, width=0.8\textwidth]{figures/conversion_symme_rendements.pdf}
-	\caption{$K_{HV}$ impact on the evolution of the BO mass potential energy.}
-	\label{fig:conversion_symme_rendements.pdf}
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \section{EXPERIMENTAL CHARACTERIZATIONS}
 \label{sec:EXPERIMENTAL CHARACTERIZATIONS}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-\lipsum[2]
     %///////////////////////////////////////////// 
 	\subsection{The electromechanical converter}	
 	\label{The electromechanical converter}
@@ -530,7 +578,6 @@ Where $p_c$ is the HC chamber pressure and $x_c$ its moving piston position. $F_
 \label{fig:/monobloc+GPA_face}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\lipsum[1]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 	\centering
@@ -566,49 +613,12 @@ Where $p_c$ is the HC chamber pressure and $x_c$ its moving piston position. $F_
 %%%%%%%%%%%%%%%%%%%%%  
 
     %///////////////////////////////////////////// 
-	\subsection{The hydraulic valves}	
+	\subsection{The HV hydraulic behavior}	
 	\label{The hydraulic valves}
     %/////////////////////////////////////////////
-    		%************* 
-			\subsubsection{Static characterizations}
-			\label{Static characterizations of HV}
-    		%************* 
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
-\begin{figure*}[!htb]
-	\begin{center}
-		\begin{subfigure}[t]{0.69\textwidth}
-			\captionsetup{justification=centering}
-			\includegraphics[trim={9.8cm 0cm 0cm 11cm},clip,width=\textwidth]{figures/essais_statique_VH.pdf}
-			\caption{Vue globale}
-			\label{fig:essais_statique_VH}
-		\end{subfigure}
-		\hfillx
-		\begin{subfigure}[t]{0.29\textwidth}
-			\captionsetup{justification=centering}
-			\includegraphics[trim={14cm 0cm 0cm 7cm},clip,width=\textwidth]{figures/essais_statique_detail.pdf}
-			\caption{Détail du contact support-échantillon}
-			\label{fig:essais_statique_detail}
-		\end{subfigure}
-		\caption{Schéma des essais de caractérisations statiques de tubes en flexion}
-		\label{fig:essais_statique_total}
-	\end{center}
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
-\begin{figure*}[!htb]
-	\begin{center}
-		\captionsetup{justification=centering}
-		\includegraphics[trim={0cm 0cm 0cm 0cm},clip,width=\textwidth]{figures/resultats_essais_statique_VH_tous_sans_simu.pdf}
-		\caption{Évolutions expérimentales de $K_t$ en fonction de $\theta$ pour quatre tubes de dimensions différentes (tab. \ref{tab:dim_tube_statique})}
-		\label{fig:resultats_essais_statique_VH_tous}
-	\end{center}
-\end{figure*} 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-    		%************* 
-			\subsubsection{Hydraulic characterizations}
-			\label{Hydraulic characterizations}
-    		%************* 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	\subsubsection{Test bench presentation}
+	\subsubsection{Results and discussion}
+
 \begin{figure*}[!htb]
 \begin{center}
 	\captionsetup{justification=centering} 
@@ -649,40 +659,33 @@ Where $p_c$ is the HC chamber pressure and $x_c$ its moving piston position. $F_
 \end{figure}
 %%%%%%%%%%%%%%%%
 	%/////////////////////////////////////////////
-	\subsection{The valve mechanical influence on the electromechanical converter}	
+	\subsection{The HV mechanical influence on the electromechanical converter (théorique = x0 réduit donc faut compenser)}	
 	\label{The mechanical influence of the valve on the electromechanical converter}
 	%/////////////////////////////////////////////
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}[!htbp]
-\begin{center}
-	\begin{subfigure}[b]{0.49\textwidth}
-	\captionsetup{justification=centering} 
-	\includegraphics[trim={19cm 0cm 0cm 8cm},clip,width=\textwidth]{figures/presentation_BDT_avant_actionnement.pdf}
-	\caption{Avant lâcher : $x_m=-x_0$}
-	\label{fig:presentation_BDT_lacher_avant_actionnement}
-	\end{subfigure}
-\hfillx
-	\begin{subfigure}[b]{0.49\textwidth}
-	\captionsetup{justification=centering} 
-	\includegraphics[trim={19cm 0cm 0cm 8cm},clip,width=\textwidth]{figures/presentation_BDT_apres_actionnement.pdf}
-	\caption{Après lâcher : $x_m=x_{0,vh}$}
-	\label{fig:presentation_BDT_lacher_apres_actionnement}
-	\end{subfigure}
-	\caption{Présentation du banc de test de lâcher avec VH}
-	\label{fig:presentation_BDT_lacher_tube}
-\end{center}	
-\end{figure*} 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Theoretically...
+
+%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
+\section{MODEL RECALIBRATION WITH EXPERIMENTAL DATA}
+\label{sec:MODEL RECALIBRATION WITH EXPERIMENTAL DATA}
+%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
+	%/////////////////////////////////////////////
+	\subsubsection{Free release trials}
+	%/////////////////////////////////////////////
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{figure}[!htbp]
-\begin{center}
-	\captionsetup{justification=centering}
-	\includegraphics[trim={4cm 0cm 0cm 9.5cm},clip,width=0.7\textwidth]{figures/contact_M_VH_lachers.pdf}
-	\caption{Image de la VH$_{T100p}$ lorsque $\theta_0$($x_m=-x_{0})$ et lorsque $\theta_f$($x_m=x_{0,vh}$)}
-	\label{fig:contact_M_VH_lachers}
-\end{center}
+	\begin{center}
+		\captionsetup{justification=centering}
+		\includegraphics[trim={4cm 0cm 0cm 9.5cm},clip,width=0.7\textwidth]{figures/contact_M_VH_lachers.pdf}
+		\caption{Image de la VH$_{T100p}$ lorsque $\theta_0$($x_m=-x_{0})$ et lorsque $\theta_f$($x_m=x_{0,vh}$)}
+		\label{fig:contact_M_VH_lachers}
+	\end{center}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	%/////////////////////////////////////////////
+	\subsubsection{Recalibrated model}
+	%/////////////////////////////////////////////
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[!htbp]
@@ -716,8 +719,6 @@ $f_0$ [Hz]						&		32.9				& 27.9   					\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-\section{MODEL RECALIBRATION WITH EXPERIMENTAL DATA}
-\label{sec:MODEL RECALIBRATION WITH EXPERIMENTAL DATA}
 \section{ANALYZE AND DISCUSSION}
 \label{sec:ANALYZE AND DISCUSSION}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
