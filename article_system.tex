@@ -323,8 +323,8 @@ The BO mass has two stable equilibrium positions, $x_m = x_0$ and $x_m = -x_0$. 
 In order to maximize the harvested energy we must minimize the energy consumed by the HVs. A technological solution for this role is to use a flexible tube buckled by bending. The figure \ref{fig:HV_actuation_detail} schematizes the integration of such HV around the BO environment. The valve is composed of a flexible tube connected between a rigid part of the hydraulic circuit and a fixed one. The BO mass motion on the mobile part induces a bending angle $\theta$ around the rotational point $O$ located at the buckled section of the flexible tube. Consequently, a pressure loss is generated through the valve in buckled position. Thus, a HV is considered closed when the BO mass is at a stable equilibrium position ($x_m=\pm x_0$) and opened when the mass is at $x_m=0$. Two HVs symmetrically placed on each side of the $\vec{x}$ axis set up an opened hydraulic circuit on one side and a closed one on the other side, depending on the BO mass position. The HV technological choice is motivated by three major arguments. First, the absence of electromechanical transduction minimizes the energy losses for the valve operation. Then, the post-buckling softening of the bent tube minimizes the mechanical impact on the BO mass dynamic operation. Finally, it is well adapted at the millimetric application scale.
 
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-\section{SYSTEM GLOBAL MODELING AND SIMULATIONS}
-\label{sec:SYSTEM MODELING AND SIMULATIONS}
+\section{SYSTEM GLOBAL MODELING}
+\label{sec:SYSTEM MODELING}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 The harvester is a multyphisic system composed of hydraulic, mechanical, and electrical components. This section presents a global multiphysic model describing the theoretical system operation. Two coupled subsystems are considered. The subsection \ref{subsec:The electromechanical converter} shows the modeling of the electromechanical frequency-up converter (BO + APG) under the mechanical influence of a HV and a HC. Then, the subsection \ref{subsec:The hydraulic circuit} discusses the design of the hydraulic circuit composed of the two HVs, the two HCs, the hydraulic amplifier, the pressure separator and the liquid filled earplug. Finally, the section \ref{subsec:Global model simulation} exposes the numerical simulation of the designed multiphysic coupled model.
 
@@ -513,41 +513,63 @@ Two additional coupled requirements allow the system operation by setting the am
 \end{empheq}
 
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
+\section{NUMERICAL MODEL AND SIMULATIONS}
 \label{NUMERICAL MODEL AND SIMULATIONS}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 
 	%///////////////////////////////////////////// 
-	\subsection{HV hydraulic targeted behavior}	
+	\subsection{Targeted hydraulic behavior of the HVs}	
 	\label{subsec:HV hydraulic targeted behavior}
 	%/////////////////////////////////////////////
 A multiphysic coupled model has been established with the equations and the preliminary dimensioning previously introduced. The unknown key aspect stays the hydraulic behavior $Cf(x_m)$ of the HVs. The numerical resolution of the differential equations can provide the necessary condition to satisfy in order to perform the adequate hydraulic commutation. In fact, the ratio between the pressure loss coefficient of the closed HV and the one of the opened HV has to be sufficient to force the flow through the opened branch. So we introduce $r_{Cf}$ as follows:
 \begin{equation}
-	r_{Cf} = \dfrac{\text{Closed HV}}{\text{Opened HV}}	= \dfrac{Cf_c}{Cf_0}	
+	r_{Cf} = \dfrac{Cf(\text{Closed HV})}{Cf(\text{Opened HV})}	= \dfrac{Cf_c}{Cf_0}	
 	\label{eq:r_Cf_definition}
 \end{equation}
-Where $Cf_f=Cf(\pm x_0)$. The literature does not provide the constitutive relation between $x_m$ and $Cf$ for a buckled flexible tube. Therefore, we preliminarily assume that it is linear and defined as follows :
+Where $Cf_c=Cf(\pm x_0)$. The literature does not provide the constitutive relation between $x_m$ and $Cf$ for a buckled flexible tube. Therefore, we preliminarily assume that it is linear and defined as follows :
 \begin{align}
-	Cf(x_m) & = Cf_0 + \dfrac{Cf_f - Cf_0}{x_0}\ x_m  \notag \\
-			& = Cf_0 \Biggl( 1 + \biggl(\dfrac{1}{r_{cf}-1} \biggr)\dfrac{x_m}{x_0} \Biggr)
+	Cf(x_m) & = Cf_0 + \dfrac{Cf_c - Cf_0}{x_0}\ x_m  \notag \\
+			& = Cf_0 \Biggl( 1 + \biggl(\dfrac{1}{r_{Cf}-1} \biggr)\dfrac{x_m}{x_0} \Biggr)
 			\label{eq:Cf(x_m)_linear}
 \end{align}
+Regarding the BO symmetry, the relation between $Cf$ and $x_m$ has to be an even function to allow the system cycling, i.e. $Cf(x_m) = Cf(-x_m)$.
 
+	%///////////////////////////////////////////// 
+	\subsection{Simulation results}	
+	\label{subsec:Simulation results}
+	%/////////////////////////////////////////////
+The numerical model aims to demonstrate the theoretical operation of the new concept of harvester. By imposing a volume variation $\Delta V_{ear}(t)$ recorded during the mastication cycle of a human subject (fig. \ref{fig:deltaV_ear}), the numerical model must give the theoretical temporal evolution of the hydraulic, mechanic and electric coupled parameters defining the harvester. 
+
+The ratio $r_{Cf}$ has been increased until it was sufficient to prioritize the flow through the opened HV. The mastication cycle is identically quadrupled in order to test the system cycling robustness. Also, the earplug is assumed as a perfect flow rate source.
+
+Figure \ref{fig:positions+DeltaV_debits_pear} presents the simulation results, for four identical consecutive mastication cycles, of the mass and the HC pistons positions overplayed with $\Delta V_{ear}(t)$, the flow rates in the two parallel branches and the earplug pressure. The two different sides are identified on the curves by the indexes $t$ for \emph{"top"} side ($x>0$) and $b$ for \emph{"bottom"} side ($x<0$), knowing that the gravity influence is not considered. The same figure shows a focused view on the two main phases of the harvester operation during the actuation by the \emph{"bottom"} HC. The simulation begins with the following initial conditions:
+\begin{itemize}
+	\item The mass is at the $-x_0$ equilibrium position.
+	\item The \emph{"top"} HV is closed ($Cf_{top} = Cf_c$) and the \emph{"bottom"} side HV is opened ($Cf_{bot} = Cf_0$).
+	\item There is no contact between the mass and the HCs.
+	\item A mastication occurs.
+\end{itemize}
+
+The first phase consists on pushing on the BO mass to store potential energy, until the mass reaches $x=0$. During this phase, the fluid exciting the earplug is mostly guided toward the \emph{"bottom"} HC and the earplug pressure is generated by the BO counter-reaction force. The second phase begins after the mass crosses the $x_m=0$ position. The \emph{"top"} HV then opens ($Cf_{top} = Cf_0$) and the \emph{"bottom"} side HV closes ($Cf_{bot} = Cf(x_m)>Cf_0$). The fluid is then preferably guided toward the \emph{"top"} side and the contact between the mass and the HCs is non-existent. The mass goes oscillate around the opposite stable equilibrium position $x_0$ while a part on the oscillatory mechanical energy is converted in electricity by the APG. The cycling of the hydraulic branches is possible when $r_{Cf} =(r_{Cf})_{min}=26$.
+
+
+	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}[!htbp]
 	\centering
 	\captionsetup{justification=centering}
-	\includegraphics[trim={9.5cm 0cm 0cm 0cm},clip, width=0.7\textwidth]{figures/simu_pos_debit_Cf_pression_1CYCLE.pdf}
-	\caption{$K_{HV}$ impact on the evolution of the BO mass potential energy.}
-	\label{fig:simu_pos_debit_Cf_pression_1CYCLE}
+	\includegraphics[trim={0cm 0cm 0cm 0.5cm},clip, width=\textwidth]{figures/positions+DeltaV_debits_pear.pdf}
+	\caption{}
+	\label{fig:positions+DeltaV_debits_pear}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}[!htbp]
 	\centering
 	\captionsetup{justification=centering}
-	\includegraphics[trim={10cm 0cm 0cm 0cm},clip, width=0.7\textwidth]{figures/simu_pos_Up_puissances_energie_1CYCLE.pdf}
-	\caption{$K_{HV}$ impact on the evolution of the BO mass potential energy.}
-	\label{fig:simu_pos_Up_puissances_energie_1CYCLE}
+	\includegraphics[trim={0cm 0cm 0cm 0.9cm},clip, width=\textwidth]{figures/positions_Up_puissances_energies.pdf}
+	\caption{}
+	\label{fig:positions_Up_puissances_energies}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
@@ -616,8 +638,15 @@ Where $Cf_f=Cf(\pm x_0)$. The literature does not provide the constitutive relat
 	\subsection{The HV hydraulic behavior}	
 	\label{The hydraulic valves}
     %/////////////////////////////////////////////
+
+	%/////////////////////////////////////////////
 	\subsubsection{Test bench presentation}
+	 %/////////////////////////////////////////////
+
+	%/////////////////////////////////////////////
 	\subsubsection{Results and discussion}
+    %/////////////////////////////////////////////
+
 
 \begin{figure*}[!htb]
 \begin{center}
