@@ -623,7 +623,7 @@ The simulated model shows promising efficiency and demonstrates that a minimum v
 	\subsection{The electromechanical converter presentation}	
 	\label{The electromechanical converter presentation}
     %/////////////////////////////////////////////
-The device heart is the electromechanical converter composed of the BO implementing the APG and therefore, they have been designed with respect to space requirements. We opted for a monobloc structure with blades in order to optimize the oscillator quality factor by avoiding screw assemblies. Figure \ref{fig:monobloc_face} shows the face view of the monobloc bistable oscillator CAD that has been fabricated by electrical discharge machining (EDM). The 8 hinges are assured by 4 buckled blades (BB) and a vertical guide blade (GB) ensures the APG mounting. The efficient part composed of the blades and the central mass are $1.2$mm think. The external rigid 6mm thick frame has been designed to ensure the fixed boundary conditions and also to allow the mounting of both the measurement instruments and the HCs. The geometrical and mechanical parameters of the BO are referenced in table \ref{tab:parametres_lames}. The following sections describe the design method that led to the values of the different parameters, depending on our needs.
+The device heart is the electromechanical converter composed of the BO implementing the APG and therefore, they have been designed with respect to space requirements. We opted for a monobloc structure with blades in order to optimize the oscillator quality factor by avoiding screw assemblies. Figure \ref{fig:monobloc_face} shows the face view of the monobloc bistable oscillator CAD that has been fabricated by electrical discharge machining (EDM). The 8 hinges are assured by 4 buckled blades (BB) and a vertical guide blade (GB) ensures the APG mounting. The efficient part composed of the blades and the central mass are $1.2$mm think. The external rigid $6$mm thick frame has been designed to ensure the fixed boundary conditions and also to allow the mounting of both the measurement instruments and the HCs. The geometrical and mechanical parameters of the BO are referenced in table \ref{tab:parametres_lames}. The following sections describe the design method that led to the values of the different parameters, depending on our needs.
 %%%%%%%%%%%%%%%%%
 \begin{table}[!htbp]
 	\centering
@@ -657,9 +657,57 @@ Stiffness of the APG along $\vec{z}$          & $K$        & 252  [kN/m]\\
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %///////////////////////////////////////////// 
-	\subsection{The electromechanical converter presentation}	
-	\label{The electromechanical converter presentation}
+	\subsection{BO blades design}	
+	\label{subsec:BO blades design}
     %/////////////////////////////////////////////
+The harvesting occurs during the free oscillation phase. The main issue is to maximize the energy conversion efficiency $\eta_{ob}$ of this stage. Richards \emph{et al.} demonstrated that for the piezoelectric transduction at the resonance frequency, it can be approximated with the equation \ref{eq:eta_ob} \cite{Richards2004}. This expression is valid for an electric extraction based on the adaptive impedance matching strategy.
+\begin{equation}
+	\eta_{ob} = \dfrac{k^2_{sys}\ Q}{k^2_{sys}\ Q + 2}
+	\label{eq:eta_ob}
+\end{equation}
+Where $k^2_{sys}$ is the electromechanical coupling of the harvesting system. The latter can be expressed with the electromechanical parameters of the APG and the stiffness of the respective blades (tab. \ref{tab:parametres_lames}) as follows :
+% \begin{equation}
+% 	k^2_{sys} = \dfrac{ K_{bb}^2 \alpha^2 }
+% 					  { \biggr(Cp(K+K_{bb} + 
+% 						\dfrac{K_{bb}^2 \alpha^2}{K_{bb} + K_{gb} + K} \biggl)
+% 						 (K_{bb} + K_{gb} + K)^2}
+% 	\label{eq:k2_sys}
+% \end{equation}
+
+\begin{equation}
+	k^2_{sys} = \dfrac{\alpha^2_{eq}}{\alpha^2_{eq} + (K+K_{gb})C_p}
+	\label{eq:k2_sys}
+\end{equation}
+Where $\alpha_{eq}$ is the equivalent piezoelectric force factor (PFF) given by equation \ref{eq:alpha_eq}. It depends on the initial PFF of the APG alone and the and ratio between the equivalent stiffness $K_{eq}$ (eq. \ref{eq:K_eq}) of the structure on the $\vec{x}$ axis and the equivalent stiffness of the APG mounted on the GB.
+\begin{equation}
+	\alpha_{eq} = \alpha\ \dfrac{K_{eq}}{K + K_{gb}} 
+	\label{eq:alpha_eq}
+\end{equation}
+\begin{equation}
+	K_{eq} = \dfrac{K_{bb}(K + K_{gb})}{K_{bb} + K_{gb} + K}
+	\label{eq:K_eq}
+\end{equation}
+Equations \ref{eq:eta_ob} - \ref{eq:K_eq} combined demonstrate that in order to maximize $\eta_{ob}$ we must make sure that $K_{bb} \gg K \gg K_{gb}$. If the condition is respected, then $K_{eq}$ can be assimilated to $K$. 
+
+On the architecture presented on figure \ref{fig:monobloc_face} the deformation of the GB is similar to the standard case of a fixed-ended beam undergoing a single concentrated load applied at midspan. Using structural analysis formulas for this load case, we can express $K_{gb}$ as follows \cite{Leet1993} :
+\begin{equation}
+	K_{gb} = \dfrac{2EI_{gb}el_v^3}{L_v^3}
+	\label{eq:Kgb_definition}
+\end{equation}
+$I_{gb}$ is the second moment of area along $\vec{y}$ axis. According the material properties and GB dimensions (tab. \ref{tab:parametres_lames}) $K_{gb} = 4.0e2$, which is negligible before $K=0.2e6$.
+
+$K_{bb}$ is for its part verified through a FEM generated with the BO CAD on ANSYS Workbench.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!htbp]
+\centering
+\captionsetup{justification=centering}
+	\includegraphics[trim={21.9cm 0cm 0cm 10.2cm},clip,width=.8\linewidth]{figures/fem_statique.pdf}
+	\caption{BO finit element model}
+\label{fig:fem_statique}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
