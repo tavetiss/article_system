@@ -588,7 +588,7 @@ $R_{ch}$			&	15.5			& [$k\Omega$] 			\\ \hline
 $\alpha$			&   0.105			& [$N/V$] 				\\ \hline
 $C_0$	   			&	0.25			& [$\mu F$]				\\ \hline
 $Q$ 				&	50				& [-] 					\\ \hline
-$\eta_g$			& 	67.1			& [$\%$]		\\ 
+$\eta_g$			& 	76				& [$\%$]		\\ 
 \bottomrule
 	\end{tabular}
 	\caption{Electromechanical parameters}
@@ -623,7 +623,7 @@ The simulated model shows promising efficiency and demonstrates that a minimum v
 	\subsection{The electromechanical converter presentation}	
 	\label{The electromechanical converter presentation}
     %/////////////////////////////////////////////
-The device heart is the electromechanical converter composed of the BO implementing the APG and therefore, they have been designed with respect to space requirements. We opted for a monobloc structure with blades in order to optimize the oscillator quality factor by avoiding screw assemblies. Figure \ref{fig:monobloc_face} shows the face view of the monobloc bistable oscillator CAD that has been fabricated by electrical discharge machining (EDM). The 8 hinges are assured by 4 buckled blades (BB) and a vertical guide blade (GB) ensures the APG mounting. The efficient part composed of the blades and the central mass are $1.2$mm think. The external rigid $6$mm thick frame has been designed to ensure the fixed boundary conditions and also to allow the mounting of both the measurement instruments and the HCs. The geometrical and mechanical parameters of the BO are referenced in table \ref{tab:parametres_lames}. The following sections describe the design method that led to the values of the different parameters, depending on our needs.
+The device heart is the electromechanical converter composed of the BO implementing the APG and therefore, they have been designed with respect to space requirements. We opted for a monobloc structure with blades in order to optimize the oscillator quality factor by avoiding screw assemblies. Figure \ref{fig:monobloc_face} shows the face view of the monobloc bistable oscillator CAD that has been fabricated by electrical discharge machining (EDM). The 8 hinges are assured by 4 buckled blades (BB) and a vertical guide blade (GB) ensures the APG mounting. The efficient part composed of the blades and the central mass are $1.2$mm think. The external rigid $6$mm thick frame has been designed to ensure the fixed boundary conditions and also to allow the mounting of both the measurement instruments and the HCs. The local thickenings at the midspan of the blades are intended to facilitate the fabrication and also to maximize the BB compression stiffness that maximizes the electromechanical coupling of the harvester, as we show in the following sections. The geometrical and mechanical parameters of the BO are referenced in table \ref{tab:parametres_lames}. The following sections describe the design method that led to the dimensions of the blades that depend on our needs.
 %%%%%%%%%%%%%%%%%
 \begin{table}[!htbp]
 	\centering
@@ -638,7 +638,7 @@ Dimensions of a buckled blade  & $L$ x $l$ x $e$           & 16x0.07x1.2 [mm] \\
 Dimensions of the guide blade  & $L_{v}$ x $l_{v}$ x $e$   & 17.5x0.07x1.2 [mm] \\
 % Mounted GB dimensions          & $L_{v2}$ x $l_{v2}$ x $e$ & 48x0.1x1.2 [mm] \\
 Soft hinge stiffness		   & $K_{\varphi}$             & 0.006 [Nm/rad] \\
-Stiffness of the guide blade along $\vec{z}$  & $K_{gb}$   & 190 [N/m] \\
+Stiffness of the guide blade along $\vec{y}$  & $K_{gb}$   & 190 [N/m] \\
 Stiffness of 4 buckled blades along $\vec{z}$ & $K_{bb}$   & 1402 [kN/m] \\  
 Stiffness of the APG along $\vec{z}$          & $K$        & 252  [kN/m]\\
 			\bottomrule
@@ -694,10 +694,9 @@ On the architecture presented on figure \ref{fig:monobloc_face} the deformation 
 	K_{gb} = \dfrac{2EI_{gb}el_v^3}{L_v^3}
 	\label{eq:Kgb_definition}
 \end{equation}
-$I_{gb}$ is the second moment of area along $\vec{y}$ axis. According the material properties and GB dimensions (tab. \ref{tab:parametres_lames}) $K_{gb} = 4.0e2$, which is negligible before $K=0.2e6$.
+$I_{gb}$ is the second moment of area along $\vec{y}$ axis. According the material properties and GB dimensions (tab. \ref{tab:parametres_lames}) \mbox{$K_{gb} = 190N/m$}, which is negligible before \mbox{$K=252kN/m$}.
 
-$K_{bb}$ is for its part verified through a FEM generated with the BO CAD on ANSYS Workbench.
-
+$K_{bb}$ is for its part verified through a FEM generated with the BO CAD on ANSYS Workbench. Figure \ref{fig:fem_statique} presents the model and the initial and boundary conditions used for the study. The fixed frame is replaced by three rigid fixed points in order to minimize the number of elements and reduce the calculation time. The APG elastic force is modeled by the load $F_{st}$ applied at the right end of the structure and the transducer is replaced by a rigid mobile part in order to isolate the stiffness of the BBs.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 \centering
@@ -707,7 +706,14 @@ $K_{bb}$ is for its part verified through a FEM generated with the BO CAD on ANS
 \label{fig:fem_statique}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+By imposing incrementally increasing $F_{st}$ and measuring the displacement $z_{st}$ of the moving structure in small displacement condition, we can determine $K_{bb}$ (tab. \ref{tab:parametres_lames}) with equation \ref{eq:Kbb_definition}.
+\begin{equation}
+	K_{bb} = \dfrac{F_{st}}{z_{st}}
+	\label{eq:Kbb_definition}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The stiffness of the BBs and the GB lead to a theoretical efficiency of 75\%, which is consistent with the previous simulated results (\ref{tab:parametres électromécaniques}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
