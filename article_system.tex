@@ -161,19 +161,9 @@
 \label{INTRODUCTION} % Ltex language=en
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 
-The growing use of wireless devices and the miniaturization of electronic circuits have led to significant progress on the energy consumption of mobile devices around the human body. Energy harvesting methods have also been studied on purpose, in order to complement their power supply and enhance the autonomy of the batteries. In-ear devices such as hearing aids and cochlear implants are powered by disposable fuel cells or rechargeable batteries. The energy consumption of the best integrated devices in the literature converges around $17$J for a 10 hours daily use \cite{Scherer2019,Yip2015,Kulah2022}. Woodruff \emph{et al.} showed that patients using hearing aids sometimes struggle to change and select batteries for their devices \cite{Woodruff2021}. Another statistical study revealed that the majority of hearing aid and cochlear implants users prefer disposable batteries for the long autonomy, but would have liked rechargeable solutions if the battery cycle was sufficient to complete the day \cite{PracticesAudiology2016}. Also, the long term use makes the rechargeable solutions a more economical and more ecological choice compared to the disposable fuels. These arguments motivate the development of energy harvesting systems to enhance the autonomy of the batteries in order to prevent the premature discharge of in-ear devices.\\
-The common sources are ambient such as solar or wind energy but their availability in the low size environment of the application context makes them not suitable for exploitation.
-The activities of the human body generate a considerable amount of energy of different natures. Among them, the electrochemical energy from the inner ear \cite{Mercier2012}, the kinetic energy from walking or head movements \cite{Azimi2021,Smilek2016}, the body heat thermal energy \cite{Kim2014}, the strain energy from the skin deformation \cite{Jin2021} could be harvested for in-ear applications. The most relevant energy source for cochlear implants or hearing aids is the ear canal mechanical deformation as it is directly located in the area of the application. Delnavaz \emph{et al.} first showed in 2012 that the jaw movements changes de ear canal geometry during mastication. The figure \ref{fig:TMJ_on_earcanal} schematizes the mechanical interaction between the temporomandibular joint and the ear canal when the jaw is opened and when it is closed.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!htbp]
-	\centering
-	\captionsetup{justification=centering}
-	\includegraphics[trim={21cm 0cm 0cm 11.2cm},clip, width=0.9\linewidth]{figures/TMJ_on_earcanal.pdf}
-	\caption{Mechanical interaction between the temporomandibular joint and the ear canal during jaw movements \cite{Delnavaz2012}}
-	\label{fig:TMJ_on_earcanal}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Carioli \emph{et al.} used a personalized earplug molding technic with a 3D scanner to reveal a global bending movement and a local compression area in the ear canal during mastication \cite{Carioli2016} (fig. \ref{fig:molding}). These two mechanical deformations represent an available energy source that can be exploited. This study first quantified the flexion energy amount to $5$mJ per mastication with a standard deviation of $4.9$mJ. The radial compression energy was also estimated to $1.3$mJ with $1.5$mJ of standard deviation. Besides this work, the literature exposes two technological solutions adapted to the extraction of the mechanical deformation energy in the ear canal. \\
+The growing use of wireless devices and the miniaturization of electronic circuits have led to significant progress on the energy consumption of mobile devices on the human body environment. Energy harvesting methods have been studied in order to complement their power supply and enhance the autonomy of the batteries. In-ear devices such as hearing aids and cochlear implants are powered by disposable cells or rechargeable batteries. The energy consumption of the best integrated devices in the literature rises up to $17$J for a 10 hours daily use \cite{Scherer2019,Yip2015,Kulah2022}. Woodruff \emph{et al.} underlined that patients using hearing aids sometimes struggle to change and select batteries for their devices \cite{Woodruff2021}. Another statistical study revealed that the majority of hearing aids and cochlear implants users prefer disposable batteries for the long autonomy, but would have liked rechargeable solutions if the battery cycle was sufficient to complete the day \cite{PracticesAudiology2016}. Also, the long term use makes the rechargeable solutions a more economical and more ecological choice compared to the disposable cells. These arguments motivated the development of energy harvesting systems.
+
+The common energy sources are solar or wind energy but their availability in the low size environment of the application context makes them not suitable for exploitation. The activities of the human body generate a considerable amount of energy of different natures. Among them, the electrochemical energy from the inner ear \cite{Mercier2012}, the kinetic energy from walking or head movements \cite{Azimi2021,Smilek2016}, the body heat thermal energy \cite{Kim2014}, the strain energy from the skin deformation \cite{Jin2021} could be harvested for in-ear applications. An interesting energy source for cochlear implants or hearing aids appears to be the ear canal mechanical deformation as it is directly located in the area of the application. Delnavaz \emph{et al.} first showed in 2012 that the jaw movements changes de ear canal geometry during mastication. Carioli \emph{et al.} then used a personalized earplug molding technic with a 3D scanner to reveal a global bending movement and a local compression area in the ear canal during mastication \cite{Carioli2016} (fig. \ref{fig:molding}). These two mechanical deformations represent an available energy source that can be exploited. Besides this work, the literature exposes two technological solutions adapted to the extraction of the mechanical deformation energy in the ear canal.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}[!htbp]
 	\centering
@@ -183,7 +173,7 @@ Carioli \emph{et al.} used a personalized earplug molding technic with a 3D scan
 	\label{fig:molding}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Delnavaz \emph{et al.} first developed a flexible piezoelectric harvester made of a silicon earplug with a PVDF layer \cite{Delnavaz2013} (fig. \ref{fig:critias_piezo}). The earplug has been melted on the subject in order to maximize the contact surface with the ear canal. The harvester is capable of exploiting both the flexion and the compression energy sources. The experimental prototype presented on figure \ref{fig:critias_piezo} was able to extract $44$µJ from a normal mastication cycle. The soft materials facilitate the bio-integration of the harvester but the PVDF low electromechanical coupling coefficient results in an energy conversion efficiency below $1\%$. A hydroelectromagnetic energy harvester was also developed by the same researchers \cite{Delnavaz2012}. The figure \ref{fig:critias_emag} shows the harvester components and experimental test setup. The energy is extracted by a liquid filled earplug whose internal volume and pressure vary as a result of the radial compression of the ear canal internal walls during the jaw movements. These variations put into motion a moving magnet translating in a water column surrounded by a copper coil. The energy was harvested by electromagnetic induction and experimentally evaluated at 0.2µJ per mastication cycle. The hydraulic energy extraction limits the energy source to the radial compression as the ear canal global flexion does not generate any volume variation in the earplug. The low conversion efficiency ($<1\%$) is a consequence of the use of electromagnetic transduction for a low frequency energy source (1.57Hz) and a small scale application \cite{Kulah2008,Priya2017}. However, the hydraulic transmission interface allows the use of more complex and voluminous technological solutions since the energy becomes available outside the small ear canal volume. The table \ref{tab:harvesters_ear} summarizes the existing harvesters that exploit the ear canal mechanical deformation energy. \\
+Delnavaz \emph{et al.} first developed a flexible piezoelectric harvester made of a silicon earplug with a PVDF layer \cite{Delnavaz2013} (fig. \ref{fig:critias_piezo}). The earplug has been melted on the subject in order to maximize the contact surface with the ear canal. The harvester is capable of exploiting both the flexion and the compression energy sources. The experimental prototype presented on figure \ref{fig:critias_piezo} was able to extract $44$µJ from a normal mastication cycle. The soft materials facilitate the bio-integration of the harvester but the PVDF low electromechanical coupling coefficient could have led to poor energy conversion efficiency. A hydro-electromagnetic energy harvester was also developed by the same researchers \cite{Delnavaz2012}. The energy is extracted by a liquid filled earplug whose internal volume and pressure vary as a result of the radial compression of the ear canal internal walls during the jaw movements. These variations put into motion a moving magnet translating in a water column surrounded by a copper coil. The energy was harvested by electromagnetic induction and experimentally evaluated at 0.2µJ per mastication cycle. The prototype appeared to be less efficient than the PVDF earplug. This could be explained by the poor power generation of the electromagnetic transduction for a low frequency energy source (1.57Hz) and a small scale application \cite{Kulah2008,Priya2017}. However, the hydraulic transmission interface allows the use of more complex and voluminous technological solutions since the energy becomes available outside the small ear canal volume. The table \ref{tab:harvesters_ear} summarizes the existing harvesters that exploit the ear canal mechanical deformation energy. \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 	\centering
@@ -770,8 +760,30 @@ The BO has been fabricated and mounted and the APG has been implemented on it. T
 	\label{fig:BDT_OB+GPA}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The HV mechanical influence is not considered in order to isolate the electromechanical converter dynamic behavior. The test protocol consisted on recreating the operation conditions as close as possible to real-life operation. The mass is guided from a stable equilibrium position until it reaches \mbox{$x_m=0$}, and then it goes oscillate around the opposite stable equilibrium position. The experimental data was then used to identify and recalibrate the following electromechanical parameters of the harvester through iterative simulations of the global \mbox{model :} $Q$, $f_0$, $K$ and $k_{sys}^2$ (tab. \ref{tab:parametres_lacher_free}). The correlations were made with iterative simulations of the global model by minimizing the error on these parameters. The converter experimental oscillation frequency $f_0$ and energy conversion efficiency $\eta_{bo}$ have also been extracted from the recalibrated model.
-
+The HV mechanical influence is not considered in order to isolate the electromechanical converter dynamic behavior. The test protocol consisted on recreating the operation conditions as close as possible to real-life operation. The mass is guided from a stable equilibrium position until it reaches \mbox{$x_m=0$}, and then it goes oscillate around the opposite stable equilibrium position. The experimental data was then used to identify and recalibrate the following electromechanical parameters of the harvester through iterative simulations of the global \mbox{model :} $Q$, $f_0$, $K$ and $k_{sys}^2$ (tab. \ref{tab:parametres_lacher_free}). The correlations were made with iterative simulations of the global model by minimizing the error between the simulated and the experimental parameters. The experimental oscillation frequency $f_0$ and energy conversion efficiency $\eta_{bo}$ of the converter have also been extracted from the recalibrated model. The simulation with the recalibrated parameters and the experimental data are superposed on figure \ref{fig:BDT_OB+GPA}. The experimental data have been fitted on the oscillation phase of the simulated global model as the test bench does not reproduce the hydraulic circuit behavior yet.
+%%%%%%%%%%%%%%%%%
+\begin{table}[!htbp]
+\centering
+\captionsetup{justification=centering}
+	\begin{tabular}{ c | c | c }
+	\toprule
+	& \textbf{Simulation with}  	   & \textbf{Simulation with}       \\
+	& \textbf{theoretical}  		   & \textbf{recalibrated }		 	\\
+	\multirow{-3}{*}{\textbf{Symbol}}
+	& \textbf{parameters}			   & \textbf{parameters} 			\\
+	\midrule
+	$Q$                       & 50.0                  & 30.0 		  	\\  
+	$f_0$                     & 47.0 Hz               & 27.9 Hz  		\\
+	$x_0$                     & 0.49 mm               & 0.50 mm    		\\
+	$K$                       & 2.56e5 N/m            & 0.85e5 N/m 		\\
+	${k^2_{sys}}$             & 16 \%                 & 1.25 \% 		\\
+	$\eta_{bo}$               & 75 \%                 & 12.9 \%   		\\
+	\bottomrule
+	\end{tabular}
+	\caption{Theoretical and experimentally recalibrated values of the electromechanical converter.}
+	\label{tab:parametres_lacher_free}
+\end{table} 
+%%%%%%%%%%%%%%%%%%%%%  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 	\centering
@@ -782,29 +794,21 @@ The HV mechanical influence is not considered in order to isolate the electromec
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%
-\begin{table}[!htbp]
-	\centering
-	\captionsetup{justification=centering}
-		\begin{tabular}{ c | c | c }
-		\toprule
-		& \textbf{Simulation with}  	   & \textbf{Simulation with}        \\
-		& \textbf{theoretical}  		   & \textbf{recalibrated }			 \\
-		\multirow{-3}{*}{\textbf{Symbol}}
-		& \textbf{parameters}			   & \textbf{parameters} 			 \\
-		\midrule
-		$Q$                       & 50.0                  & 30.0 		  	\\  
-		$f_0$                     & 47.0 Hz               & 27.9 Hz  		\\
-		$x_0$                     & 0.49 mm               & 0.50 mm    		\\
-		$K$                       & 2.56e5 N/m            & 0.85e5 N/m 		\\
-		${k^2_{sys}}$             & 16 \%                 & 1.25 \% 		\\
-		$\eta_{bo}$               & 79 \%                 & 12.9 \%   		\\
-		\bottomrule
-		\end{tabular}
-		\caption{Theoretical and experimentally recalibrated values of the electromechanical converter.}
-		\label{tab:parametres_lacher_free}
-	\end{table} 
-	%%%%%%%%%%%%%%%%%%%%%  
+    %///////////////////////////////////////////// 
+	\subsection{Analyze and summary}	
+	\label{subsec:Analyze and summary}
+    %/////////////////////////////////////////////
+
+According to figure \ref{fig:BDT_OB+GPA}, the experimental dynamics of the converter is predictable by the equations established after identification of the system parameters listed in table \ref{tab:parametres_lacher_free}. However, the performances of the experimental prototype proved to be below the values theoretically predicted (tab. \ref{tab:parametres électromécaniques}) even if the efficiency drop is consistent with the quality factor and the electromechanical coupling coefficient drop (eq. \ref{eq:eta_ob}). We identified two main factors that could have led to such results. 
+
+First, the quality factor decrease could be related to the general non-permanent assembly that uses non-perfect embeddings with fixation screws and a mobile micrometric screw. 
+Then, small undulations have been observed on the BBs after fabrication, and they could also have gotten worse during the manipulation.
+
+
+%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
+\section{EXPERIMENTAL APPROACH FOR THE HV \mbox{DESIGN}}
+\label{sec:EXPERIMENTAL APPROACH FOR THE HV DESIGN}
+%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 
     %///////////////////////////////////////////// 
 	\subsection{The HV hydraulic behavior}	
