@@ -204,36 +204,43 @@ The earplug operation characteristic behavior has not been studied yet. Thus, th
     %/////////////////////////////////////////////
 Electromagnetic transducers are usually used to harvest energy from kinetic (vibration) energy sources. In fact, the power density of electromagnetic transducers decreases as much as the effective volume of transducing material and the frequency of the energy source decrease \cite{Priya2017,Kulah2008}. Also, the fabrication and the integration of the coil and the moving magnet can come out to be difficult as the gap between the two components has to be carefully managed to prevent non-linear unpredicted responses \cite{Caruntu2001}. Thus, piezoelectric ceramics appear like good candidates, but they can not be easily used because of their high stiffness and their high resonance frequencies (>$1.57$Hz). Therefore, the harvesting system could benefit from a frequency-up conversion stage \cite{Ashraf2011,Peng2021} to increase the frequency of the energy source and so the energy conversion efficiency of piezoelectric ceramic transducers. A majority of the frequency-up systems with piezoelectric transducers use mechanical stops with piezoelectric ceramic cantilevers to reach high frequencies with a good mechanical coupling \cite{Edwards2013,Gu2011,Lee2007}. Stoppers however dissipate energy. Alternative solutions use mechanically bistable resonators (BR) to perform frequency-up \cite{Vocca2012}. Recent works led to the development and optimization of  bistable structures integrating stacked piezoelectric ceramics inside flextensional elastic structures \cite{Huguet2017}. They show enhanced performances due to high electromechanical coupling.
 
-We can estimate the best choice maximizing the energy extraction from the hydraulic source. Figure \ref{fig:OB_vs_LINEAR} shows in blue the hydraulic behavior of the ideal flow rate source previously introduced with the upper limit values of pressure and volume variations. To be harvested, the energy has to be stored in a mechanical potential reservoir at first, to be then converted in electricity by the transducer. The hydraulic-mechanic interface can be a hydraulic cylinder (HC). It could store then the energy in the frequency-up converter by actuating it at the frequency of human mastication. Figure \ref{fig:hydraulic_mechanic_interface} schematizes the mechanical interaction between the HC and the resonator assimilated to a spring of stiffness $K_s$.
+We can estimate the best choice maximizing the energy extraction from the hydraulic source. To be harvested, the energy has to be stored in a mechanical potential reservoir at first, to be then converted in electricity by the transducer. The hydraulic-mechanic interface can be a hydraulic cylinder (HC). It could store then the energy in the frequency-up converter by actuating it at the frequency of human mastication. Figure \ref{fig:hydraulic_mechanic_interface} schematizes the mechanical interaction between the HC and the resonator assimilated to a spring of stiffness $K_s$. During the low frequency actuation, the forces applied on each side of the HC piston are equal. Equation \ref{eq:hydraulic-mechanic_interface} models the hydraulic-mechanic interface with $x_{m}$ and $ S_{hc}$ being respectively the dynamic mass position on the $\vec{x}$ axis and the HC internal section.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}
+	\Delta p_{ear}\ S_{hc} = K_{s}\ x_{m}
+	\label{eq:hydraulic-mechanic_interface}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 	\centering
 	\captionsetup{justification=centering}
-	\includegraphics[trim={19.7cm 0cm 0cm 13cm},clip, width=0.6\linewidth]{figures/hydraulic_mechanic_interface.pdf}
+	\includegraphics[trim={19.7cm 0cm 0cm 13cm},clip, width=0.7\linewidth]{figures/hydraulic_mechanic_interface.pdf}
 	\caption{Hydraulic source exploitation depending on the mechanical load}
 	\label{fig:hydraulic_mechanic_interface}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The potential energy then stored in a linear resonator can be expressed as follows :
+Therefore, the potential energy stored in a linear resonator from the ideal hydraulic source previously described can be expressed as follows :
 \begin{equation}
-	Ep_{lin} = \dfrac{K_{lin}\ x_{hc}^2}{2}
+	Ep_{lin} = \dfrac{K_s\ x_{m}^2}{2} = \dfrac{\Delta p_{ear} \Delta V_{ear}}{2}
 \end{equation}
-Where $K_{lin}$ models the linear resonator stiffness and $x_{hc}$ the HC piston stroke. During the actuation, the forces applied on each side of the HC are equal, which models the hydraulic-mechanic interface (eq. \ref{eq:hydraulic-mechanic_interface}).
-\begin{equation}
-	\Delta p_{ear}\ S_{hc} = K_{lin}\ x_{hc}
-	\label{eq:hydraulic-mechanic_interface}
-\end{equation}
-theoretically exploit/store a maximum of $50\%$ from the maximum available hydraulic energy ($\text{max}(E_{hyd})$). Yest, BRs usually admit non-linear elastic behavior. For example, a BR governed by a Duffing equation is inherently capable of exploiting $65$\% from the same energy source, which is $15$\% better than the best theoretical linear option.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!htbp]
-	\centering
-	\captionsetup{justification=centering}
-	\includegraphics[trim={22.5cm 0cm 0cm 8.8cm},clip, width=0.35\textwidth]{figures/OB_vs_LINEAR.pdf}
-	\caption{Hydraulic source exploitation depending on the mechanical load}
-	\label{fig:OB_vs_LINEAR}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Hence, the absence of rubbing parts and the optimal energy extraction shed light on a BR as a promising solution for our application. 
+Thus, the linear solution can theoretically exploit/store a maximum of $50\%$ from the maximum available hydraulic energy ($\text{max}(E_{hyd})$). 
+
+Yet, BRs usually admit non-linear elastic behavior. For example, a BR governed by a Duffing equation is inherently capable of exploiting $65$\% from the same energy source, which is $15$\% better than the best theoretical linear option. Section \ref{sec:SYSTEM MODELING} discusses the details of the modeling and design of the harvester that implements such a non-linear BR as it appeared to be a better solution than the linear approach. 
+
+
+
+
+% Figure \ref{fig:OB_vs_LINEAR} shows in blue the hydraulic behavior of the ideal flow rate source previously introduced with the upper limit values of pressure and volume variations.
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!htbp]
+% 	\centering
+% 	\captionsetup{justification=centering}
+% 	\includegraphics[trim={22.5cm 0cm 0cm 8.8cm},clip, width=0.35\textwidth]{figures/OB_vs_LINEAR.pdf}
+% 	\caption{Hydraulic source exploitation depending on the mechanical load}
+% 	\label{fig:OB_vs_LINEAR}
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \section{HARVESTER PRESENTATION AND OPERATION \mbox{PRINCIPLE}}
 \label{sec:HARVESTER PRESENTATION AND OPERATION PRINCIPLE}
@@ -248,7 +255,7 @@ Hence, the absence of rubbing parts and the optimal energy extraction shed light
 	\label{fig:system_presentation}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The figure \ref{fig:system_presentation} presents a schematic view of the energy harvesting system. It uses a liquid filled earplug to transmit the energy outside the ear canal and benefit so from larger effective space. To maximize the efficiency, the system integrates a frequency-up conversion stage performed by a bistable resonator (BR). The latter implements an amplified piezoelectric generator (APG) made of a flextensional elastic APX4 steel structure containing stacked lead zirconate titanate (PZT) ceramics (fig. \ref{fig:APG}). The electromechanical converter composed of the BR and the APG theoretically offers higher energy conversion efficiency compared to low frequency solutions and/or flexible electromechanical transducers \cite{Guo2019}.
+The figure \ref{fig:system_presentation} presents a schematic view of the energy harvesting system. It uses a liquid filled earplug to transmit the energy outside the ear canal. To maximize the efficiency, the system integrates a frequency-up conversion stage obtained by a BR. The latter is associated with an amplified piezoelectric generator (APG) \cite{CEDRATTECHNOLOGIES2022} made of a flextensional elastic APX4 steel \cite{AUBERT&DUVAL2022} structure containing stacked lead zirconate titanate (PZT) ceramics (fig. \ref{fig:APG}). The electromechanical converter composed of the BR and the APG theoretically offers higher energy conversion efficiency compared to low frequency solutions and/or flexible electromechanical transducers \cite{Abdelnaby2016}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{figure}[!htb]
 	\begin{center}
@@ -271,9 +278,9 @@ The figure \ref{fig:system_presentation} presents a schematic view of the energy
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-The electromechanical converter is actuated, by two hydraulic cylinders (HC), with the hydraulic energy transmitted from the liquid filled earplug, through a pressure separator, a hydraulic amplifier and two hydraulic valves (HV).
+The electromechanical converter is actuated, by two hydraulic cylinders (HC), with the hydraulic energy transmitted from the liquid filled earplug, through a hydraulic amplifier (HA) and two hydraulic valves (HV).
 
-To maximize the mechanical energy transfer between the ear canal and the earplug, the latter is lightly pressurized. A minimum of 14kPa is needed in order to fit the earplug to the ear canal wall \cite{Delnavaz2013}. The pressure separator ensures that this initial pressurization does not interfere on the system operation. Then, during a mastication cycle, the TMJ compresses the ear canal wall and expels so the fluid outside the earplug. The HVs ensure to led the fluid alternatively to each HC in order to actuate the BR mass back and forward. The hydraulic amplifier adapts the cylinders stroke to the available earplug flow rate and also adapts the mechanical impedance of the BR to the mechanical impedance of the ear canal wall.
+During a mastication cycle, the TMJ compresses the ear canal wall and expels so the fluid outside the earplug. The HVs ensure to led the fluid alternatively to each HC in order to actuate the BR mass back and forward. The hydraulic amplifier adapts the cylinders stroke to the available earplug flow rate and also adapts the mechanical impedance of the BR to the mechanical impedance of the ear canal wall.
 
 The BR mass has two stable equilibrium positions, $x_m = x_0$ and $x_m = -x_0$. The harvester operates on two major phases. The first consists on the BR mass actuation, by a HC, from one stable equilibrium position toward the unstable position at $x_m = 0$. During the second phase the mass goes oscillate around the opposite stable equilibrium position until it stops, while a portion of the resonatory energy is converted in electricity by the GPA. The mass then moves backward during the next mastication, completing so the harvester cycle.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -324,6 +331,7 @@ The model is based on the following hypotheses:
 %%%%%%%%%%%%%%%%%
 \begin{table}[!htbp]
 \centering
+\resizebox{0.8\linewidth}{!}{%
 	\begin{tabular}{ c | c }
 		\toprule
 		\multicolumn{1}{c}{\textbf{Num}}  &
@@ -336,7 +344,7 @@ The model is based on the following hypotheses:
 		4	& APG     	\\
 		5	& Simplified HV mechanical model     	\\
 		\bottomrule
-	\end{tabular}
+	\end{tabular}}
 	\caption{Designation of rigid bodies}
 \label{tab:Designation of rigid bodies}
 \end{table} 
