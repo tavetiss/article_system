@@ -204,7 +204,26 @@ The earplug operation characteristic behavior has not been studied yet. Thus, th
     %/////////////////////////////////////////////
 Electromagnetic transducers are usually used to harvest energy from kinetic (vibration) energy sources. In fact, the power density of electromagnetic transducers decreases as much as the effective volume of transducing material and the frequency of the energy source decrease \cite{Priya2017,Kulah2008}. Also, the fabrication and the integration of the coil and the moving magnet can come out to be difficult as the gap between the two components has to be carefully managed to prevent non-linear unpredicted responses \cite{Caruntu2001}. Thus, piezoelectric ceramics appear like good candidates, but they can not be easily used because of their high stiffness and their high resonance frequencies (>$1.57$Hz). Therefore, the harvesting system could benefit from a frequency-up conversion stage \cite{Ashraf2011,Peng2021} to increase the frequency of the energy source and so the energy conversion efficiency of piezoelectric ceramic transducers. A majority of the frequency-up systems with piezoelectric transducers use mechanical stops with piezoelectric ceramic cantilevers to reach high frequencies with a good mechanical coupling \cite{Edwards2013,Gu2011,Lee2007}. Stoppers however dissipate energy. Alternative solutions use mechanically bistable resonators (BR) to perform frequency-up \cite{Vocca2012}. Recent works led to the development and optimization of  bistable structures integrating stacked piezoelectric ceramics inside flextensional elastic structures \cite{Huguet2017}. They show enhanced performances due to high electromechanical coupling.
 
-We can estimate the best choice maximizing the energy extraction from the hydraulic source. Figure \ref{fig:OB_vs_LINEAR} shows in blue the hydraulic behavior of the ideal flow rate source previously introduced with the upper limit values of pressure and volume variations. To be harvested, the energy has to be stored in a mechanical potential reservoir at first, to be then converted in electricity by the transducer. The hydraulic-mechanic interface can be a hydraulic cylinder. In this way, the best linear resonator can theoretically exploit/store a maximum of $50\%$ from the maximum available hydraulic energy ($\text{max}(E_{hyd})$). Furthermore, BR usually admit non-linear elastic behavior. For example, a BR governed by a Duffing equation is inherently capable of exploiting $65$\% from the same energy source, which is $15$\% better than the best theoretical linear option.
+We can estimate the best choice maximizing the energy extraction from the hydraulic source. Figure \ref{fig:OB_vs_LINEAR} shows in blue the hydraulic behavior of the ideal flow rate source previously introduced with the upper limit values of pressure and volume variations. To be harvested, the energy has to be stored in a mechanical potential reservoir at first, to be then converted in electricity by the transducer. The hydraulic-mechanic interface can be a hydraulic cylinder (HC). It could store then the energy in the frequency-up converter by actuating it at the frequency of human mastication. Figure \ref{fig:hydraulic_mechanic_interface} schematizes the mechanical interaction between the HC and the resonator assimilated to a spring of stiffness $K_s$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!htbp]
+	\centering
+	\captionsetup{justification=centering}
+	\includegraphics[trim={19.7cm 0cm 0cm 13cm},clip, width=0.6\linewidth]{figures/hydraulic_mechanic_interface.pdf}
+	\caption{Hydraulic source exploitation depending on the mechanical load}
+	\label{fig:hydraulic_mechanic_interface}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The potential energy then stored in a linear resonator can be expressed as follows :
+\begin{equation}
+	Ep_{lin} = \dfrac{K_{lin}\ x_{hc}^2}{2}
+\end{equation}
+Where $K_{lin}$ models the linear resonator stiffness and $x_{hc}$ the HC piston stroke. During the actuation, the forces applied on each side of the HC are equal, which models the hydraulic-mechanic interface (eq. \ref{eq:hydraulic-mechanic_interface}).
+\begin{equation}
+	\Delta p_{ear}\ S_{hc} = K_{lin}\ x_{hc}
+	\label{eq:hydraulic-mechanic_interface}
+\end{equation}
+theoretically exploit/store a maximum of $50\%$ from the maximum available hydraulic energy ($\text{max}(E_{hyd})$). Yest, BRs usually admit non-linear elastic behavior. For example, a BR governed by a Duffing equation is inherently capable of exploiting $65$\% from the same energy source, which is $15$\% better than the best theoretical linear option.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 	\centering
