@@ -223,6 +223,7 @@ We can estimate the best choice maximizing the energy extraction from the hydrau
 Therefore, the potential energy stored in a linear resonator from the ideal hydraulic source previously described can be expressed as follows :
 \begin{equation}
 	Ep_{lin} = \dfrac{K_s\ x_{m}^2}{2} = \dfrac{\Delta p_{ear} \Delta V_{ear}}{2}
+	\label{eq:best_linear_soution}
 \end{equation}
 Thus, the linear solution can theoretically exploit/store a maximum of $50\%$ from the maximum available hydraulic energy ($\text{max}(E_{hyd})$). 
 
@@ -386,11 +387,15 @@ Equation \ref{eq:theta_fonction_de_xm} defines the implicit relation between $\t
 % \FloatBarrier
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{equation}
-x_m = \dfrac{D_r(1-\cos(\theta))+2a\sin(\theta)}{2\cos(\theta)}\text{,}
-				~~ \theta\leq\arctan\biggl(\dfrac{2a}{D_r}\biggr)
+\resizebox{.9\linewidth}{!}{$	
+x_m = \Biggl[ \dfrac{D_r(1-\cos(\theta))+2a\sin(\theta)}{2\cos(\theta)}\text{,}
+				~~ \theta\leq\arctan\biggl(\dfrac{2a}{D_r}\biggr) \Biggr]
+				$}
 \label{eq:theta_fonction_de_xm}
 \end{equation}
+
 %%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure*}
@@ -398,7 +403,7 @@ x_m = \dfrac{D_r(1-\cos(\theta))+2a\sin(\theta)}{2\cos(\theta)}\text{,}
 % % \begin{small}
 % 	\begin{dcases}
 % \ddot{x}_m = - \frac{2K{x_0}^2}{mL^2}\Biggl[\biggl(\frac{x_m^2}{{x_0}^2} -1\biggr )+ \dfrac{8K_{\varphi}}{L^2}\Biggr]x_m 
-% 			 - \frac{K_{VH}(x_m)\theta(x_m)}{ma}
+% 			 - \frac{K_{HV}(x_m)\theta(x_m)}{ma}
 % 			 - \frac{\mu+\mu_c}{m}\dot{x}_m  - \nu_f \text{sign}(\dot{x}_m)
 % 			 - \frac{2\alpha U_p\ x_m}{mL}
 % 			 - p_{ac}\ S_{hc} \\
@@ -481,24 +486,29 @@ Moreover, the fluid entering the HC necessarily results on a piston displacement
 \label{NUMERICAL MODEL AND SIMULATIONS}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
     %///////////////////////////////////////////// 
-	\subsection{The harvester setting}	
+	\subsection{The harvester parameters setting}	
 	\label{subsec:The harvester setting}
     %/////////////////////////////////////////////
-The system parameters are set to maximize the exploited energy. The maximum theoretical energy in a BR through a QS actuation is equal to the height of the potential energy barrier $E_{pb}$ when the mass position varies from \mbox{$x_m=\pm x_0$ } to \mbox{$x_m=0$}. Knowing that it is equal to 65\% of the upper limit of the available hydraulic energy (eq. \ref{eq:max_hydraulic_energy}), we can set the BR buckling level \mbox{$\epsilon = x_0/L$} through the equation \ref{eq:Ep_bar}. The harvester is thus optimized depending on the energy source.
+The energy system combines many variable parameters. In order to determine them, it is first necessary to identify the fixed technological elements: 
+\begin{itemize}
+	\item The transducer is a APA50XS piezoelectric actuator, from Cedrat Technologies, exploited as a generator \cite{CEDRATTECHNOLOGIES2022}. Regarding the low forces level in the ear canal, we chose a product with low stiffness $K$. Subsequently, by changing the buckling level $\epsilon$, we will be able to manage the BR energy depending on $\text{max}(E_{hyd})$.
+	\item The friction in the HCs must be minimized. However, at the application scale, it is difficult to seal the pistons while providing low operating pressures For the experimental validations purpose, the actuation is therefore ensured by the SMC MQP4-10S HCs which admit operates at 1kPa pressure \cite{SMC2022}. The HC internal diameter $D_{hc}$ is $4$mm.
+	\item The usual hearing aid size is $50$x$20$x$10$mm \cite{Quattro2019}. The \mbox{$L=16mm$} parameter is chosen to be consistent with this scale. $\epsilon$ can still be adjusted with $x_0$.
+\end{itemize}
+
+The maximum theoretical energy in a BR through a QS actuation is equal to the height of the potential energy barrier $E_{pb}$ when the mass position varies from \mbox{$x_m=\pm x_0$ } to \mbox{$x_m=0$} (eq. \ref{eq:Ep_bar}). It will be a fraction $n$ of the upper limit of the available hydraulic energy (eq. \ref{eq:max_hydraulic_energy}) where $n$ has to be maximized. 
 \begin{equation}
-	E_{pb} = \dfrac{K x_0^4}{3L^2}=0.65p_c \Delta V_{ear,m}
+	E_{pb} = \dfrac{K x_0^4}{3L^2} = n(p_c \cdot \Delta V_{ear,m})
 	\label{eq:Ep_bar}
 \end{equation}
-Two coupled requirements allow the system operation by setting the amplification level $a_h$ and the BR buckling level $\epsilon$. First, the available swept volume must be enough to ensure the HC stroke from its equilibrium position until the BR mass reaches \mbox{$x_m=0$} (eq. \ref{eq:contrainte_course}). Then, the BR mechanical force on $\vec{x}$ axis reaches a maximum value $F_c$ when \mbox{$ x_m = x_c = \dfrac{x_0}{\sqrt{3}}$}. At this point, a maximum pressure is induced in the earplug and so the equation \ref{eq:contrainte_confort} has to be verified to guarantee the pressure limit. If not, $\epsilon$ can be decreased, diminishing the extracted energy.
+The system is designed by setting the two coupled requirements allowing the system operation. First, the available swept volume must be enough to ensure the HC stroke from its equilibrium position until the BR mass reaches \mbox{$x_m=0$} (eq. \ref{eq:contrainte_course}). Then, the BR mechanical force on $\vec{x}$ axis reaches a maximum value $F_c$ when \mbox{$ x_m = x_c = \dfrac{x_0}{\sqrt{3}}$}. At this point, a maximum pressure is induced in the earplug and so the equation \ref{eq:contrainte_confort} has to be verified to guarantee the pressure limit. If not, $\epsilon$ can be decreased, diminishing the extracted energy.
 \begin{empheq}[left=\empheqlbrace]{align} 
 	\Delta V_{ear,m} = a_h\ S_{hc}\  x_{c0}
 	\label{eq:contrainte_course}\\
 	p_c > \frac{1}{a_h} \frac{F_c}{S_{hc}} ~~~~ \text{with}~~~~ F_c = \dfrac{4Kx_0^3}{3\sqrt{3}L^2}
 	\label{eq:contrainte_confort}
 \end{empheq}
-
-starts by setting technological choices in order to experimentally validate the multiphysic coupled model. Therefore, the APG is a APA50XS piezoelectric actuator, from Cedrat Technologies, exploited as a generator, setting so the stiffness $K$. Then, the MQP4-10S HC from SMC will ensure the hydraulic to mechanical interface, setting then the cylinder piston section $S_{hc}$. Next, the hydraulic commutation of the two parallel branches is driven by two HVs made of collapsed flexible tubes, setting then $Cf(x_m)$. Finally, the \mbox{$L=16mm$ }parameter is chosen to be consistent with the application scale. 
-
+Equations \ref{eq:contrainte_course} and \ref{eq:contrainte_confort} set the amplification level $a_h$ and the BR buckling level $\epsilon$. Regarding the technological choices and the system operation requirements, we can evaluate $n=65\%$. This value can be compared to the best theoretical linear energy extraction solution described in \ref{eq:best_linear_soution}.
 	%///////////////////////////////////////////// 
 	\subsection{Targeted hydraulic behavior of the HVs}	
 	\label{subsec:HV hydraulic targeted behavior}
@@ -509,16 +519,15 @@ A multiphysic coupled model has been established with the equations and the prel
 	\label{eq:r_Cf_definition}
 \end{equation}
 The numerical resolution of the differential equations can provide the minimum value $(r_{Cf})_{min}$ to reach in order to perform the adequate hydraulic commutation.
-
 	%///////////////////////////////////////////// 
 	\subsection{Simulation results}	
 	\label{subsec:Simulation results}
 	%/////////////////////////////////////////////
-The numerical model aims to demonstrate the theoretical operation of the new concept of harvester. By imposing a volume variation $\Delta V_{ear}(t)$ recorded during the mastication cycle of a human subject (fig. \ref{fig:deltaV_ear}), the numerical model must give the theoretical temporal evolution of the hydraulic, mechanic and electric coupled parameters defining the harvester. 
+The numerical model aims to demonstrate the theoretical operation of the new concept of harvester. By imposing a volume variation $\Delta V_{ear}(t)$ recorded during the mastication cycle of a human subject (fig. \ref{fig:deltaV_ear}), the numerical model gives the theoretical temporal evolution of the hydraulic, mechanic and electric coupled parameters defining the harvester. 
 
-The ratio $r_{Cf}$ has been increased until it was sufficient to prioritize the flow through the opened HV. The mastication cycle is identically quadrupled in order to test the system cycling robustness. Also, the earplug is assumed as a perfect flow rate source. The calculated and the resulting theoretical parameters of the simulated global model are presented in tables \ref{tab:parametres électromécaniques} and \ref{tab:parametres_hydrauliques}.
+$r_{Cf}$ has been increased until it was sufficient to prioritize the flow through the active HV. The mastication cycle is identically quadrupled in order to test the system cycling robustness. The earplug is assumed to be a perfect flow rate source. The fixed, designed and resulting theoretical parameters of the simulated global model are presented in tables \ref{tab:parametres électromécaniques} and \ref{tab:parametres_hydrauliques}.
 
-Figure \ref{fig:positions+DeltaV_debits_pear} presents the simulation results, for four identical consecutive mastication cycles, of the mass and the HC pistons positions overplayed with $\Delta V_{ear}(t)$, the flow rates in the two parallel branches and the earplug pressure. The two different sides are identified on the curves by the indexes $t$ for \emph{"top"} side ($x>0$) and $b$ for \emph{"bottom"} side ($x<0$), knowing that the gravity influence is not considered. The same figure shows a focused view on the two main phases of the harvester operation during the actuation by the \emph{"bottom"} HC. The simulation begins with the following initial conditions:
+Figure \ref{fig:positions+DeltaV_debits_pear} shows the simulation results, for four identical consecutive mastication cycles, of the mass and the HC pistons positions overplayed with $\Delta V_{ear}(t)$, the flow rates in the two parallel branches and the earplug pressure. The two different sides are identified on the curves by the indexes $t$ for \emph{"top"} side ($x>0$) and $b$ for \emph{"bottom"} side ($x<0$), knowing that the gravity influence is not considered. The same figure shows a focused view on the two main phases of the harvester operation during the actuation by the \emph{"bottom"} HC. The simulation begins with the following initial conditions:
 \begin{itemize}
 	\item The mass is at the $-x_0$ equilibrium position.
 	\item The \emph{"top"} HV is closed ($Cf_{top} = Cf_c$) and the \emph{"bottom"} side HV is opened ($Cf_{bot} = Cf_0$).
@@ -812,7 +821,7 @@ Then, small undulations have been observed on the BBs after fabrication, and the
 \begin{center}
 	\captionsetup{justification=centering} 
 	\includegraphics[trim={8cm 0cm 0cm 5cm},clip,width=0.8\textwidth]{figures/BDT_hydraulique_VH.pdf}
-	\caption{Banc d'essai pour la caractérisations hydrauliques de VH}
+	\caption{Banc d'essai pour la caractérisations hydrauliques de HV}
 	\label{fig:BDT_hydraulique_VH}
 \end{center}	
 \end{figure*}    
@@ -822,7 +831,7 @@ Then, small undulations have been observed on the BBs after fabrication, and the
 \begin{center}
 	\captionsetup{justification=centering} 
 	\includegraphics[trim={2cm 0cm 0cm 10cm},clip,width=\textwidth]{figures/essais_hydraulique_VH.pdf}
-	\caption{Essais de caractérisations hydrauliques de VH}
+	\caption{Essais de caractérisations hydrauliques de HV}
 	\label{fig:essais_hydraulique_VH}
 \end{center}	
 \end{figure*}    
@@ -832,7 +841,7 @@ Then, small undulations have been observed on the BBs after fabrication, and the
 \begin{center}
 	\captionsetup{justification=centering} 
 	\includegraphics[trim={2cm 0cm 0cm 4cm},clip,width=0.49\textwidth]{figures/fabrication_tube_experimental.pdf}
-	\caption{Méthode de fabrication de la VH}
+	\caption{Méthode de fabrication de la HV}
 	\label{fig:fabrication_tube_experimental}
 \end{center}	
 \end{figure}    
@@ -842,7 +851,7 @@ Then, small undulations have been observed on the BBs after fabrication, and the
 \begin{center}
 	\captionsetup{justification=centering}
 	\includegraphics[trim={10cm 0cm 0cm 0cm},clip,width=0.49\textwidth]{figures/resultats_essais_hydraulique_VH_D1mm.pdf}
-	\caption{$Cf_{VH}$ calculé à partir des essais pour 7 incréments d'angles}
+	\caption{$Cf_{HV}$ calculé à partir des essais pour 7 incréments d'angles}
 	\label{fig:resultats_essais_hydraulique_VH_D1mm}
 \end{center}
 \end{figure}
@@ -866,7 +875,7 @@ Theoretically...
 	\begin{center}
 		\captionsetup{justification=centering}
 		\includegraphics[trim={4cm 0cm 0cm 9.5cm},clip,width=0.7\textwidth]{figures/contact_M_VH_lachers.pdf}
-		\caption{Image de la VH$_{T100p}$ lorsque $\theta_0$($x_m=-x_{0})$ et lorsque $\theta_f$($x_m=x_{0,vh}$)}
+		\caption{Image de la HV$_{T100p}$ lorsque $\theta_0$($x_m=-x_{0})$ et lorsque $\theta_f$($x_m=x_{0,HV}$)}
 		\label{fig:contact_M_VH_lachers}
 	\end{center}
 \end{figure}
