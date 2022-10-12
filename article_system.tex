@@ -259,14 +259,14 @@ The figure \ref{fig:system_presentation} presents a schematic view of the energy
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{figure}[!htb]
 	\begin{center}
-		\begin{subfigure}[t]{0.6\linewidth}
+		\begin{subfigure}[t]{0.5\linewidth}
 			\captionsetup{justification=centering}
-			\includegraphics[trim={16cm 0cm 0cm 6cm},clip,width=\linewidth]{figures/APG_schema.pdf}
+			\includegraphics[trim={13cm 0cm 0cm 6cm},clip,width=\linewidth]{figures/APG_schema.pdf}
 			\caption{Detailed schema}
 			\label{fig:APG_schema}
 		\end{subfigure}
 		\hfillx
-		\begin{subfigure}[t]{0.29\linewidth}
+		\begin{subfigure}[t]{0.21\linewidth}
 			\captionsetup{justification=centering}
 			\includegraphics[trim={29.5cm 0cm 0cm 8cm},clip,width=0.65\linewidth]{figures/APG_photo.pdf}
 			\caption{Picture}
@@ -280,26 +280,28 @@ The figure \ref{fig:system_presentation} presents a schematic view of the energy
 
 The electromechanical converter is actuated, by two hydraulic cylinders (HC), with the hydraulic energy transmitted from the liquid filled earplug, through a hydraulic amplifier (HA) and two hydraulic valves (HV).
 
-During a mastication cycle, the TMJ compresses the ear canal wall and expels so the fluid outside the earplug. The HVs ensure to led the fluid alternatively to each HC in order to actuate the BR mass back and forward. The hydraulic amplifier adapts the cylinders stroke to the available earplug flow rate and also adapts the mechanical impedance of the BR to the mechanical impedance of the ear canal wall.
+During a mastication cycle, the TMJ compresses the ear canal wall and expels the fluid out of the earplug. The HVs led the fluid alternatively to each HC in order to actuate the BR mass back and forth. The HA adapts the both cylinders stroke to the available earplug swept volume and the actuation force of the BR to the comfort pressure of the ear canal (fig. \ref{fig:system_presentation}).
 
-The BR mass has two stable equilibrium positions, $x_m = x_0$ and $x_m = -x_0$. The harvester operates on two major phases. The first consists on the BR mass actuation, by a HC, from one stable equilibrium position toward the unstable position at $x_m = 0$. During the second phase the mass goes oscillate around the opposite stable equilibrium position until it stops, while a portion of the resonatory energy is converted in electricity by the GPA. The mass then moves backward during the next mastication, completing so the harvester cycle.
+The BR mass has two stable equilibrium positions, \mbox{$x_m = x_0$ }and \mbox{$x_m = -x_0$}. The harvester operates on two major phases. The first consists on the BR mass actuation, by a HC, from one stable equilibrium position toward the unstable position at $x_m = 0$. During the second phase the mass reaches and oscillates around the opposite stable equilibrium position until it stops, while a portion of the vibration energy is converted into electricity by the GPA. The mass will move backward when the next mastication will occur and complete the harvester cycle.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 	\centering
 	\captionsetup{justification=centering}
-	\includegraphics[trim={20cm 0cm 0cm 10.75cm},clip, width=\linewidth]{figures/HV_actuation_detail.pdf}
+	\includegraphics[trim={20.5cm 0cm 0cm 11.5cm},clip, width=0.8\linewidth]{figures/HV_actuation_detail.pdf}
 	\caption{Contact detail between a HV and the BR mass} 
 	\label{fig:HV_actuation_detail}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In order to maximize the harvested energy we must minimize the energy consumed by the HVs. A technological solution for this role is to use a flexible tube buckled by bending. The figure \ref{fig:HV_actuation_detail} schematizes the integration of such HV around the BR environment. The valve is composed of a flexible tube connected between a rigid part of the hydraulic circuit and a fixed one. The BR mass motion on the mobile part induces a bending angle $\theta$ around the rotational point $O$ located at the buckled section of the flexible tube. Consequently, a pressure loss is generated through the valve in buckled position. Thus, a HV is considered closed when the BR mass is at a stable equilibrium position ($x_m=\pm x_0$) and opened when the mass is at $x_m=0$. Two HVs symmetrically placed on each side of the $\vec{x}$ axis set up an opened hydraulic circuit on one side and a closed one on the other side, depending on the BR mass position. The HV technological choice is motivated by three major arguments. First, the absence of electromechanical transduction minimizes the energy losses for the valve operation. Then, the post-buckling softening of the bent tube minimizes the mechanical impact on the BR mass dynamic operation. Finally, it is well adapted at the millimetric application scale.
+A technological solution for the HV is to use a flexible tube buckled by bending. The figure \ref{fig:HV_actuation_detail} schematizes the integration of such HV around the BR environment. The HV is composed of a flexible tube connected to the hydraulic circuit between a rigid mobile and rigid fixed parts. It is in contact with the mass at the T point. The mass motion on the mobile part induces a bending angle $\theta$ around the rotational point $O$ located at the buckled section of the flexible tube. Consequently, a pressure loss is generated through the valve in buckled position. The HV is considered closed when the BR mass is at a stable equilibrium position ($x_m=\pm x_0$) and opened when the mass is at $x_m=0$. This last point will be validated experimentally in section \ref{sec:EXPERIMENTAL APPROACH FOR THE HV DESIGN}. Two HVs symmetrically placed on each side of the $\vec{z}$ axis set up an opened hydraulic circuit on one side and a closed one on the other side, depending on the BR mass position. The HV technological choice is motivated by three major arguments. First, the absence of electromechanical transduction compared to a more usual actuated valve minimizes the energy losses for the valve operation. Then, the post-buckling softening effect of the bent tube minimizes the mechanical impact on the BR mass dynamic operation. Finally, it seems well adapted for integration purpose for millimetric application scale.
 
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \section{SYSTEM GLOBAL MODELING}
 \label{sec:SYSTEM MODELING}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-The harvester is a multyphisic system composed of hydraulic, mechanical, and electrical components. This section presents a global multiphysic model describing the theoretical system operation. Two coupled subsystems are considered. The subsection \ref{subsec:The electromechanical converter} shows the modeling of the electromechanical frequency-up converter (BR + APG) under the mechanical influence of a HV and a HC. Then, the subsection \ref{subsec:The hydraulic circuit} discusses the design of the hydraulic circuit composed of the two HVs, the two HCs, the hydraulic amplifier, the pressure separator and the liquid filled earplug. Finally, the section \ref{subsec:Global model simulation} exposes the numerical simulation of the designed multiphysic coupled model.
+The harvester is a multiphysic system composed of hydraulic, mechanical, and electrical components. This section presents the global multiphysic model describing the system theoretical operation. Two coupled subsystems are considered. The subsection \ref{subsec:The electromechanical converter} shows the modeling of the electromechanical frequency-up converter (BR + APG) under the mechanical influence of a HV and a HC. Subsection \ref{subsec:The hydraulic circuit} discusses the design of the hydraulic circuit composed of the two HVs, the two HCs, the hydraulic amplifier, the pressure separator and the liquid filled earplug.
+
+This work challenges are focused on the experimental validation of the electromechanical converter cycled by two hydraulic valves. In fact several hydraulic miniature solutions are introduced by the literature for both of the components \cite{Wang2020,Xu2021,Zhu2013}. Hence, this section neglects the pressure loss through the pressure separator and the energy loss inside the hydraulic amplifier. These hydraulic components will rather be considered on further work. 
 
     %///////////////////////////////////////////// 
 	\subsection{Modeling of the electromechanical converter}	
@@ -310,19 +312,20 @@ The harvester is a multyphisic system composed of hydraulic, mechanical, and ele
 	\centering
 	\captionsetup{justification=centering}
 	\includegraphics[trim={0cm 0cm 0cm 0cm},clip, width=0.9\textwidth]{figures/schema_cinematique1.pdf}
-	\caption{Cinematic schema of the of the electromechanical converter under the mechanical influence of a HV and a HC}
+	\caption{Kinematic scheme of the electromechanical converter under the mechanical influence of a HV and a HC}
 	\label{fig:schema_cinematique1}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The figure \ref{fig:schema_cinematique1} shows the cinematic schema of the electromechanical converter under the mechanical influence of a HV and a HC. The different schematized rigid bodies all designated in the table \ref{tab:Designation of rigid bodies}. The BR is represented by 4 identical arms articulated by 8 hinges and a central mass. The APG is considered as a spring of stiffness $K$ with an electromechanical coupling $k^2$, indicative of the piezoelectric transduction, expressed by the equation \ref{eq:k2_def}.\\
+The figure \ref{fig:schema_cinematique1} shows the kinematic scheme of the electromechanical converter under the mechanical influence of a HV and a HC. The different rigid bodies are defined in the table \ref{tab:Designation of rigid bodies}. The BR is represented by 4 identical arms articulated by 8 hinges and a central mass. The APG is considered as a spring of stiffness $K$ with an electromechanical coupling $k^2$, standing for the piezoelectric transduction, defined by the equation \ref{eq:k2_def}.\\
 The model is based on the following hypotheses:
 \begin{itemize}
 	\item The only mass considered is the BR mass (2).
-	\item All parts are infinitely rigid beside the APG (4).
-	\item The hinges are considered elastic. They are defined by their rotational stiffness $K_{\varphi}$ and their mechanical damping is included in the global viscous damping coefficient $\mu$.
-	\item The contact between the BR mass (2) and the HC piston head (5) is considered permanent.
-	\item We assume the small-angle approximation with \mbox{$x_0<<L$}. 
+	\item All parts are infinitely rigid except for the APG (4).
+	\item The hinges are considered elastic: They are defined by their rotational stiffness $K_{\varphi}$
+	\item The mechanical damping of the hinges is included in the global viscous damping coefficient $\mu$.
+	\item The contact between the BR mass (2) and the HC piston head (5) is considered permanent for $0 < x < x_0$.
+	\item \mbox{$x_0 \ll L$}. 
 \end{itemize}
 \begin{equation}
 	k^2 = \dfrac{\alpha^2}{\alpha^2 +  K C_p}
@@ -331,37 +334,33 @@ The model is based on the following hypotheses:
 %%%%%%%%%%%%%%%%%
 \begin{table}[!htbp]
 \centering
-\resizebox{0.8\linewidth}{!}{%
+\resizebox{0.6\linewidth}{!}{%
 	\begin{tabular}{ c | c }
 		\toprule
-		\multicolumn{1}{c}{\textbf{Num}}  &
-		\multicolumn{1}{c}{\textbf{Name}}  \\
+		\multicolumn{1}{c}{\textbf{Num}} &
+		\multicolumn{1}{c}{\textbf{Name}}                                 \\
 		\midrule
-		0	& Fixed frame      	  	\\  
-		1	& BR arm      	  	\\  
-		2	& BR mass     	\\
-		3	& HC piston head	\\
-		4	& APG     	\\
-		5	& Simplified HV mechanical model     	\\
+		0                                & Fixed frame                    \\
+		1                                & BR arm                         \\
+		2                                & BR mass                        \\
+		3                                & HC piston head                 \\
+		4                                & APG                            \\
+		5                                & Simplified HV mechanical model \\
 		\bottomrule
 	\end{tabular}}
-	\caption{Designation of rigid bodies}
+\caption{Definition of figure \ref{fig:schema_cinematique1} bodies}
 \label{tab:Designation of rigid bodies}
-\end{table} 
+\end{table}
 %%%%%%%%%%%%%%%%%%%%%  
 
-By isolating the BR mass and using the Newtons 2$^{nd}$ law, we can express its dynamic equilibrium with respect to the different external forces. The projection on the $\vec{x}$ axis of the resulting expression is given by the equation \ref{eq:OB-GPA} where the provenance of the different terms is highlighted. The BR mechanical equilibrium took aside contains the mass inertial term, a non-linear stiffness depending on $x_m$, the hinges stiffness and viscous losses. This expression has also been demonstrated by the Lagrange method in past works \cite{Liu2013}. The first term introduced by the HV is related to its rotationnal stiffness and the second term is related to the friction losses at the contact point $T$ (fig. \ref{fig:HV_actuation_detail}). A dry friction model is choose to describe the nature of the contact between the two components. Thus, $F_f$ will depend on a dry friction coefficient $\mu_f$, related to the nature of the material that are rubbing, and the sign of $\dot{x}_m$ (eq. \ref{eq:Dry_friction}). The force $F_{pis}$ induced by the piston head of the HC on the OB mass will depend on hydraulic parameters. The hydro-mechanical coupling is highlighted later by the equation \ref{eq:equilibre_dynamique_piston_ouvert}.
-\begin{equation}
-	F_f = \mu_f \text{sign}(\dot{x}_m)
-	\label{eq:Dry_friction}
-\end{equation}
+By isolating the BR mass and using the Newtons 2$^{nd}$ law, we can express its dynamic equilibrium. The projection on the $\vec{x}$ axis of the resulting expression is given by the equation \ref{eq:OB-GPA}. The BR mechanical equilibrium has a mass inertial term, a non-linear stiffness depending on $x_m$, the stiffness of the hinge $K_{\varphi}$ and viscous losses. The first term introduced by the HV is related to its rotational stiffness $K_{HV}$ and the second term is related to the friction losses at the contact point $T$ (fig. \ref{fig:HV_actuation_detail}). A dry friction model is chosen to describe the dissipation effect of the contact. The rubbing efforts depend on a dry friction coefficient $\nu_f$, related to the nature of the material that are rubbing, and the sign of $\dot{x}_m$. The pressure $p_{ac}$ induces the HC hydraulic force and the coefficient $\mu_c$ models the viscous friction at the sealing gasket. The hydro-mechanical coupling will be detailed later.
 
-The electrical power generated by the APG is dissipated in a load resistor $R_{ch}$ calculated with an adaptive impedance matching expressed by the equation \ref{eq:R_ch_adaptive_imp} \cite{Liu2013}. 
+The electrical power generated by the APG is dissipated in a load resistor $R_{ch}$ calculated with an adaptive impedance matching expressed in the equation \ref{eq:R_ch_adaptive_imp} \cite{Liu2013}. 
 \begin{equation}
 	R_{ch} = \dfrac{1}{C_p w_0}
 	\label{eq:R_ch_adaptive_imp}
 \end{equation}
-Thus, the equation governing the electrical behavior of the APG is :
+Thus, the electrical equation of the APG is :
 \begin{equation}
 	\dfrac{U_p}{R_{ch}} = 
 	-\alpha\dfrac{d}{dt}\biggl(2\sqrt{{l_0}^2-x_m^2}\biggr)
@@ -373,112 +372,124 @@ Consequently, the generated power $P_e$ expression is :
 	P_e = \frac{{U_p}^2}{R_{ch}} 
 	\label{eq:P_e}
 \end{equation} 
-With the small-angle approximation, the system equation \ref{eq:OB+GPA+VH+piston} defines the electromechanical behavior of the harvester. The HV stiffness $K_{HV}$ will depend on its bending angle $\theta$ and the latter will geometrically depend on the BR mass position $x_m$, as showed in figure \ref{fig:HV_actuation_detail}.
-
+Equation \ref{eq:theta_fonction_de_xm} defines the implicit relation between $\theta$, $x_m$ and the geometrical parameters of the setup. Also, the HV stiffness $K_{HV}$ will depend on its bending angle $\theta$ and the latter will geometrically depend on the BR mass position $x_m$, as showed in figure \ref{fig:HV_actuation_detail}. 
 %%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}
+\begin{figure*}[!htb]
 \begin{equation}
-\overbrace{\ m \ddot{x}_m =-2K(\sqrt{x_m^2+L^2}-l_0)\tan(\varphi) 
-							-\mu \dot{x}_m
-							-\frac{4K_{\varphi}\varphi}{L}\ }^{OB}
-			\underbrace{\ -2\alpha U_p \tan(\varphi)\ }_{APG}		 
-			\overbrace{\ -\dfrac{K_{HV}\theta}{a} - F_f\ }^{HV}
-			\underbrace{\ -F_{pis}\ }_{HC}
+ m \ddot{x}_m =-2K(\sqrt{x_m^2+L^2}-l_0)\tan(\varphi) -\mu \dot{x}_m -\frac{4K_{\varphi}\varphi}{L}
+				\ -2\alpha U_p \tan(\varphi)
+				\ -\dfrac{K_{HV}(x_m)\theta(x_m)}{a} - \nu_f \text{sign}(\dot{x}_m)
+				\  - p_{ac}\ S_{hc} - \mu_{c}\ \dot{x}_m
 \label{eq:OB-GPA}
 \end{equation}
 \end{figure*}
 % \FloatBarrier
 %%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure*}
 \begin{equation}
-% \begin{small}
-	\begin{dcases}
-\ddot{x}_m = - \frac{2K{x_0}^2}{mL^2}\biggl(\frac{x_m^2}{{x_0}^2} -1\biggr)
-			   x_m - \frac{\mu}{m}\dot{x}_m - \frac{2\alpha U_p\ x_m}{mL}
-			-\frac{K_{VH}(x_m)\theta(x_m)}{ma}
-			-\frac{F_f}{m}
-			-\frac{F_{pis}}{m} \\
-\dfrac{U_p}{R_{ch}} = \frac{2\alpha x_m \dot{x}_m}{L} - C_p\dot{U}_p
-	\end{dcases}
-	\label{eq:OB+GPA+VH+piston}	
-% \end{small}
+x_m = \dfrac{D_r(1-\cos(\theta))+2a\sin(\theta)}{2\cos(\theta)}\text{,}
+				~~ \theta\leq\arctan\biggl(\dfrac{2a}{D_r}\biggr)
+\label{eq:theta_fonction_de_xm}
 \end{equation}
-\end{figure*}
-% \FloatBarrier
 %%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure*}
+% \begin{equation}
+% % \begin{small}
+% 	\begin{dcases}
+% \ddot{x}_m = - \frac{2K{x_0}^2}{mL^2}\Biggl[\biggl(\frac{x_m^2}{{x_0}^2} -1\biggr )+ \dfrac{8K_{\varphi}}{L^2}\Biggr]x_m 
+% 			 - \frac{K_{VH}(x_m)\theta(x_m)}{ma}
+% 			 - \frac{\mu+\mu_c}{m}\dot{x}_m  - \nu_f \text{sign}(\dot{x}_m)
+% 			 - \frac{2\alpha U_p\ x_m}{mL}
+% 			 - p_{ac}\ S_{hc} \\
+% x_m = \dfrac{D_r(1-\cos(\theta))+2a\sin(\theta)}{2\cos(\theta)}\text{,}
+% 				~~ \theta\leq\arctan\biggl(\dfrac{2a}{D_r}\biggr)\\
+% \dfrac{U_p}{R_{ch}} = \frac{2\alpha x_m \dot{x}_m}{L} - C_p\dot{U}_p 
+% 	\end{dcases}
+% 	\label{eq:OB+GPA+VH+piston}	
+% % \end{small}
+% \end{equation}
+% \end{figure*}
+% % \FloatBarrier
+% %%%%%%%%%%%%%%%%%%%%%%%
     %///////////////////////////////////////////// 
 	\subsection{Modeling of the hydraulic circuit}	
 	\label{subsec:The hydraulic circuit}
     %/////////////////////////////////////////////
-This work challenges are focused on the experimental validation of the electromechanical converter cycled by two hydraulic valves. In fact several hydraulic miniature solutions are introduced by the literature for both of the components \cite{Wang2020,Xu2021,Zhu2013}. Hence, this section neglects the pressure loss through the pressure separator and the energy loss inside the hydraulic amplifier. These hydraulic components will rather be considered on further work.
 
-In order to model the coupled behavior of the two hydraulic branches, we will use the index "$o$" for the open branch and the index "$c$" for the closed one. The following hypotheses will be considered :
+In order to model the coupled behavior of the two hydraulic branches, we will use the index "$a$" for the active branch where the fluid flows and the index "$i$" for the inactive one. \\
+The following hypotheses will be considered :
 \begin{itemize}
-	\item The fluid is incompressible and Newtonian.
-	\item The hydraulic circuit is non-deformable (no volume change) and there is no leakage.
-	\item The hydraulic actuation is considered quasi-static (QS) in front
-	the oscillation frequency of the BR.
+	\item The flow is incompressible and Newtonian.
+	\item The hydraulic circuit is rigid (no volume change) and there is no leakage.
+	\item The hydraulic actuation is considered quasi-static considering the oscillation frequency of the BR.
 \end{itemize}
-The projection on the $\vec{x}$ axis of the Newtons 2$^{nd}$ law applied respectively to each HC moving piston gives us their mechanical equilibrium as follows :
+The mechanical equilibrium is :
 \begin{align}
-	\text{Opened cylinder ~}& \left\{~
-	-F_{pis} - p_{oc}\ S_{c} - \lambda_{c}\ \dot{x}_{oc} = 0
+	\text{Active cylinder ~}& \left\{~
+	F_{br} - p_{ac}\ S_{hc} - \mu_{c}\ \dot{x}_m = 0
 	\right.
 	\label{eq:equilibre_dynamique_piston_ouvert}\\
-	\text{Closed cylinder ~}& \left\{~
-	p_{cc}\ S_{c} - \lambda_{c}\ \dot{x}_{cc} = 0
+	\text{Inactive cylinder ~}& \left\{~
+	p_{ic}\ S_{hc} - \mu_{c}\ \dot{x}_{ic} = 0
 	\right.
 	\label{eq:equilibre_dynamique_piston_ferme}
 \end{align}
-Where $p_c$ is the HC chamber pressure and $x_c$ its moving piston position. $F_{pis}$ accounts for the OB counter-reaction on the HC. Thus, with the QS assumption, it can be derived from equation \ref{eq:OB+GPA+VH+piston} and expressed as follows : 
+Where $p_c$ is the HC chamber pressure and $x_{ic}$ the piston position of the inactive HC piston. $F_{br}$ accounts for the OB counter-reaction on the HC. With the QS actuation assumption, it can be derived from equation \ref{eq:OB-GPA} and expressed as follows : 
 \begin{align}
-	-F_{pis} & = F_{br}\\
-	-F_{pis} & = -\frac{K\ {x_0}^2}{L^2}\biggl(\frac{x_m^2}{{x_0}^2} -1\biggr)x_m - \biggl( \frac{K_{HV}\theta}{a} \biggr) - F_f
+	F_{br} = -\frac{K\ {x_0}^2}{L^2}\biggl(\frac{x_m^2}{{x_0}^2} -1\biggr)x_m - \biggl( \frac{K_{HV}\theta}{a} \biggr)
 	\label{eq:F_OB_xxxxxx}
 \end{align}
-Then, by juxtaposing the Bernoulli's equation for a current line, we can express the earplug inside pressure $p_{ear}$ as a function of the hydraulic resistance in the two parallel branches with the equations \ref{eq:Bernoulli_piston_ouvert} and \ref{eq:Bernoulli_piston_ferme}.
+The pressure loss coefficient $Cf$ for a buckled flexible tube will depend on the HV bending angle $\theta$ and therefore on the BR mass position $x_m$ (fig. \ref{fig:HV_actuation_detail}). $Cf$ will be as more important as $x_m$ increases. It is minimal when the HV is unbent and worth $Cf_0$. The literature does not provide the constitutive relation between $x_m$ and $Cf$, thus we preliminarily assume that it is linear and defined as follows :
 \begin{align}
-	\text{Opened branch ~}& \left\{~
-	p_{ear} = p_{in} + \dfrac{1}{a_h}\biggl(p_{oc} + Cf_0 {q_0}^2 \biggr)
+Cf(x_m) & = Cf_0 + \dfrac{Cf_c - Cf_0}{x_0}\ x_m 
+\label{eq:Cf(x_m)_linear}
+\end{align}
+Where $Cf_c=Cf(\pm x_0)$. Regarding the BR symmetry, the relation between $Cf$ and $x_m$ has to be an even function to allow the system cycling, i.e. $Cf(x_m) = Cf(-x_m)$.
+
+By the Bernoulli's equation for a current line, we can express the earplug inside pressure $p_{ear}$ as a function of the hydraulic resistance in the two parallel branches with the equations \ref{eq:Bernoulli_piston_ouvert} and \ref{eq:Bernoulli_piston_ferme}.
+\begin{align}
+	\text{Active branch ~}& \left\{~
+	p_{ear} = \dfrac{1}{a_h}\biggl(p_{ac} + Cf_0 {q_a}^2 \biggr)
 	\right.
 	\label{eq:Bernoulli_piston_ouvert}\\
-	\text{Closed branch ~}& \left\{~
-	p_{ear} = p_{in} + \dfrac{1}{a_h}\biggl(p_{cc} + Cf(x_m) {q_f}^2 \biggr)
+	\text{Inactive branch ~}& \left\{~
+	p_{ear} = \dfrac{1}{a_h}\biggl(p_{ic} + Cf(x_m) {q_i}^2 \biggr)
 	\right.
 	\label{eq:Bernoulli_piston_ferme}
 \end{align}
-Where $p_{in}$ is the initial pressurization, $a_h$ is the hydraulic amplification ratio, $q$ the flow rate and $Cf$ the pressure loss coefficient of a HV. The latter will depend on the HV bending angle $\theta$ and therefore on the BR mass position $x_m$ (fig. \ref{fig:HV_actuation_detail}). $Cf$ will be as more important as the $x_m$ increases. It is minimal when the HV is unbent and worth $Cf_0$.
+Where $a_h$ is the hydraulic amplification ratio and $q$ the flow rate.
 
-Also, the no leakage assumption imposes that all the outgoing fluid from the earplug is contained in the two hydraulic branches (eq. \ref{eq:conservation_masse}).
+The no leakage assumption imposes that all the fluid exiting the earplug is contained in the two hydraulic branches (eq. \ref{eq:conservation_masse}).
 \begin{equation}
-	q_{ear} = q_o + q_f
+	q_{ear} = \dot{\Delta V_{ear}} = q_a + q_i
 	\label{eq:conservation_masse}
 \end{equation}
-Moreover, the same previous hypothese requires that all the fluid entering the HC results on a piston displacement (eqs \ref{eq:conservation_masse_ouvert},\ref{eq:conservation_masse_ferme}).
+Moreover, the fluid entering the HC necessarily results on a piston displacement (eqs. \ref{eq:conservation_masse_ouvert},\ref{eq:conservation_masse_ferme}).
 \begin{align}
-	\text{Opened cylinder ~}& \left\{~
-	q_o = S_{hc} \dot{x}_{oc}
+	\text{Active cylinder ~}& \left\{~
+	q_a = S_{hc} \dot{x}_m
 	\right.
 	\label{eq:conservation_masse_ouvert}\\
-	\text{Closed cylinder ~}& \left\{~
-	q_c = S_{hc} \dot{x}_{cc}
+	\text{Inactive cylinder ~}& \left\{~
+	q_i = S_{hc} \dot{x}_{ic}
 	\right.
 	\label{eq:conservation_masse_ferme}
 \end{align}
-
+%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
+\section{NUMERICAL MODEL AND SIMULATIONS}
+\label{NUMERICAL MODEL AND SIMULATIONS}
+%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
     %///////////////////////////////////////////// 
-	\subsection{Preliminary dimensioning}	
-	\label{subsec:Preliminar dimensionning}
+	\subsection{The harvester setting}	
+	\label{subsec:The harvester setting}
     %/////////////////////////////////////////////
-The dimensioning starts by setting technological choices in order to experimentally validate the multiphysic coupled model. Therefore, the APG is a APA50XS piezoelectric actuator, from Cedrat Technologies, exploited as a generator, setting so the stiffness $K$. Then, the MQP4-10S HC from SMC will ensure the hydraulic to mechanical interface, setting then the cylinder piston section $S_{hc}$. Next, the hydraulic commutation of the two parallel branches is driven by two HVs made of collapsed flexible tubes, setting then $Cf(x_m)$. Finally, the \mbox{$L=16mm$ }parameter is chosen to be consistent with the application scale. 
-
-The maximum energy extractable with the BR through a QS actuation is equal to the height of the potential energy barrier $E_{pb}$ when the mass position varies from \mbox{$x_m=\pm x_0$ }to \mbox{$x_m=0$}. Knowing that it is equal to 65\% of the upper limit of the available hydraulic energy (eq. \ref{eq:max_hydraulic_energy} $\&$ fig. \ref{fig:OB_vs_LINEAR}), we can set the BR buckling level \mbox{$\epsilon = x_0/L$} through the equation \ref{eq:Ep_bar}. The harvester is thus optimized depending on the energy source.
+The system parameters are set to maximize the exploited energy. The maximum theoretical energy in a BR through a QS actuation is equal to the height of the potential energy barrier $E_{pb}$ when the mass position varies from \mbox{$x_m=\pm x_0$ } to \mbox{$x_m=0$}. Knowing that it is equal to 65\% of the upper limit of the available hydraulic energy (eq. \ref{eq:max_hydraulic_energy}), we can set the BR buckling level \mbox{$\epsilon = x_0/L$} through the equation \ref{eq:Ep_bar}. The harvester is thus optimized depending on the energy source.
 \begin{equation}
 	E_{pb} = \dfrac{K x_0^4}{3L^2}=0.65p_c \Delta V_{ear,m}
 	\label{eq:Ep_bar}
 \end{equation}
-Two additional coupled requirements allow the system operation by setting the amplification level $a_h$. First, the available fluid must be enough to ensure the HC stroke from its equilibrium position until the BR mass reaches \mbox{$x_m=0$} (eq. \ref{eq:contrainte_course}). Then, the BR mechanical impedance on $\vec{x}$ axis reaches a maximum value $F_c$ when \mbox{$ x_m = x_c = \dfrac{x_0}{\sqrt{3}}$}. At this point, a maximum pressure is induced in the earplug and so the equation \ref{eq:contrainte_confort} has to be verified to ensure the user comfort. If not, $\epsilon$ must be decreased, decreasing the extracted energy for the benefit of comfort.
+Two coupled requirements allow the system operation by setting the amplification level $a_h$ and the BR buckling level $\epsilon$. First, the available swept volume must be enough to ensure the HC stroke from its equilibrium position until the BR mass reaches \mbox{$x_m=0$} (eq. \ref{eq:contrainte_course}). Then, the BR mechanical force on $\vec{x}$ axis reaches a maximum value $F_c$ when \mbox{$ x_m = x_c = \dfrac{x_0}{\sqrt{3}}$}. At this point, a maximum pressure is induced in the earplug and so the equation \ref{eq:contrainte_confort} has to be verified to guarantee the pressure limit. If not, $\epsilon$ can be decreased, diminishing the extracted energy.
 \begin{empheq}[left=\empheqlbrace]{align} 
 	\Delta V_{ear,m} = a_h\ S_{hc}\  x_{c0}
 	\label{eq:contrainte_course}\\
@@ -486,27 +497,18 @@ Two additional coupled requirements allow the system operation by setting the am
 	\label{eq:contrainte_confort}
 \end{empheq}
 
-%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-\section{NUMERICAL MODEL AND SIMULATIONS}
-\label{NUMERICAL MODEL AND SIMULATIONS}
-%/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
+starts by setting technological choices in order to experimentally validate the multiphysic coupled model. Therefore, the APG is a APA50XS piezoelectric actuator, from Cedrat Technologies, exploited as a generator, setting so the stiffness $K$. Then, the MQP4-10S HC from SMC will ensure the hydraulic to mechanical interface, setting then the cylinder piston section $S_{hc}$. Next, the hydraulic commutation of the two parallel branches is driven by two HVs made of collapsed flexible tubes, setting then $Cf(x_m)$. Finally, the \mbox{$L=16mm$ }parameter is chosen to be consistent with the application scale. 
 
 	%///////////////////////////////////////////// 
 	\subsection{Targeted hydraulic behavior of the HVs}	
 	\label{subsec:HV hydraulic targeted behavior}
 	%/////////////////////////////////////////////
-A multiphysic coupled model has been established with the equations and the preliminary dimensioning previously introduced. The unknown key aspect stays the hydraulic behavior $Cf(x_m)$ of the HVs. The numerical resolution of the differential equations can provide the necessary condition to satisfy in order to perform the adequate hydraulic commutation. In fact, the ratio between the pressure loss coefficient of the closed HV and the one of the opened HV has to be sufficient to force the flow through the opened branch. So we introduce the hydraulic restriction coefficient $r_{Cf}$ defined as follows :
+A multiphysic coupled model has been established with the equations and the preliminary dimensioning previously introduced. The unknown key aspect stays the hydraulic behavior $Cf(x_m)$ of the HVs. The ratio between the pressure loss coefficient of the closed HV and the one of the opened HV has to be sufficient to force the flow through the opened branch. So we introduce the hydraulic restriction coefficient $r_{Cf}$ defined as follows :
 \begin{equation}
 	r_{Cf} = \dfrac{Cf(\text{Closed HV})}{Cf(\text{Opened HV})}	= \dfrac{Cf_c}{Cf_0}	
 	\label{eq:r_Cf_definition}
 \end{equation}
-Where $Cf_c=Cf(\pm x_0)$. The literature does not provide the constitutive relation between $x_m$ and $Cf$ for a buckled flexible tube. Therefore, we preliminarily assume that it is linear and defined as follows :
-\begin{align}
-	Cf(x_m) & = Cf_0 + \dfrac{Cf_c - Cf_0}{x_0}\ x_m  \notag \\
-			& = Cf_0 \Biggl( 1 + \biggl(\dfrac{1}{r_{Cf}-1} \biggr)\dfrac{x_m}{x_0} \Biggr)
-			\label{eq:Cf(x_m)_linear}
-\end{align}
-Regarding the BR symmetry, the relation between $Cf$ and $x_m$ has to be an even function to allow the system cycling, i.e. $Cf(x_m) = Cf(-x_m)$.
+The numerical resolution of the differential equations can provide the minimum value $(r_{Cf})_{min}$ to reach in order to perform the adequate hydraulic commutation.
 
 	%///////////////////////////////////////////// 
 	\subsection{Simulation results}	
