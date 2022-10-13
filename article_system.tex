@@ -63,6 +63,7 @@
 \usepackage{float}
 \usepackage{empheq}
 \usepackage{textcomp}
+\usepackage{multicol}
 
 %----------------------------------------------------------------------
 %                     Commands
@@ -156,11 +157,106 @@
 %\linenumbers
 
 %% main text
+ % Ltex language=en
+\begin{table*}
+\begin{large}
+	\begin{center}
+		Nomenclature	\\
+		\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+	\end{center}
+\end{large}		
+% \end{table*}
+\begin{minipage}{.5\textwidth}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{table}[!h]
+	\begin{tabular}{ c  m{6cm} }
+		\textbf{Subscripts}      &                                                         \\
+		APG                      & Amplified piezoelectric generator                       \\
+		BB                       & Buckled blade                                           \\
+		BR                       & Bistable resonator                                      \\
+		GB                       & Guide blade                                             \\
+		HA                       & Hydraulic amplifier                                     \\
+		HC                       & Hydraulic Cylinder                                      \\
+		HV                       & Hydraulic valve                                         \\
+		\textbf{Roman letters}   &                                                         \\
+		$a$                      & HV bending lever arm                                    \\
+		$a_h$ [-]                & Hydraulic amplification level                           \\
+		$Cf$ [Pam$^3$/s]         & Pressure loss coefficient                               \\
+		$Cf_0$ [Pam$^3$/s]       & Opened HV pressure loss coefficient                     \\
+		$Cf_c$ [Pam$^3$/s]       & Closed HV pressure loss coefficient                     \\
+		$C_p$ [F]                & APG internal capacity                                   \\
+		$D_h$ [m]                & Hydraulic diameter of the HV                            \\
+		$D_{hc}$ [m]             & Hydraulic cylinder internal diameter                    \\
+		$D_r$ [m]                & HV rigid sheath diameter                                \\
+		$E_d$ [J]                & Global dissipated energy                                \\
+		$E_e$ [J]                & Harvested electric energy                               \\
+		$E_{hyd}$ [J]            & Available hydraulic energy from earplug                 \\
+		$F_{br}$ [N]             & BR counter reaction force                               \\
+		$f_0$ [Hz]				 &	BR natural resonance frequency						   \\
+		$K$ [N/m]                & APG stiffness                                           \\
+		$K_{bb}$ [N/m]           & 8 BB's stiffness                                        \\
+		$K_{eq}$ [N/m]           & Equivalent stiffness seen from the APG                  \\
+		$K_{gb}$ [N/m]           & GB stiffness                                            \\
+		$K_{HV}$ [Nm/rad]        & HV stiffness                                            \\
+		$K_s$ [N/m]              & Spring stiffness                                        \\
+		$K_{\varphi}$ [Nm/rad]   & Single hinge stiffness                                  \\
+		$k^2$ [-]                & APG electromechanical coupling coefficient              \\
+		$k_{sys}^2$ [-]          & Global electromechanical coupling coefficient           \\
+\end{tabular}
+% \end{table}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+% \begin{table}[!h]
+\begin{tabular}{ c  m{6cm} }
+		$L$ [m]                  & Distance between 2 BR adjacent hinges                   \\
+		$l_0$ [m]                & Distance between 2 BR adjacent hinges on $\vec{x}$ axis \\
+		$m$ [kg]			     & BR dynamic mass 										   \\
+		$p_c$ [Pa]               & comfort pressure                                        \\
+		$p_{hc}$ [Pa]            & Hydraulic cylinder internal pressure                    \\
+		$S_{hc}$ [Pa]            & Hydraulic cylinder internal section                     \\
+		$q$ [m$^3$/s]            & Flow rate                                               \\
+		$R_l$ [$\Omega$]         & Load resistance                                         \\
+		$P_e$ [W]                & Harvested electric power                                \\
+		$Q$                      & BR quality factor                                       \\
+		$r_{Cf}$ [-]             & Hydraulic restriction coefficient                       \\
+		$x_m$ [m]                & BR mass position                                        \\
+		$x_{hc}$ [m]             & HC piston position                                      \\
+		$x_m$ [m]                & BR mass position                                        \\
+		$U_p$ [V]                & APG tension                                             \\
+		\textbf{Greek letters}   &                                                         \\
+		$\alpha$ [N/V]           & piezoelectric force coefficient                         \\
+		$\Delta p_{ear}$ [Pa]    & Earplug pressure variation                              \\
+		$\Delta V_{ear}$ [m$^3$] & Earplug volume variation                                \\
+		$\epsilon$ [-]           & BR buckling level                                       \\
+		$\eta_{br}$ [-]          & BR energy conversion efficiency                         \\
+		$\eta_g$ [-]             & Harvester energy conversion efficiency                  \\
+		$\theta$ [rad]           & HV bending angle                                        \\
+		$\mu$ [Ns/m]             & Air dynamic viscosity                                   \\
+		$\mu_{hc}$ [Ns/m]        & HC viscous loss coefficient                             \\
+		$\nu$ [Ns/m]             & Dry friction loss coefficient                           \\
+		$\omega_0$ [rad/s]       & BR natural angular frequency                            \\
+		\textbf{Indexes}         &                                                         \\
+		$\square_a$              & Active hydraulic branch                                 \\
+		$\square_b$              & \emph{Bottom} side hydraulic branch ($x <0$)            \\
+		$\square_c$              & Closed HV state              						   \\
+		$\square_i$              & \emph{Top} side hydraulic branch ($x >0$)               \\
+		$\square_o$              & Opened HV state             							   \\
+		$\square_t$              & Inactive hydraulic branch                               \\
+		$\square_{max}$          & Upper value                                             \\
+		$\square_{min}$          & Lowest value                                            \\
+	\end{tabular}
+% \end{table}
+\end{minipage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{table*}
+		\begin{center}
+			\noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+		\end{center}
+\end{table*}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \section{INTRODUCTION}
-\label{INTRODUCTION} % Ltex language=en
+\label{INTRODUCTION}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-
 The growing use of wireless devices and the miniaturization of electronic circuits have led to significant progress on the energy consumption of mobile devices on the human body environment. Energy harvesting methods have been studied in order to complement their power supply and enhance the autonomy of the batteries. In-ear devices such as hearing aids and cochlear implants are powered by disposable cells or rechargeable batteries. The energy consumption of the best integrated devices in the literature rises up to $17$J for a 10 hours daily use \cite{Scherer2019,Yip2015,Kulah2022}. Woodruff \emph{et al.} underlined that patients using hearing aids sometimes struggle to change and select batteries for their devices \cite{Woodruff2021}. Another statistical study revealed that the majority of hearing aids and cochlear implants users prefer disposable batteries for the long autonomy, but would have liked rechargeable solutions if the battery cycle was sufficient to complete the day \cite{PracticesAudiology2016}. Also, the long term use makes the rechargeable solutions a more economical and more ecological choice compared to the disposable cells. These arguments motivated the development of energy harvesting systems.
 
 The common energy sources are solar or wind energy but their availability in the low size environment of the application context makes them not suitable for exploitation. The activities of the human body generate a considerable amount of energy of different natures. Among them, the electrochemical energy from the inner ear \cite{Mercier2012}, the kinetic energy from walking or head movements \cite{Azimi2021,Smilek2016}, the body heat thermal energy \cite{Kim2014}, the strain energy from the skin deformation \cite{Jin2021} could be harvested for in-ear applications. An interesting energy source for cochlear implants or hearing aids appears to be the ear canal mechanical deformation as it is directly located in the area of the application. Delnavaz \emph{et al.} first showed in 2012 that the jaw movements changes de ear canal geometry during mastication. Carioli \emph{et al.} then used a customized earplug molding technic with a 3D scanner to reveal a global bending movement and a local compression area in the ear canal during mastication \cite{Carioli2016}. These two mechanical deformations represent a potential energy source that can be exploited.
@@ -192,9 +288,9 @@ The hydraulic extraction strategy proposed in \cite{Delnavaz2012} is less effect
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The earplug operation characteristic behavior has not been studied yet. Thus, the evolution of the volume variation $\Delta V_{ear}$ is not well known as a function of the pressure variation $\Delta p_{ear}$. Then, considering the pressure and volume variation levels from \cite{Delnavaz2012} and \cite{Bouchard-Roy2020}, the equation \ref{eq:max_hydraulic_energy} approximates an upper limit for the extractable hydraulic energy with the maximum values of $\Delta p_{ear}$ et $\Delta V_{ear}$ that have been recorded, i.e. $p_c=12kPa$ and $\Delta V_{ear,m}=60$mm$^3$. $p_c$ stands for the comfort pressure by assuming that the user could feel discomfort if $\Delta p_{ear}>p_c$. The energy estimation presumes that the earplug is a perfect flow rate source, which is a theoretical hypothesis leading to $0.9$mJ available from one mastication. Based on 2200 mastication cycles per day, according to \cite{Goll2011}, there would be $2$mJ available per day, per ear. This amount of energy could theoretically enhance supply $23.5$\% of the $17$J of needed for the state of the art of cochlear implants \cite{Kulah2022}. Further research in both domains related to hearing aids and energy harvesting could lead to fully autonomous devices in the future.
+The earplug operation characteristic behavior has not been studied yet. Thus, the evolution of the volume variation $\Delta V_{ear}$ is not well known as a function of the pressure variation $\Delta p_{ear}$. Then, considering the pressure and volume variation levels from \cite{Delnavaz2012} and \cite{Bouchard-Roy2020}, the equation \ref{eq:max_hydraulic_energy} approximates an upper limit for the extractable hydraulic energy with the maximum values of $\Delta p_{ear}$ et $\Delta V_{ear}$ that have been recorded, i.e. $p_c=12kPa$ and $(\Delta V_{ear})_{max}=60$mm$^3$. $p_c$ stands for the comfort pressure by assuming that the user could feel discomfort if $\Delta p_{ear}>p_c$. The energy estimation presumes that the earplug is a perfect flow rate source, which is a theoretical hypothesis leading to $0.9$mJ available from one mastication. Based on 2200 mastication cycles per day, according to \cite{Goll2011}, there would be $2$mJ available per day, per ear. This amount of energy could theoretically enhance supply $23.5$\% of the $17$J of needed for the state of the art of cochlear implants \cite{Kulah2022}. Further research in both domains related to hearing aids and energy harvesting could lead to fully autonomous devices in the future.
 \begin{align}
-	\text{max}(E_{hyd}) = p_c \cdot \Delta V_{ear,m} = 0.9\text{mJ}
+	\text{max}(E_{hyd}) = p_c \cdot (\Delta V_{ear})_{max} = 0.9\text{mJ}
 	\label{eq:max_hydraulic_energy}
 \end{align}
 
@@ -294,7 +390,7 @@ The BR mass has two stable equilibrium positions, \mbox{$x_m = x_0$ }and \mbox{$
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A technological solution for the HV is to use a flexible tube buckled by bending. The figure \ref{fig:HV_actuation_detail} schematizes the integration of such HV around the BR environment. The HV is composed of a flexible tube connected to the hydraulic circuit between a rigid mobile and rigid fixed parts. It is in contact with the mass at the T point. The mass motion on the mobile part induces a bending angle $\theta$ around the rotational point $O$ located at the buckled section of the flexible tube. Consequently, a pressure loss is generated through the valve in buckled position. The HV is considered closed when the BR mass is at a stable equilibrium position ($x_m=\pm x_0$) and opened when the mass is at $x_m=0$. This last point will be validated experimentally in section \ref{sec:EXPERIMENTAL APPROACH FOR THE HV DESIGN}. Two HVs symmetrically placed on each side of the $\vec{z}$ axis set up an opened hydraulic circuit on one side and a closed one on the other side, depending on the BR mass position. The HV technological choice is motivated by three major arguments. First, the absence of electromechanical transduction compared to a more usual actuated valve minimizes the energy losses for the valve operation. Then, the post-buckling softening effect of the bent tube minimizes the mechanical impact on the BR mass dynamic operation. Finally, it seems well adapted for integration purpose for millimetric application scale.
+A technological solution for the HV is to use a flexible tube buckled by bending. The figure \ref{fig:HV_actuation_detail} schematizes the integration of such HV around the BR environment. The HV is composed of a flexible tube connected to the hydraulic circuit between a rigid mobile and rigid fixed sheaths. It is in contact with the mass at the T point. The mass motion on the mobile sheath induces a bending angle $\theta$ around the rotational point $O$ located at the buckled section of the flexible tube. Consequently, a pressure loss is generated through the valve in buckled position. The HV is considered closed when the BR mass is at a stable equilibrium position ($x_m=\pm x_0$) and opened when the mass is at $x_m=0$. This last point will be validated experimentally in section \ref{sec:EXPERIMENTAL APPROACH FOR THE HV DESIGN}. Two HVs symmetrically placed on each side of the $\vec{z}$ axis set up an opened hydraulic circuit on one side and a closed one on the other side, depending on the BR mass position. The HV technological choice is motivated by three major arguments. First, the absence of electromechanical transduction compared to a more usual actuated valve minimizes the energy losses for the valve operation. Then, the post-buckling softening effect of the bent tube minimizes the mechanical impact on the BR mass dynamic operation. Finally, it seems well adapted for integration purpose for millimetric application scale.
 
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \section{SYSTEM GLOBAL MODELING}
@@ -354,23 +450,23 @@ The model is based on the following hypotheses:
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%  
 
-By isolating the BR mass and using the Newtons 2$^{nd}$ law, we can express its dynamic equilibrium. The projection on the $\vec{x}$ axis of the resulting expression is given by the equation \ref{eq:OB-GPA}. The BR mechanical equilibrium has a mass inertial term, a non-linear stiffness depending on $x_m$, the stiffness of the hinge $K_{\varphi}$ and viscous losses. The first term introduced by the HV is related to its rotational stiffness $K_{HV}$ and the second term is related to the friction losses at the contact point $T$ (fig. \ref{fig:HV_actuation_detail}). A dry friction model is chosen to describe the dissipation effect of the contact. The rubbing efforts depend on a dry friction coefficient $\nu_f$, related to the nature of the material that are rubbing, and the sign of $\dot{x}_m$. The pressure $p_{ac}$ induces the HC hydraulic force and the coefficient $\mu_c$ models the viscous friction at the sealing gasket. The hydro-mechanical coupling will be detailed later.
+By isolating the BR mass and using the Newtons 2$^{nd}$ law, we can express its dynamic equilibrium. The projection on the $\vec{x}$ axis of the resulting expression is given by the equation \ref{eq:OB-GPA}. The BR mechanical equilibrium has a mass inertial term, a non-linear stiffness depending on $x_m$, the stiffness of the hinge $K_{\varphi}$ and viscous losses. The first term introduced by the HV is related to its rotational stiffness $K_{HV}$ and the second term is related to the friction losses at the contact point $T$ (fig. \ref{fig:HV_actuation_detail}). A dry friction model is chosen to describe the dissipation effect of the contact. The rubbing efforts depend on a dry friction coefficient $\nu$, related to the nature of the material that are rubbing, and the sign of $\dot{x}_m$. The pressure $p_{hc,a}$ induces the HC hydraulic force and the coefficient $\mu_{hc}$ models the viscous friction at the sealing gasket. The hydro-mechanical coupling will be detailed later.
 
-The electrical power generated by the APG is dissipated in a load resistor $R_{ch}$ calculated with an adaptive impedance matching expressed in the equation \ref{eq:R_ch_adaptive_imp} \cite{Liu2013}. 
+The electrical power generated by the APG is dissipated in a load resistor $R_l$ calculated with an adaptive impedance matching expressed in the equation \ref{eq:R_ch_adaptive_imp} \cite{Liu2013}. 
 \begin{equation}
-	R_{ch} = \dfrac{1}{C_p w_0}
+	R_l = \dfrac{1}{C_p w_0}
 	\label{eq:R_ch_adaptive_imp}
 \end{equation}
 Thus, the electrical equation of the APG is :
 \begin{equation}
-	\dfrac{U_p}{R_{ch}} = 
+	\dfrac{U_p}{R_l} = 
 	-\alpha\dfrac{d}{dt}\biggl(2\sqrt{{l_0}^2-x_m^2}\biggr)
 	- C_p\dot{U_p}
 	= \frac{2\alpha x_m\dot{x}_m}{\sqrt{L^2+x_m^2}} - C_p\dot{U_p}
 \end{equation}
 Consequently, the generated power $P_e$ expression is :
 \begin{equation}
-	P_e = \frac{{U_p}^2}{R_{ch}} 
+	P_e = \frac{{U_p}^2}{R_l} 
 	\label{eq:P_e}
 \end{equation} 
 Equation \ref{eq:theta_fonction_de_xm} defines the implicit relation between $\theta$, $x_m$ and the geometrical parameters of the setup. Also, the HV stiffness $K_{HV}$ will depend on its bending angle $\theta$ and the latter will geometrically depend on the BR mass position $x_m$, as showed in figure \ref{fig:HV_actuation_detail}. 
@@ -379,8 +475,8 @@ Equation \ref{eq:theta_fonction_de_xm} defines the implicit relation between $\t
 \begin{equation}
  m \ddot{x}_m =-2K(\sqrt{x_m^2+L^2}-l_0)\tan(\varphi) -\mu \dot{x}_m -\frac{4K_{\varphi}\varphi}{L}
 				\ -2\alpha U_p \tan(\varphi)
-				\ -\dfrac{K_{HV}(x_m)\theta(x_m)}{a} - \nu_f \text{sign}(\dot{x}_m)
-				\  - p_{ac}\ S_{hc} - \mu_{c}\ \dot{x}_m
+				\ -\dfrac{K_{HV}(x_m)\theta(x_m)}{a} - \nu \text{sign}(\dot{x}_m)
+				\  - p_{hc,a}\ S_{hc} - \mu_{c}\ \dot{x}_m
 \label{eq:OB-GPA}
 \end{equation}
 \end{figure*}
@@ -404,12 +500,12 @@ x_m = \Biggl[ \dfrac{D_r(1-\cos(\theta))+2a\sin(\theta)}{2\cos(\theta)}\text{,}
 % 	\begin{dcases}
 % \ddot{x}_m = - \frac{2K{x_0}^2}{mL^2}\Biggl[\biggl(\frac{x_m^2}{{x_0}^2} -1\biggr )+ \dfrac{8K_{\varphi}}{L^2}\Biggr]x_m 
 % 			 - \frac{K_{HV}(x_m)\theta(x_m)}{ma}
-% 			 - \frac{\mu+\mu_c}{m}\dot{x}_m  - \nu_f \text{sign}(\dot{x}_m)
+% 			 - \frac{\mu+\mu_{hc}}{m}\dot{x}_m  - \nu \text{sign}(\dot{x}_m)
 % 			 - \frac{2\alpha U_p\ x_m}{mL}
-% 			 - p_{ac}\ S_{hc} \\
+% 			 - p_{hc,a}\ S_{hc} \\
 % x_m = \dfrac{D_r(1-\cos(\theta))+2a\sin(\theta)}{2\cos(\theta)}\text{,}
 % 				~~ \theta\leq\arctan\biggl(\dfrac{2a}{D_r}\biggr)\\
-% \dfrac{U_p}{R_{ch}} = \frac{2\alpha x_m \dot{x}_m}{L} - C_p\dot{U}_p 
+% \dfrac{U_p}{R_l} = \frac{2\alpha x_m \dot{x}_m}{L} - C_p\dot{U}_p 
 % 	\end{dcases}
 % 	\label{eq:OB+GPA+VH+piston}	
 % % \end{small}
@@ -432,15 +528,15 @@ The following hypotheses will be considered :
 The mechanical equilibrium is :
 \begin{align}
 	\text{Active cylinder ~}& \left\{~
-	F_{br} - p_{ac}\ S_{hc} - \mu_{c}\ \dot{x}_m = 0
+	F_{br} - p_{hc,a}\ S_{hc} - \mu_{c}\ \dot{x}_m = 0
 	\right.
 	\label{eq:equilibre_dynamique_piston_ouvert}\\
 	\text{Inactive cylinder ~}& \left\{~
-	p_{ic}\ S_{hc} - \mu_{c}\ \dot{x}_{ic} = 0
+	p_{hc,i}\ S_{hc} - \mu_{c}\ \dot{x}_{hc,i} = 0
 	\right.
 	\label{eq:equilibre_dynamique_piston_ferme}
 \end{align}
-Where $p_c$ is the HC chamber pressure and $x_{ic}$ the piston position of the inactive HC piston. $F_{br}$ accounts for the OB counter-reaction on the HC. With the QS actuation assumption, it can be derived from equation \ref{eq:OB-GPA} and expressed as follows : 
+Where $p_c$ is the HC chamber pressure and $x_{hc,i}$ the piston position of the inactive HC piston. $F_{br}$ accounts for the OB counter-reaction on the HC. With the QS actuation assumption, it can be derived from equation \ref{eq:OB-GPA} and expressed as follows : 
 \begin{align}
 	F_{br} = -\frac{K\ {x_0}^2}{L^2}\biggl(\frac{x_m^2}{{x_0}^2} -1\biggr)x_m - \biggl( \frac{K_{HV}\theta}{a} \biggr)
 	\label{eq:F_OB_xxxxxx}
@@ -455,11 +551,11 @@ Where $Cf_c=Cf(\pm x_0)$. Regarding the BR symmetry, the relation between $Cf$ a
 By the Bernoulli's equation for a current line, we can express the earplug inside pressure $p_{ear}$ as a function of the hydraulic resistance in the two parallel branches with the equations \ref{eq:Bernoulli_piston_ouvert} and \ref{eq:Bernoulli_piston_ferme}.
 \begin{align}
 	\text{Active branch ~}& \left\{~
-	p_{ear} = \dfrac{1}{a_h}\biggl(p_{ac} + Cf_0 {q_a}^2 \biggr)
+	p_{ear} = \dfrac{1}{a_h}\biggl(p_{hc,a} + Cf_0 {q_a}^2 \biggr)
 	\right.
 	\label{eq:Bernoulli_piston_ouvert}\\
 	\text{Inactive branch ~}& \left\{~
-	p_{ear} = \dfrac{1}{a_h}\biggl(p_{ic} + Cf(x_m) {q_i}^2 \biggr)
+	p_{ear} = \dfrac{1}{a_h}\biggl(p_{hc,i} + Cf(x_m) {q_i}^2 \biggr)
 	\right.
 	\label{eq:Bernoulli_piston_ferme}
 \end{align}
@@ -491,19 +587,19 @@ Moreover, the fluid entering the HC necessarily results on a piston displacement
     %/////////////////////////////////////////////
 The energy system combines many variable parameters. In order to determine them, it is first necessary to identify the fixed technological elements: 
 \begin{itemize}
-	\item The transducer is a APA50XS piezoelectric actuator, from Cedrat Technologies, exploited as a generator \cite{CEDRATTECHNOLOGIES2022}. Regarding the low forces level in the ear canal, we chose a product with low stiffness $K$. Subsequently, by changing the buckling level $\epsilon$, we will be able to manage the BR energy depending on $\text{max}(E_{hyd})$.
-	\item The friction in the HCs must be minimized. However, at the application scale, it is difficult to seal the pistons while providing low operating pressures For the experimental validations purpose, the actuation is therefore ensured by the SMC MQP4-10S HCs which admit operates at 1kPa pressure \cite{SMC2022}. The HC internal diameter $D_{hc}$ is $4$mm.
+	\item The transducer is a APA50XS piezoelectric actuator, from Cedrat Technologies, exploited as a generator \cite{CEDRATTECHNOLOGIES2022}.
+	\item The hydraulic actuation is ensured by the SMC MQP4-10S HCs which admit operates at 1kPa pressure \cite{SMC2022}.
 	\item The usual hearing aid size is $50$x$20$x$10$mm \cite{Quattro2019}. The \mbox{$L=16mm$} parameter is chosen to be consistent with this scale. $\epsilon$ can still be adjusted with $x_0$.
 \end{itemize}
 
 The maximum theoretical energy in a BR through a QS actuation is equal to the height of the potential energy barrier $E_{pb}$ when the mass position varies from \mbox{$x_m=\pm x_0$ } to \mbox{$x_m=0$} (eq. \ref{eq:Ep_bar}). It will be a fraction $n$ of the upper limit of the available hydraulic energy (eq. \ref{eq:max_hydraulic_energy}) where $n$ has to be maximized. 
 \begin{equation}
-	E_{pb} = \dfrac{K x_0^4}{3L^2} = n(p_c \cdot \Delta V_{ear,m})
+	E_{pb} = \dfrac{K x_0^4}{3L^2} = n(p_c \cdot (\Delta V_{ear})_{max})
 	\label{eq:Ep_bar}
 \end{equation}
 The system is designed by setting the two coupled requirements allowing the system operation. First, the available swept volume must be enough to ensure the HC stroke from its equilibrium position until the BR mass reaches \mbox{$x_m=0$} (eq. \ref{eq:contrainte_course}). Then, the BR mechanical force on $\vec{x}$ axis reaches a maximum value $F_c$ when \mbox{$ x_m = x_c = \dfrac{x_0}{\sqrt{3}}$}. At this point, a maximum pressure is induced in the earplug and so the equation \ref{eq:contrainte_confort} has to be verified to guarantee the pressure limit. If not, $\epsilon$ can be decreased, diminishing the extracted energy.
 \begin{empheq}[left=\empheqlbrace]{align} 
-	\Delta V_{ear,m} = a_h\ S_{hc}\  x_{c0}
+	(\Delta V_{ear})_{max} = a_h\ S_{hc}\  x_{c0}
 	\label{eq:contrainte_course}\\
 	p_c > \frac{1}{a_h} \frac{F_c}{S_{hc}} ~~~~ \text{with}~~~~ F_c = \dfrac{4Kx_0^3}{3\sqrt{3}L^2}
 	\label{eq:contrainte_confort}
@@ -523,9 +619,7 @@ The numerical resolution of the differential equations can provide the minimum v
 	\subsection{Simulation results}	
 	\label{subsec:Simulation results}
 	%/////////////////////////////////////////////
-The numerical model aims to demonstrate the theoretical operation of the new concept of harvester. By imposing a volume variation $\Delta V_{ear}(t)$ recorded during the mastication cycle of a human subject (fig. \ref{fig:deltaV_ear}), the numerical model gives the theoretical temporal evolution of the hydraulic, mechanic and electric coupled parameters defining the harvester. 
-
-$r_{Cf}$ has been increased until it was sufficient to prioritize the flow through the active HV. The mastication cycle is identically quadrupled in order to test the system cycling robustness. The earplug is assumed to be a perfect flow rate source. The fixed, designed and resulting theoretical parameters of the simulated global model are presented in tables \ref{tab:parametres électromécaniques} and \ref{tab:parametres_hydrauliques}.
+By imposing a volume variation $\Delta V_{ear}(t)$ recorded during the mastication cycle of a human subject (fig. \ref{fig:deltaV_ear}), the numerical model gives the theoretical temporal evolution of the hydraulic, mechanic and electric coupled parameters defining the harvester. $r_{Cf}$ has been increased until it was sufficient to prioritize the flow through the active HV. The mastication cycle is identically quadrupled in order to test the system cycling robustness. The earplug is assumed to be a perfect flow rate source. The fixed, designed and resulting theoretical parameters of the simulated global model are presented in tables \ref{tab:parametres électromécaniques} and \ref{tab:parametres_hydrauliques}.
 
 Figure \ref{fig:positions+DeltaV_debits_pear} shows the simulation results, for four identical consecutive mastication cycles, of the mass and the HC pistons positions overplayed with $\Delta V_{ear}(t)$, the flow rates in the two parallel branches and the earplug pressure. The two different sides are identified on the curves by the indexes $t$ for \emph{"top"} side ($x>0$) and $b$ for \emph{"bottom"} side ($x<0$), knowing that the gravity influence is not considered. The same figure shows a focused view on the two main phases of the harvester operation during the actuation by the \emph{"bottom"} HC. The simulation begins with the following initial conditions:
 \begin{itemize}
@@ -535,7 +629,7 @@ Figure \ref{fig:positions+DeltaV_debits_pear} shows the simulation results, for 
 	\item A mastication occurs.
 \end{itemize}
 
-The first phase consists on pushing on the BR mass to store potential energy, until the mass reaches $x=0$. During this phase, the fluid exciting the earplug is mostly guided toward the \emph{"bottom"} HC and the earplug pressure is generated by the BR counter-reaction force. The second phase begins after the mass crosses the $x_m=0$ position. The \emph{"top"} HV then opens ($Cf_{top} = Cf_0$) and the \emph{"bottom"} side HV closes ($Cf_{bot} = Cf(x_m)>Cf_0$). The fluid is then preferably guided toward the \emph{"top"} side and the contact between the mass and the HCs is non-existent. The mass goes oscillate around the opposite stable equilibrium position $x_0$ while a part on the resonatory mechanical energy is converted in electricity by the APG. The flow rate goes toward the right piston when $r_{Cf}$ is set at a minimum value of \mbox{$(r_{Cf})_{min}=26$}. 
+During a first phase the BR mass is pushed until it reaches $x=0$. The fluid exciting the earplug is mostly guided toward the \emph{"bottom"} HC and a pressure is induced in the earplug by the BR counter-reaction force. The mass then crosses $x_m=0$ and the second phase begins. The \emph{"top"} HV then opens ($Cf_{top} = Cf_0$) and the \emph{"bottom"} side HV closes ($Cf_{bot} = Cf(x_m)>Cf_0$). The fluid is then guided toward the \emph{"top"} side and there is no contact between the mass and a HC. The mass oscillates around $x_m=x_0$and the energy is harvested by the APG. The adequate hydraulic actuation making the fluid flow toward the right HC is achievable when \mbox{$(r_{Cf})_{min}=26$}. 
 
 Figure \ref{fig:positions_Up_puissances_energies} additionally presents the different positions of the moving components, the APG voltage, the source and harvested powers and the different energies entering and exciting the system. The theoretical global efficiency of the harvester is evaluated at \mbox{$\eta_g=76$\%} with 20µJ harvested from one mastication. The energy losses are mostly located in the BR stage and depend on the quality factor $Q$ that has been set in accordance with previous work results on similar BR architectures \cite{Liu2013}. The energy source depends on the comfort pressure level $p_c$ that is set to 1kPa here, i.e. a fraction of the theoretical maximal value of $12$kPa \cite{Bouchard-Roy2020}. The harvester efficiency could lead to a theoretical maximum of $684$µJ extractable from the ear canal.
 
@@ -569,9 +663,9 @@ $x_0$				&	0.49			& [$mm$] 				\\ \hline
 $L$					&	16.0			& [$mm$] 				\\ \hline
 $m$					&	5.88			& [$g$] 				\\ \hline
 $x_{c0}$			&	0.69			& [$mm$] 				\\ \hline
-$R_{ch}$			&	6.39			& [$k\Omega$] 			\\ \hline
+$R_l$			&	6.39			& [$k\Omega$] 			\\ \hline
 $\alpha$			&   0.105			& [$N/V$] 				\\ \hline
-$C_0$	   			&	0.25			& [$\mu F$]				\\ \hline
+$C_p$	   			&	0.25			& [$\mu F$]				\\ \hline
 $Q$ 				&	50				& [-] 					\\ \hline
 $\eta_g$			& 	76				& [$\%$]		\\ 
 \bottomrule
@@ -743,7 +837,7 @@ The secondary buckling modes absorb mechanical energy that is not transmitted to
 	\subsection{Experimental characterizations}	
 	\label{subsec:Experimental characterizations}
     %/////////////////////////////////////////////
-The BR has been fabricated and mounted and the APG has been implemented on it. The experimental test bench for the electromechanical characterizations of the resultant converter is presented on figure \ref{fig:BDT_OB+GPA}. An additional blade is mounted with the APG in order to prevent its rotation around any axis. A micrometric screw helps to set the initial structural buckling level $x_0$ ($\pm 10$µm). The bearing decouples the rotation of the screw with the rotation of the blade structure in order to prevent unwanted torsional stress. Two symmetrically mounted masses are added on the initial central mass with a 45\degree{} machined plane. The latter receives and reflects the displacement sensor emitted laser along the $\vec{z}$ axis and allows to get the $x_m$ position of the mas along $\vec{x}$ axis ($\pm 10$µm). The APG power is dissipated in the $R_{ch}$ resistor and the $U_p$ tension ($\pm 1$mV), along with $x_m$, are monitored through a data acquisition card NI-USB 6212 and a LabVIEW interface. Finally, the two HC plungers actuate the mass from one stable equilibrium position to the other.
+The BR has been fabricated and mounted and the APG has been implemented on it. The experimental test bench for the electromechanical characterizations of the resultant converter is presented on figure \ref{fig:BDT_OB+GPA}. An additional blade is mounted with the APG in order to prevent its rotation around any axis. A micrometric screw helps to set the initial structural buckling level $x_0$ ($\pm 10$µm). The bearing decouples the rotation of the screw with the rotation of the blade structure in order to prevent unwanted torsional stress. Two symmetrically mounted masses are added on the initial central mass with a 45\degree{} machined plane. The latter receives and reflects the displacement sensor emitted laser along the $\vec{z}$ axis and allows to get the $x_m$ position of the mas along $\vec{x}$ axis ($\pm 10$µm). The APG power is dissipated in the $R_l$ resistor and the $U_p$ tension ($\pm 1$mV), along with $x_m$, are monitored through a data acquisition card NI-USB 6212 and a LabVIEW interface. Finally, the two HC plungers actuate the mass from one stable equilibrium position to the other.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 	\centering
@@ -906,7 +1000,7 @@ $v_0$ [mm/s] 					& \textcolor{red}{10}		& \textcolor{red}{65}  		\\ \hline
 $Q$	[~~] 						& 		24.0		 		& 5.0     					\\ \hline
 $k^2_{sys}$ [\%] 				& 		1.25		 		& \textcolor{red}{1.25}   	\\ \hline
 $\eta_{ob}$ [\%] 				& 		11.9		 		& 2.6   					\\ \hline	
-$R_{ch}$ [k$\text{\ohm}$] 		&	\textcolor{red}{15.5}	& \textcolor{red}{15.5}    	\\ \hline		
+$R_l$ [k$\text{\ohm}$] 		&	\textcolor{red}{15.5}	& \textcolor{red}{15.5}    	\\ \hline		
 $m$	[g]						    &	\textcolor{red}{5.88}	& 9.00   					\\ \hline	
 $f_0$ [Hz]						&		32.9				& 27.9   					\\
 \bottomrule	
