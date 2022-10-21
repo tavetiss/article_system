@@ -305,17 +305,12 @@ Electromagnetic transducers are usually used to harvest energy from kinetic (vib
 
 Piezoelectric ceramics appear like good candidates for mechanical energy transduction at small scales, but their high stiffness can limit their use on soft materials as human tissues. Mechanical amplifiers like flextensional structures can nevertheless be used to adapt the stress/displacement levels between the energy source and the transducing stiff material \cite{Abdelnaby2016}. Also, the best energy conversion efficiency for piezoelectric ceramics is achieved for at the transducer resonance. As the mean mastication frequency is estimated to \mbox{$1.57$Hz}, the harvesting system could benefit from a frequency-up conversion stage \cite{Ashraf2011,Peng2021} to increase the frequency of the energy source and so the energy conversion efficiency of the transducer. A majority of the frequency-up systems with piezoelectric transducers use mechanical stops with piezoelectric ceramic cantilevers to reach high frequencies with a good mechanical coupling \cite{Edwards2013,Gu2011,Lee2007}. Stoppers however dissipate energy. Alternative solutions use mechanically bistable resonators (BR) \cite{Vocca2012}. Recent works led to the development and optimization of bistable structures integrating stacked piezoelectric ceramics inside flextensional elastic structures \cite{Huguet2017}. They show enhanced performances due to high electromechanical coupling. The electromechanical converter, composed of a BR with piezoelectric ceramics in a flextensional structure, theoretically offers higher energy conversion efficiency compared to low frequency solutions and/or flexible electromechanical transducers \cite{Abdelnaby2016,Peng2021}.
 
-The hydraulic-mechanic interface can be a hydraulic cylinder (HC). It can store the energy in the frequency-up converter by actuating it at the frequency of human mastication. The amount of extractable energy from the hydraulic source will then depend on the mechanical stage behavior. Before being converted in electricity, the energy is in fact stored in a mechanical potential reservoir. During the low frequency actuation, the forces applied on each side of the HC piston are equal. Equation \ref{eq:hydraulic-mechanic_interface} models the hydraulic-mechanic interface with $x_{m}$ and $ S_{hc}$ being respectively the dynamic mass position on the $\vec{x}$ axis and the HC internal section.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!htbp]
-	\centering
-	\captionsetup{justification=centering}
-	\includegraphics[trim={19.7cm 0cm 0cm 13cm},clip, width=0.7\linewidth]{figures/hydraulic_mechanic_interface.pdf}
-	\caption{Hydraulic source exploitation depending on the mechanical load}
-	\label{fig:hydraulic_mechanic_interface}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Therefore, the potential energy stored in a linear resonator from the ideal hydraulic source previously described can be expressed as follows :
+The hydraulic-mechanic interface can be a hydraulic cylinder (HC). It can store the energy in the frequency-up converter by actuating it at the frequency of human mastication. The amount of extractable energy from the hydraulic source will then depend on the mechanical stage behavior. Before being converted in electricity, the energy is in fact stored in a mechanical potential reservoir. During the low frequency actuation, the forces applied on each side of the HC piston are equal. Equation \ref{eq:hydraulic-mechanic_interface} models the hydraulic-mechanic interface with $x_{m}$ and $ S_{hc}$ being respectively the dynamic mass position on the $\vec{x}$ axis and the HC internal section. 
+\begin{equation}
+	\Delta p_{ear}S_{hc} = K_s x_m
+	\label{eq:hydraulic-mechanic_interface}
+\end{equation}
+Therefore, the potential energy stored in a linear resonator from the ideal hydraulic source previously described can be expressed as :
 \begin{equation}
 	Ep_{lin} = \dfrac{K_s\ x_{m}^2}{2} = \dfrac{\Delta p_{ear} \Delta V_{ear}}{2}
 	\label{eq:best_linear_soution}
@@ -691,7 +686,7 @@ The simulated model shows promising efficiency (tab. \ref{tab:parametres électr
 \label{sec:EXPERIMENTAL CHARACTERIZATIONS OF THE ELECTROMECHANICAL CONVERTER}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
     %///////////////////////////////////////////// 
-	\subsection{The electromechanical converter presentation}	
+	\subsection{Electromechanical converter presentation}	
 	\label{The electromechanical converter presentation}
     %/////////////////////////////////////////////
 The BR is fabricated by electrical discharge machining (EDM) in a monobloc structure. This method optimizes the resonator quality factor by avoiding assemblies. Figure \ref{fig:BDT_OB+GPA} shows the BR mounted on the experimental test bench. The 8 hinges are realized by 4 buckled blades (BB) while a vertical guide beam (GB) ensures the APG mounting and avoids any of its rotations. The local thickenings at the midspan of the blades are intended to facilitate the fabrication. They also maximize the BB compression stiffness that maximizes harvester efficiency, as detailed in the following section. The geometrical and mechanical parameters of the BR are referenced in table \ref{tab:parametres_lames}. The following sections describe the design method that led to the dimensions of the blades that depend on our needs.
@@ -709,9 +704,7 @@ Dimensions of a buckled beam  & $L$ x $l$ x $e$           & 16x0.07x1.2 [mm] \\
 Dimensions of the guide beam  & $L_{v}$ x $l_{v}$ x $e$   & 17.5x0.07x1.2 [mm] \\
 % Mounted GB dimensions          & $L_{v2}$ x $l_{v2}$ x $e$ & 48x0.1x1.2 [mm] \\
 Soft hinge stiffness		   & $K_{\varphi}$             & 0.006 [N.m/rad] \\
-Stiffness of the guide beam along $\vec{y}$  & $K_{gb}$   & 190 [N/m] \\
-Stiffness of 4 buckled blades along $\vec{z}$ & $K_{bb}$   & 1402 [kN/m] \\  
-Stiffness of the APG along $\vec{z}$          & $K$        & 252  [kN/m]\\
+Stiffness of the guide beam along $\vec{y}$  & $K_{gb}$    & 190 [N/m] \\
 			\bottomrule
 		\end{tabular}}
 	\caption{Definitions and values of the fabricated BR}
@@ -750,12 +743,12 @@ Where $\alpha_{eq}$ is the equivalent piezoelectric force factor (PFF) given by 
 \end{equation}
 Equations \ref{eq:eta_ob} - \ref{eq:K_eq} demonstrate that in order to maximize $\eta_{ob}$ we must make sure that $K_{bb} \gg K \gg K_{gb}$. If the condition is respected, then $K_{eq}$ can be assimilated to $K$ and $\alpha_{eq} \approx \alpha$. 
 
-In order to preserve an adequate mechanical transmission from the mass to the APG, we must ensure that no secondary buckling mode does appear on the BBs during the BR operation. When the mass crosses the unstable \mbox{$x_m=0$} position, the compression force $F_{z,0}$ induces the maximum stress on the BB. $F_{z,0}$ can be expressed by equation \ref{eq:Fz0_flambement} relying on figure \ref{fig:schema_cinematique1}.
+When the mass crosses the unstable \mbox{$x_m=0$} position, the compression force $F_{z,0}$ induces the maximum stress on the BB. $F_{z,0}$ can be expressed by equation \ref{eq:Fz0_flambement}. $K_{bb}$ can then be assured if the compression efforts absorbed by the BBs do not induce any secondary buckling mode during the BR operation. 
 \begin{equation}
 	F_{z,0} = 2K \biggl( \sqrt{x_0^2+L^2}-L \biggr)
 	\label{eq:Fz0_flambement}
 \end{equation}
-The problem was treated with a FEM model and the results are summarized through the figure \ref{fig:buckling_limit}. It reveals that the first secondary undesirable modes appear for $F_{z,0}=6.4$N. The secondary buckling modes absorb mechanical energy that is not transmitted to the APG and therefore can not be converted in electricity. Therefore, it is preferable to avoid them by establishing a buckling height domain for the fabricated BR, as presented on figure. The preliminary simulated case presented in the previous section is well located in the preferable domain where there is no undesirable buckling modes. Moreover, the force absorbed by the APG is well under the maximal limit of 18N from which the device could be damaged.
+The beams design was obtained using a FEM model which result is summarized in the figure \ref{fig:buckling_limit}. It reveals that the first secondary undesirable buckling mode appears for $F_{z,0}=6.4$N. If it happens, the compression force is not transmitted from the mass to the APG. $K_{bb}$ is then not assured and therefore $k^2_{sys}$ is diminished (eq. \ref{eq:k2_sys}). We establish a buckling height domain (fig. \ref{fig:buckling_limit}) to avoid their appearance for the fabricated BR. The preliminary simulated case presented in the previous section is in the preferable domain. Moreover, the force absorbed by the APG is assured to be under the maximal limit of 18N from which the device could be damaged.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 	\centering
@@ -771,7 +764,7 @@ The problem was treated with a FEM model and the results are summarized through 
 	\subsection{Experimental characterizations}	
 	\label{subsec:Experimental characterizations}
     %/////////////////////////////////////////////
-The experimental test bench for the electromechanical characterizations of the electromechanical converter is presented on figure \ref{fig:BDT_OB+GPA}. An additional beam is mounted with the APG in order to prevent its rotation around any axis. A micrometric screw helps to set the initial structural buckling level $x_0$ ($\pm 10$µm). The bearing decouples the rotation of the screw with the rotation of the beam structure in order to prevent unwanted torsional stress. Two symmetrically mounted masses are added on the initial central mass with a 45\degree{} machined plane. The latter receives and reflects the displacement sensor emitted laser along the $\vec{z}$ axis and allows to get the $x_m$ position of the mas along $\vec{x}$ axis ($\pm 10$µm). The APG power is dissipated in the $R_l$ resistor and the $U_p$ tension ($\pm 1$mV), along with $x_m$, are monitored through a data acquisition card NI-USB 6212 and a LabVIEW interface. Finally, the two HC plungers actuate the mass from one stable equilibrium position to the other.
+The experimental test bench for the electromechanical characterizations of the electromechanical converter is presented on figure \ref{fig:BDT_OB+GPA}. An additional beam is mounted with the APG in order to prevent its rotation around any axis. A micrometric screw sets the initial buckling level $x_0$ ($\pm 10$µm). The bearing decouples the rotation of the screw with the beam structure in order to prevent unwanted torsional stress. The central mass $\degree{45}$ place receives and reflects the displacement sensor emitted laser along the $\vec{z}$ axis and allows to get the $x_m$ position. The APG power is dissipated in the $R_l$ resistor and the $U_p$ voltage ($\pm 1$mV), along with $x_m$, are monitored through a data acquisition card NI-USB 6212 and a LabVIEW interface. Finally, the two HC plungers actuate the mass from one stable equilibrium position to the other. The HV mechanical influence is not considered here in order to focus on the electromechanical converter dynamic behavior. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 	\centering
@@ -781,7 +774,8 @@ The experimental test bench for the electromechanical characterizations of the e
 	\label{fig:BDT_OB+GPA}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The HV mechanical influence is not considered in order to isolate the electromechanical converter dynamic behavior. The mass is guided by a HC from a stable equilibrium position until it reaches \mbox{$x_m=0$}, and then oscillates around the opposite stable equilibrium position. The experimental data was used to identify and recalibrate the following electromechanical parameters of the harvester, through iterative simulations of the global \mbox{model :} $Q$, $f_0$, $K$ and $k_{sys}^2$ (tab. \ref{tab:parametres_lacher_free}). The experimental oscillation frequency $f_0$ and energy conversion efficiency $\eta_{br}$ can also be calculated.
+
+The mass is pushed by a HC from a stable equilibrium position until it reaches \mbox{$x_m=0$}, and then oscillates around the opposite stable equilibrium position. The experimental data have been fitted on the oscillation phase of the simulated global model as the test bench does not reproduce the hydraulic circuit behavior yet. This data was used to identify and recalibrate the following electromechanical parameters of the harvester, through iterative simulations of the global \mbox{model :} $Q$, $f_0$, $K$ and $k_{sys}^2$ (tab. \ref{tab:parametres_lacher_free}).  The experimental oscillation frequency $f_0$ and energy conversion efficiency $\eta_{br}$ were also calculated.
 %%%%%%%%%%%%%%%%%
 \begin{table}[!htbp]
 \centering
@@ -797,7 +791,8 @@ The HV mechanical influence is not considered in order to isolate the electromec
 	$Q$                       & 50.0                  & 30.0 		  	\\  
 	$f_0$                     & 47.0 Hz               & 27.9 Hz  		\\
 	$x_0$                     & 0.49 mm               & 0.50 mm    		\\
-	$K$                       & 2.56e5 N/m            & 0.85e5 N/m 		\\
+	$K_{eq}$                  & 2.56e5 N/m            & 0.85e5 N/m 		\\
+	$K_{bb}$                  & 14.2e5 N/m            & 1.27 N/m 		\\
 	${k^2_{sys}}$             & 16 \%                 & 1.25 \% 		\\
 	$\eta_{br}$               & 75 \%                 & 12.9 \%   		\\
 	\bottomrule
@@ -806,29 +801,30 @@ The HV mechanical influence is not considered in order to isolate the electromec
 	\label{tab:parametres_lacher_free}
 \end{table} 
 %%%%%%%%%%%%%%%%%%%%%  
-    %///////////////////////////////////////////// 
 
+Experimental $K_{bb}\approx K/2$ can be calculated from the identified $K_{eq}$ with equation \ref{eq:K_eq}, supposing $K_{gb}$ negligible (tab. \ref{tab:parametres_lames}).
+    %///////////////////////////////////////////// 
 	\subsection{Analyze and summary}	
 	\label{subsec:Analyze and summary}
     %/////////////////////////////////////////////
-The experimental dynamic behavior of the converter is predictable by the equations established after identification of the system parameters listed in table \ref{tab:parametres_lacher_free}. However, the performances of the experimental prototype are below the theoretical expectations (tab. \ref{tab:parametres électromécaniques}). The efficiency drop is consistent with the quality factor and the electromechanical coupling coefficient drop (eq. \ref{eq:eta_ob}). 
+The experimental dynamic behavior of the converter is predictable by the equations established after identification of the system parameters listed in table \ref{tab:parametres_lacher_free}. However, the performances of the experimental prototype are below the theoretical expectations (tab. \ref{tab:parametres électromécaniques}). The efficiency drop is mainly associated with the quality factor and the electromechanical coupling coefficient drop (eq. \ref{eq:eta_ob}). 
 
-Two major factors could have led to such results. First, the quality factor decrease could be related to the general non-permanent assembly that uses non-perfect embeddings with fixation screws and a mobile micrometric screw. Then, small undulations have been observed on the BBs after fabrication and could also have gotten worse during the manipulation. These undulations reduce $K_{bb}$, diminishing $k^2_{sys}$ according equations \ref{eq:k2_sys}-\ref{eq:K_eq}. Improvements are proposed later in order to reduce the energy losses during this stage.
+The quality factor decrease could be related to the general non-permanent assembly that uses non-perfect embeddings with fixation screws and a mobile micrometric screw. The small undulations have been observed on the BBs after fabrication and could also have gotten worse during the manipulation. These undulations aid the appearance of secondary buckling modes and contribute to reduce $K_{bb}$, diminishing $k^2_{sys}$ according equations \ref{eq:k2_sys}-\ref{eq:K_eq}. Improvements are proposed later in order to reduce the energy losses during this stage.
 
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \section{EXPERIMENTAL APPROACH FOR THE HV \mbox{DESIGN}}
 \label{sec:EXPERIMENTAL APPROACH FOR THE HV DESIGN}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-In order to validate the feasibility of the HVs we adopted an experimental approach to find the material and geometrical parameters of the tube capable to achieve $(r_{Cf})_{min}=26$ (tab. \ref{tab:parametres_hydrauliques}). A HV composed of a kapton tube \cite{Dupont2012} of initial diameter $D_t=1.05$mm and thickness $th_t=25$ µm was found to meet this hydraulic criteria. It will be called HV$_{T1}$ afterwards. 
+In order to validate the feasibility of the HVs we adopted an experimental approach to find the material and geometrical parameters of the tube to achieve $(r_{Cf})_{min}=26$ (tab. \ref{tab:parametres_hydrauliques}). A buckled kapton tube \cite{Dupont2012} of internal diameter $D_t=1.05$mm and thickness $th_t=25$ µm was found to meet this hydraulic criteria. It will be called HV$_{T1}$ afterwards. 
     %///////////////////////////////////////////// 
 	\subsection{HV hydraulic experimental characterization}	
 	\label{subsec:HV hydraulic test bench presentation}
     %/////////////////////////////////////////////
-Figure \ref{fig:essais_hydraulique_VH} shows the HV$_{T1}$ during the experimental characterizations on the hydraulic test bench. An electromechanical rotary plate is monitored on LabVIEW interface and imposes the bending angle $\theta$. A liquid filled syringe is emptied through the HV$_{T1}$ and its exciting flow rate $q_{ser}$ is deduced by tracking its moving piston displacement. The pressure loss coefficient $Cf_{T1}$ is calculated as \mbox{follows :}
+Figure \ref{fig:essais_hydraulique_VH} shows the HV$_{T1}$ during the experimental characterizations on the hydraulic test bench. An electromechanical rotary plate is monitored on LabVIEW interface and imposes a bending angle $\theta$. A liquid filled syringe fixes the fluid flow through the HV$_{T1}$ and $q_{ser}$ is evaluated by tracking the syringe piston displacement. The pressure loss coefficient $Cf_{T1}$ is calculated as \mbox{follows :}
 \begin{equation}
-	Cf_{T1} = \dfrac{p_1-p_2}{q_{ser}^2}
+	Cf_{T1} = \dfrac{p_1-p_2}{q_{syr}^2}
 \end{equation}
-Where $p_1$ and $p_2$ are respectively the fluid pressure monitored before entering and after exciting the HV$_{T1}$.
+Where $p_1$ and $p_2$ are the fluid pressure monitored before entering and after exciting the HV$_{T1}$ respectively.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{figure*}[!htb]
 \begin{center}
@@ -839,31 +835,33 @@ Where $p_1$ and $p_2$ are respectively the fluid pressure monitored before enter
 \end{center}	
 \end{figure*}    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-The emptying procedure was repeated 7 times for $\theta$ varying from $0^{\circ}$ to $60^{\circ}$ with $10^{\circ}$ increments. The experimental results are plotted on figure \ref{fig:resultats_essais_hydraulique_VH_D1mm}.
+The tests were repeated 7 times for $\theta$ varying from $0^{\circ}$ to $60^{\circ}$ with $10^{\circ}$ increments. The experimental results are plotted on figure \ref{fig:resultats_essais_hydraulique_VH_D1mm}.
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]
 \centering
 	\captionsetup{justification=centering}
-	\includegraphics[trim={15.5cm 0cm 0cm 3.6cm},clip,width=0.6\linewidth]{figures/resultats_essais_hydraulique_VH_D1mm.pdf}
+	\includegraphics[trim={15.5cm 0cm 0cm 3.6cm},clip,width=0.7\linewidth]{figures/resultats_essais_hydraulique_VH_D1mm.pdf}
 	\caption{Hydraulic characterization of the HV$_{T1}$.}
 	\label{fig:resultats_essais_hydraulique_VH_D1mm}
 \end{figure}
 %%%%%%%%%%%%%%%%
-The hydraulic restriction coefficient of the HV$_{T1}$ has been evaluated to 60 if the opened angle $\theta_0=20^{\circ}$ and the closed angle $\theta_c = 60^{\circ}$. Its hydraulic behavior respects the minimum criteria of \mbox{$(r_{Cf})_{min}=26$} and therefore can ensure the adequate hydraulic commutation to cycle the BR mass motion. In order to set an optimal angle operation range $\Delta\theta$ we must investigate the evolution $K_{HV}(\theta)$. This matter will not be discussed in this paper. However, $\Delta\theta$ must be minimized in order to limit the energy needed for the HVs operation and also, $\theta_0$ must be minimized to reduce the hydraulic energy losses in the active branch.
+The hydraulic restriction coefficient of the HV$_{T1}$ has been evaluated to $r_{Cf}60$ if the opened angle $\theta_0=20^{\circ}$ and the closed angle $\theta_c = 60^{\circ}$. Its hydraulic behavior respects the minimum criteria of \mbox{$(r_{Cf})_{min}=26$} and therefore can ensure the adequate hydraulic commutation to cycle the BR mass motion. In order to set an optimal angle operation range $\Delta\theta$ we must investigate the evolution $K_{HV}(\theta)$. This matter will not be discussed in this paper. However, $\Delta\theta$ must be minimized in order to limit the energy needed for the HVs operation and also, $\theta_0$ must be minimized to reduce the hydraulic energy losses in the active branch.
 
-The following section presents the recalibrated harvester model using the hydraulic characterization data of the HV$_{T1}$ and the electromechanical experimental data of the BR with the APG.
+The following section presents the harvester model using the hydraulic characterization data of the HV$_{T1}$ and the electromechanical experimental data of the BR with the APG.
 
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-\section{MODEL RECALIBRATION WITH EXPERIMENTAL DATA}
+\section{GLOBAL MODEL RECALIBRATION WITH \mbox{EXPERIMENTAL} DATA}
 \label{sec:MODEL RECALIBRATION WITH EXPERIMENTAL DATA}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 
-The experimentally identified parameters have been implemented in the global multiphysic coupled model to enhance its predictability and to evaluate the harvester performances. The last matter is achieved by evaluating the mechanical influence of the HV$_{T1}$ through an experimental approach in order to identify the energy losses at the HV-mass contact point (T on figure \ref{fig:HV_actuation_detail}). 
+The experimentally identified parameters have been implemented in the global multiphysic coupled model to enhance its predictability and to evaluate the harvester performances. The mechanical influence of the HV$_{T1}$ is identified with an experimental approach characterizing the energy losses at the HV-mass contact point (T on figure \ref{fig:HV_actuation_detail}). 
 
 	%/////////////////////////////////////////////
-	\subsection{Experimental evaluation of the mechanical impact of HV$_{T1}$}
+	\subsection{Recalibration with release trials}
 	%/////////////////////////////////////////////
-The HV$_{T1}$ has been mounted on the experimental test bench presented on figure \ref{fig:BDT_OB+GPA} and two experimental trials have been performed to identify the HV mechanical influence : free oscillations and oscillations with HV$_{T1}$ presence, during a harvesting phase. The mass is initially set on $x_m=x_0$ and then pushed toward $x_0$. The HV$_{T1}$ internal pressure is adjusted to 30kPa with an oil column, in order to be consistent with the simulated case (tab. \ref{tab:parametres_hydrauliques}). The oscillation phase begins when the mass crosses the $x_m=0$ position. In order to set $\theta_0$ we add an angle stopper that is shown in figure \ref{fig:contact_M_VH_lachers}. $\theta_c$ is then reached when the oscillations stop at $x_m=x_0$. The mass position and the APG tension are monitored during the tests.
+The HV$_{T1}$ has been mounted on the experimental test bench presented on figure \ref{fig:BDT_OB+GPA} and two experimental trials have been performed to identify the HV mechanical influence : free oscillations and oscillations with HV$_{T1}$ presence, during a harvesting phase. Thus, the dynamics difference between the two tests focus on the HV$_{T1}$ mechanical influence. 
+
+The mass is initially set on $x_m=x_0$ and then pushed toward $x_0$. The HV$_{T1}$ internal pressure is adjusted to 30kPa with an oil column, in order to be consistent with the simulated case (tab. \ref{tab:parametres_hydrauliques}). The oscillation phase begins when the mass crosses the $x_m=0$ position. In order to set $\theta_0$ we add two angle stoppers illustrated on figure \ref{fig:contact_M_VH_lachers}. $\theta_c$ is then reached when the oscillations stop at $x_m=x_0$. The mass position and the APG tension are monitored during the tests.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \begin{figure}[!htbp]
 	\begin{center}
@@ -875,15 +873,9 @@ The HV$_{T1}$ has been mounted on the experimental test bench presented on figur
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The global model parameters listed in table \ref{tab:parametres lacher tube} are recalibrated for both test configurations by iterative simulations. 
-The simulations with the recalibrated parameters and the experimental data are superposed on figure \ref{fig:BDT_OB+GPA} concerning the harvesting phase of both configurations. 
+The global model parameters listed in table \ref{tab:parametres lacher tube} are recalibrated for both test configurations by iterative simulations. The simulations with the recalibrated parameters and the experimental data are superposed on figure \ref{fig:BDT_OB+GPA} concerning the harvesting phase of both configurations. 
 
-After recalibration, the low error between the simulated and the experimental data verify that the electromechanical dynamics behavior of the harvester is theoretically predictable by the established model. 
-The comparison between the results of the two tests reveal the mechanical impact of the HV. 
-The stiffness at $\theta_c$ is calculated with $x_0$ evolution between the two tests and equation \ref{eq:OB-GPA}. 
-The quality factor decrease is a result of the rubbing between the mass and the HV and diminishes the BR energy conversion efficiency.
-The HV adds a supplementary dynamic mass in the BR.
-The electromechanical coupling coefficient is not influenced by the HV presence, which is consistent with equation \ref{eq:k2_sys}.  
+After recalibration, the low error between the simulated and the experimental data verify that the electromechanical dynamics behavior of the harvester is theoretically predictable by the established model. The HV$_{T1}$ stiffness shifts $x_0$ toward $0$ and its value at $\theta_c$ is evaluated with the shift gap and equation \ref{eq:OB-GPA}. The HV$_{T1}$ adds a supplementary dynamic mass in the BR and changes the oscillation frequency. The electromechanical coupling coefficient is not influenced by the HV presence. The quality factor decreases and the dry friction coefficient is calculated from the drop. Moreover, $a$ and $\Delta\theta$ are graphically evaluated.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!htbp]	
 \captionsetup{justification=centering}
@@ -901,10 +893,6 @@ The electromechanical coupling coefficient is not influenced by the HV presence,
 	\label{fig:recalage_global}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-	%/////////////////////////////////////////////
-	\subsection{Recalibrated coupled model}
-	%/////////////////////////////////////////////
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[!htbp]
 	\centering
@@ -913,7 +901,7 @@ The electromechanical coupling coefficient is not influenced by the HV presence,
 \toprule
 \multicolumn{1}{c}{\textbf{Parameter}}	&
 \multicolumn{1}{c}{\textbf{BR}} 	& 
-\multicolumn{1}{c}{\textbf{BR+VH$_{T1}$}}  \\
+\multicolumn{1}{c}{\textbf{BR+HV$_{T1}$}}  \\
 \midrule
 $D_r$ [mm] 						& \cellcolor{ashgrey} 		& {4} 		\\ \hline
 $\Delta\theta$ [deg] 			& \cellcolor{ashgrey} 		& {{[$\approx$ 19 ; $\approx$ 36]}} \\ \hline
@@ -924,7 +912,7 @@ $K$ [N/m] 						&	84480			  	 	&  84480  			\\ \hline
 $x_0$ [mm] 						& {0.59}					& {0.50}  	\\ \hline
 $Q$	[-] 						& 		24.0		 		& 5.0     					\\ \hline
 $k^2_{sys}$ [\%] 				& 		1.25		 		& {1.25}   	\\ \hline
-$\eta_{br}$ [\%] 				& 		11.9		 		& 2.6   \\ \hline	
+$\eta_{br}$ [\%] 				& 		12.9		 		& 2.6   \\ \hline	
 $R_l$ [k$\text{\ohm}$] 			&	{15.5}					& {15.5}   	\\ \hline		
 $m$	[g]						    &	{5.88}					& 9.00   		\\ \hline	
 $f_0$ [Hz]						&		32.9				& 27.9   					\\
@@ -933,11 +921,25 @@ $f_0$ [Hz]						&		32.9				& 27.9   					\\
         \caption{Value des paramètres de l'OB et de l'ensemble OBVH implémentant le tube T100p suite au essais de lâchers expérimentaux}
         \label{tab:parametres lacher tube}
 \end{table}        
+	%/////////////////////////////////////////////
+	\subsection{Analyse and discussion}
+	%/////////////////////////////////////////////
+The experimental hydraulic behavior of the HV$_{T1}$ is theoretically capable to provide \mbox{$r_{Cf}>26$} and ensure the hydraulic adequate commutation cycling the BR mass motion.
+
+The quality factor decrease results from the rubbing between the mass and the HV and diminishes the BR energy conversion efficiency. The friction losses can be minimized by an order of magnitude by using materials with low friction coefficient like teflon \cite{Nosonovsky2013}. The HV-mass contact can also profit from magnetic interactions instead of direct rubbing.
+
+The global electromechanical coupling is not influenced by the HV presence, which is consistent with equation \ref{eq:k2_sys}. The major part of the energy loss is due to the $k^2_{sys}$ drop as a result of the softening of the BBs from the prototype fabrication and manipulation. It can be minimized by using thicker BBs while taking care that the buckling domain does not reach the critical point where the APG could be damaged (fig. \ref{fig:buckling_limit}). With $200$µm thick BBs instead of $75$µm, we can expect 26\% improvement on $\eta_{br}$ (eqs. \ref{eq:eta_ob}-\ref{eq:K_eq}).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 \section{CONCLUSION}
 \label{sec:CONCLUSION}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
+This work emphasizes the energy need for hearing aids and the exploitation of the mechanical deformation of the ear canal as a solution to enhance the autonomy of those devices batteries.
+
+A new energy harvester architecture maximizing the energy conversion efficiency is proposed. A hydraulic, mechanical and electrical coupled model is established. Its numerical evaluation predicts that the system can theoretically harvest 76\% of the available energy with a hydraulic extraction method. The dynamic behavior and the performances of the fabricated electromechanical converter composed of the BR and the APG are evaluated. A new concept of HVs is proposed, based on the bending buckling of flexible tubes. A HV design is proposed with experimental investigation based on the theoretical needed behavior extracted from the numerical simulations.
+
+The experimental data are used to recalibrate the harvester multiphysic model and to evaluate its performances. The global predicted efficiency is $\eta_g=2.6\%$. The energy losses factors are identified and solutions are proposed in order to reduce them for a next generation of prototypes.
+
 
 
 %% If you have bibdatabase file and want bibtex to generate the
