@@ -123,7 +123,7 @@
 %% \address{Address\fnref{label3}}
 %% \fntext[label3]{}
 
-\title{Ear canal dynamic motion piezoelectric energy harvester using a bistable resonator cycled by coupled hydraulic switches made of collapsed flexible tubes.}
+\title{Toward a novel piezoelectric energy harvester for ear canal dynamic motion exploitation, using a bistable resonator cycled by coupled hydraulic valves made of collapsed flexible tubes}
 
 %% use optional labels to link authors explicitly to addresses:
 %% \author[label1,label2]{}
@@ -145,11 +145,13 @@
 
 
 \begin{abstract}
-%% Text of abstract
+Scavenging energy from the ear canal dynamic motion during jaw motion may be a practical way to enhance the battery autonomy of hearing aids. One of the main challenges is to optimize the extracted energy while coping with the constraints associated to soft human tissues and restricted ear canal volume. We propose a new concept of harvester made of a liquid filled earplug transferring the energy outside the ear canal to a generator. It is composed oa hydraulic amplifier, two hydraulic cylinders actuating a bistable resonator raising the source frequency driving an amplified piezoelectric transducer to generate electricity. The cycling of the resonator is achieved using two innovative flexible hydraulic valves based on the buckling of flexible tubes.\\
+A multiphysic coupled model is established in order to determine the system operation requirements and to evaluate its theoretical performance. It exhibits a theoretical energy conversion efficiency of 85\%. The electromechanical performance of the resonator couple to the piezoelectric transducer as well as the hydraulic behavior of the valves are experimentally investigated. The global model is updated with the experimental data to ameliorate its predictability for a further optimized design. The energy losses are identified, which allow an entire design proposed to improve the experimental energy conversion efficiency to 26\%.
+	
 \end{abstract}
 
 \begin{keyword}
-%% Keywords
+Energy harvesting, frequency-up, ear canal, multiphysic, hydraulic valve
 \end{keyword}
 
 \end{frontmatter}
@@ -380,9 +382,9 @@ A technological solution for the HV is to use a flexible tube buckled by bending
 \section{SYSTEM GLOBAL MODELING}
 \label{sec:SYSTEM MODELING}
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
-This section presents the global multiphysic model describing the system operation. Two coupled subsystems are considered. The subsection \ref{subsec:The electromechanical converter} shows the modeling of the electromechanical frequency-up converter (BR + APG) under the mechanical influence of a HV and a HC. Subsection \ref{subsec:The hydraulic circuit} discusses the design of the hydraulic circuit composed of the two HVs, the two HCs, the hydraulic amplifier and the liquid filled earplug.
+This section presents the global multiphysic model describing the system operation. Two coupled subsystems are considered. The subsection \ref{subsec:The electromechanical converter} shows the modeling of the electromechanical frequency-up converter (BR + APG) under the mechanical influence of a HV and a HC. Subsection \ref{subsec:The hydraulic circuit} discusses the design of the hydraulic circuit composed of the two HVs, the two HCs, the HA and the liquid filled earplug.
 
-This work challenges are focused on the experimental validation of the electromechanical converter cycled by two hydraulic valves. In fact several hydraulic miniature solutions are introduced by the literature for both of the components \cite{Wang2020,Xu2021,Zhu2013}. Hence, this section neglects the pressure loss through the pressure separator and the energy loss inside the hydraulic amplifier. These hydraulic components will rather be considered for further work. 
+This work challenges are focused on the experimental validation of the electromechanical converter cycled by two hydraulic valves. In fact several hydraulic miniature solutions are introduced by the literature for both of the components \cite{Wang2020,Xu2021,Zhu2013}. Hence, this section neglects the energy loss inside the HA and the HCs. These hydraulic components will rather be considered in further work. 
 
     %///////////////////////////////////////////// 
 	\subsection{Modeling of the electromechanical converter}	
@@ -612,7 +614,7 @@ Figure \ref{fig:positions+DeltaV_debits_pear} shows the simulation results of th
 
 During a first phase the BR mass is pushed until it reaches $x=0$. The fluid exiting the earplug is mostly guided toward the \emph{"bottom"} HC and a pressure is induced in the earplug by the BR counter-reaction force. The mass then crosses $x_m=0$ and the second phase begins. The \emph{"top"} HV then opens ($Cf_{top} = Cf_0$) and the \emph{"bottom"} side HV closes ($Cf_{bot} = Cf(x_m)>Cf_0$). The fluid is then directed toward the \emph{"top"} side and there is no contact between the mass and a HC. The mass oscillates around $x_m=x_0$ and energy is harvested by the APG. The adequate hydraulic actuation making the fluid flow toward the right HC is achievable when \mbox{$(r_{Cf})_{min}=26$}. 
 
-Additionally, figure \ref{fig:positions_Up_puissances_energies} presents the APG voltage, the source and harvested powers and the different energies entering and exciting the system. The theoretical global efficiency of the harvester is evaluated at \mbox{$\eta_g=76$\%} with $22$µJ electrical energy harvested from one mastication. The energy losses are mostly located in the BR stage and depend on the quality factor $Q$ that has been set in accordance with previous work results on similar BR architectures \cite{Liu2013}. The energy source is limited by the comfort pressure level $p_c$ that is set to 1kPa, i.e. a fraction of the theoretical maximal value of $12$kPa \cite{Bouchard-Roy2020}. The harvester theoretical efficiency could lead to a maximum of $684$µJ extractable from the ear canal.
+Additionally, figure \ref{fig:positions_Up_puissances_energies} presents the APG voltage, the source and harvested powers and the different energies entering and exciting the system. The theoretical global efficiency of the harvester is evaluated at \mbox{$\eta_g=85$\%} with $22$µJ electrical energy harvested from one mastication. The energy losses are mostly located in the BR stage and depend on the quality factor $Q$ that has been set in accordance with previous work results on similar BR architectures \cite{Liu2013}. The energy source is limited by the comfort pressure level $p_c$ that is set to 1kPa, i.e. a fraction of the theoretical maximal value of $12$kPa \cite{Bouchard-Roy2020}. The harvester theoretical efficiency could lead to a maximum of $684$µJ extractable from the ear canal.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure*}[!htbp]
@@ -641,7 +643,7 @@ Additionally, figure \ref{fig:positions_Up_puissances_energies} presents the APG
 \toprule
 \multicolumn{1}{c}{~~\textbf{Parameter}~~}  & \multicolumn{1}{c}{~~\textbf{Value}~~} \\
 \midrule
-$K$	[N/µm]		&	0.256		\\	\hline
+$K_{eq}$	[N/µm]	&	0.256		\\	\hline
 $x_0$ [mm]			&	0.49		\\	\hline
 $L$	[mm]			&	16.0		\\	\hline
 $m$	[g]				&	5.88		\\	\hline
@@ -650,7 +652,7 @@ $R_l$ [k$\Omega$] 	&	6.39		\\	\hline
 $\alpha$ [N/V]		&   0.105		\\	\hline
 $C_p$ [µF]	   		&	0.25		\\	\hline
 $Q$ [-]				&	50			\\	\hline
-$\eta_g$ [\%]		& 	76			\\
+$\eta_g$ [\%]		& 	85			\\
 \bottomrule
 	\end{tabular}}
 	\caption{Electromechanical}
@@ -698,13 +700,14 @@ The BR is fabricated by electrical discharge machining (EDM) in a monobloc struc
 			\toprule
 \textbf{Parameter definition} & \textbf{Symbol}    & \textbf{Valeur [Unit]} \\
 \midrule
-APX4 steel Young's modulus     & $E$                       & 211 [GPa]  \\
-APX4 steel elastic resistance  & $Re_{APX4}$               & 955[MPa]    \\
+APX4 steel Young's modulus    & $E$                       & 211 [GPa]  \\
+APX4 steel elastic resistance & $Re_{APX4}$               & 955[MPa]    \\
 Dimensions of a buckled beam  & $L$ x $l$ x $e$           & 16x0.07x1.2 [mm] \\
 Dimensions of the guide beam  & $L_{v}$ x $l_{v}$ x $e$   & 17.5x0.07x1.2 [mm] \\
-% Mounted GB dimensions          & $L_{v2}$ x $l_{v2}$ x $e$ & 48x0.1x1.2 [mm] \\
-Soft hinge stiffness		   & $K_{\varphi}$             & 0.006 [N.m/rad] \\
-Stiffness of the guide beam along $\vec{y}$  & $K_{gb}$    & 190 [N/m] \\
+Soft hinge stiffness		  & $K_{\varphi}$             & 0.006 [N.m/rad] \\
+Stiffness of the guide beam along $\vec{y}$  & $K_{gb}$   & 190 [N/m] \\
+Stiffness of 4 buckled blades along $\vec{z}$ & $K_{bb}$   & 1402 [kN/m] \\  
+Stiffness of the APG along $\vec{z}$          & $K$        & 252  [kN/m]\\
 			\bottomrule
 		\end{tabular}}
 	\caption{Definitions and values of the fabricated BR}
@@ -717,7 +720,7 @@ Stiffness of the guide beam along $\vec{y}$  & $K_{gb}$    & 190 [N/m] \\
     %/////////////////////////////////////////////
 The harvesting happens during the free oscillation phase. The main issue is to maximize the energy conversion efficiency $\eta_{ob}$ of this stage. Richards \emph{et al.} demonstrated that for the piezoelectric transduction at the resonance frequency, it can be approximated with the equation \ref{eq:eta_ob} \cite{Richards2004}. This expression is valid for an electric extraction based on the adaptive impedance matching strategy.
 \begin{equation}
-	\eta_{ob} = \dfrac{k^2_{sys}\ Q}{k^2_{sys}\ Q + 2}
+	\eta_{br} = \dfrac{k^2_{sys}\ Q}{k^2_{sys}\ Q + 2}
 	\label{eq:eta_ob}
 \end{equation}
 $k^2_{sys}$ is the global electromechanical coupling coefficient of the harvesting system. The latter can be expressed with the electromechanical parameters of the APG and the stiffness of the blades (tab. \ref{tab:parametres_lames}) as follows :
@@ -732,7 +735,7 @@ $k^2_{sys}$ is the global electromechanical coupling coefficient of the harvesti
 	k^2_{sys} = \dfrac{\alpha^2_{eq}}{\alpha^2_{eq} + (K+K_{gb})C_p}
 	\label{eq:k2_sys}
 \end{equation}
-Where $\alpha_{eq}$ is the equivalent piezoelectric force factor (PFF) given by equation \ref{eq:alpha_eq}. It depends on the APG PFF the and ratio between the equivalent stiffness $K_{eq}$ (eq. \ref{eq:K_eq}) of the structure on the $\vec{x}$ axis and the equivalent stiffness of the APG mounted on the GB.
+Where $\alpha_{eq}$ is the equivalent piezoelectric force factor (PFF) given by equation \ref{eq:alpha_eq}. It depends on the APG PFF the and ratio between the equivalent stiffness $K_{eq}$ (eq. \ref{eq:K_eq}) of the structure on the $\vec{z}$ axis and the equivalent stiffness of the APG mounted on the GB.
 \begin{equation}
 	\alpha_{eq} = \alpha\ \dfrac{K_{eq}}{K + K_{gb}} 
 	\label{eq:alpha_eq}
@@ -792,9 +795,9 @@ The mass is pushed by a HC from a stable equilibrium position until it reaches \
 	$f_0$                     & 47.0 Hz               & 27.9 Hz  		\\
 	$x_0$                     & 0.49 mm               & 0.50 mm    		\\
 	$K_{eq}$                  & 2.56e5 N/m            & 0.85e5 N/m 		\\
-	$K_{bb}$                  & 14.2e5 N/m            & 1.27 N/m 		\\
+	$K_{bb}$                  & 14.2e5 N/m            & 1.27e5 N/m 		\\
 	${k^2_{sys}}$             & 16 \%                 & 1.25 \% 		\\
-	$\eta_{br}$               & 75 \%                 & 12.9 \%   		\\
+	$\eta_{br}$               & 85 \%                 & 12.9 \%   		\\
 	\bottomrule
 	\end{tabular}}
 	\caption{Theoretical and experimentally recalibrated values of the electromechanical converter.}
@@ -837,7 +840,7 @@ Where $p_1$ and $p_2$ are the fluid pressure monitored before entering and after
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 The tests were repeated 7 times for $\theta$ varying from $0^{\circ}$ to $60^{\circ}$ with $10^{\circ}$ increments. The experimental results are plotted on figure \ref{fig:resultats_essais_hydraulique_VH_D1mm}.
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
 \centering
 	\captionsetup{justification=centering}
 	\includegraphics[trim={15.5cm 0cm 0cm 3.6cm},clip,width=0.7\linewidth]{figures/resultats_essais_hydraulique_VH_D1mm.pdf}
@@ -863,7 +866,7 @@ The HV$_{T1}$ has been mounted on the experimental test bench presented on figur
 
 The mass is initially set on $x_m=x_0$ and then pushed toward $x_0$. The HV$_{T1}$ internal pressure is adjusted to 30kPa with an oil column, in order to be consistent with the simulated case (tab. \ref{tab:parametres_hydrauliques}). The oscillation phase begins when the mass crosses the $x_m=0$ position. In order to set $\theta_0$ we add two angle stoppers illustrated on figure \ref{fig:contact_M_VH_lachers}. $\theta_c$ is then reached when the oscillations stop at $x_m=x_0$. The mass position and the APG tension are monitored during the tests.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
 	\begin{center}
 		\captionsetup{justification=centering}
 		\includegraphics[trim={6.9cm 0cm 0cm 9cm},clip,width=0.9\linewidth]{figures/contact_M_VH_lachers.pdf}
@@ -877,7 +880,7 @@ The global model parameters listed in table \ref{tab:parametres lacher tube} are
 
 After recalibration, the low error between the simulated and the experimental data verify that the electromechanical dynamics behavior of the harvester is theoretically predictable by the established model. The HV$_{T1}$ stiffness shifts $x_0$ toward $0$ and its value at $\theta_c$ is evaluated with the shift gap and equation \ref{eq:OB-GPA}. The HV$_{T1}$ adds a supplementary dynamic mass in the BR and changes the oscillation frequency. The electromechanical coupling coefficient is not influenced by the HV presence. The quality factor decreases and the dry friction coefficient is calculated from the drop. Moreover, $a$ and $\Delta\theta$ are graphically evaluated.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!htbp]	
+\begin{figure}[!htb]	
 \captionsetup{justification=centering}
 	\begin{subfigure}{.49\linewidth}
 		\includegraphics[trim={9cm 0cm 0cm 0cm},clip,width=\linewidth]{figures/recalage_free.pdf}
@@ -936,9 +939,9 @@ The global electromechanical coupling is not influenced by the HV presence, whic
 %/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\/!\%
 This work emphasizes the energy need for hearing aids and the exploitation of the mechanical deformation of the ear canal as a solution to enhance the autonomy of those devices batteries.
 
-A new energy harvester architecture maximizing the energy conversion efficiency is proposed. A hydraulic, mechanical and electrical coupled model is established. Its numerical evaluation predicts that the system can theoretically harvest 76\% of the available energy with a hydraulic extraction method. The dynamic behavior and the performances of the fabricated electromechanical converter composed of the BR and the APG are evaluated. A new concept of HVs is proposed, based on the bending buckling of flexible tubes. A HV design is proposed with experimental investigation based on the theoretical needed behavior extracted from the numerical simulations.
+A new energy harvester architecture maximizing the energy conversion efficiency is proposed. A hydraulic, mechanical and electrical coupled model is established. Its numerical evaluation predicts that the system can theoretically harvest 85\% of the available energy with a hydraulic extraction method. The dynamic behavior and the performances of the fabricated electromechanical converter composed of the BR and the APG are evaluated. A new concept of HVs is proposed, based on the bending buckling of flexible tubes. A HV design is proposed with experimental investigation based on the theoretical needed behavior extracted from the numerical simulations.
 
-The experimental data are used to recalibrate the harvester multiphysic model and to evaluate its performances. The global predicted efficiency is $\eta_g=2.6\%$. The energy losses factors are identified and solutions are proposed in order to reduce them for a next generation of prototypes.
+The experimental data are used to recalibrate the harvester multiphysic model and to evaluate its performances. The global experimental efficiency is evaluated to $2.6$\%. The energy losses factors are identified and solutions are proposed in order to increase the efficiency up to 26\%.
 
 
 
